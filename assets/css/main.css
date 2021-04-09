@@ -2027,6 +2027,8 @@ input, select, textarea {
 	.box.recent-comments ul {
 		list-style: none;
 		padding-left: 0;
+		text-align: center;
+		font-size: 18px;
 	}
 
 	.box.recent-comments li {
