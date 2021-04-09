@@ -2041,10 +2041,14 @@ input, select, textarea {
 			border-top: 0;
 			box-shadow: none;
 			padding-top: 0;
+			text-align: center;
+			font-size: 18px;
 		}
 
 		.box.recent-comments li:last-child {
 			padding-bottom: 0;
+			text-align: center;
+			font-size: 18px;
 		}
 
 	.box.search form {
