@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>note.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="101">10.1</h1>
+<h2 id="%E4%B8%89%E6%AE%B5%E5%BC%8F%E7%8A%B6%E6%80%81%E6%9C%BA">三段式状态机</h2>
+<img width = '600' height ='250' src ="1.png">  
+<pre class="hljs"><code><div><span class="hljs-keyword">module</span> top_module(
+    <span class="hljs-keyword">input</span> clk,
+    <span class="hljs-keyword">input</span> areset,    <span class="hljs-comment">// Asynchronous reset to state B</span>
+    <span class="hljs-keyword">input</span> in,
+    <span class="hljs-keyword">output</span> out);
+
+    <span class="hljs-keyword">parameter</span> A=<span class="hljs-number">0</span>, B=<span class="hljs-number">1</span>; 
+    <span class="hljs-keyword">reg</span> state, next_state;
+
+    <span class="hljs-keyword">always</span> @(*) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">case</span>(state)
+                A: <span class="hljs-keyword">if</span> (in) next_state = A;
+                	<span class="hljs-keyword">else</span> next_state = B;
+                B: <span class="hljs-keyword">if</span> (in) next_state = B;
+                	<span class="hljs-keyword">else</span> next_state = A;
+            <span class="hljs-keyword">endcase</span>
+    <span class="hljs-keyword">end</span>
+
+    <span class="hljs-keyword">always</span> @(<span class="hljs-keyword">posedge</span> clk, <span class="hljs-keyword">posedge</span> areset) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (areset) state &lt;= B;
+        <span class="hljs-keyword">else</span>
+            state &lt;= next_state;
+    <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">assign</span> out = state == B;
+
+<span class="hljs-keyword">endmodule</span>
+</div></code></pre>
+<h2 id="%E7%8B%AC%E7%83%AD%E7%A0%81%E7%8A%B6%E6%80%81%E6%9C%BA">独热码状态机</h2>
+<img width = '300' height ='300' src ="2.png">  
+<p><em>For example, in the above state machine, how can the state machine can reach state A?<br>
+It must use one of the two incoming edges: &quot;Currently in state A and in=0&quot; or &quot;Currently in state C and in = 0&quot;.<br>
+Due to the one-hot encoding, the logic equation to test for &quot;currently in state A&quot; is simply the state bit for state A.<br>
+This leads to the final logic equation for the next state of state bit A: next_state[0] = state[0]&amp;(~in) | state[2]&amp;(~in).<br>
+The one-hot encoding guarantees that at most one clause (product term) will be &quot;active&quot; at a time, so the clauses can just be ORed together.</em>
+<br>  </br></p>
+<h1 id="102">10.2</h1>
+<h2 id="%E8%B7%9F%E5%89%8D%E4%B8%80%E4%B8%AA%E7%8A%B6%E6%80%81%E6%9C%89%E5%85%B3%E7%9A%84%E5%80%BC%E8%B7%9F%E6%97%B6%E5%BA%8F%E6%9C%89%E5%85%B3%E9%9C%80%E8%A6%81%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91">跟前一个状态有关的值（跟时序有关）需要时序逻辑</h2>
+<img width = '800' height ='600' src ="3.png">  
+<pre class="hljs"><code><div><span class="hljs-keyword">module</span> top_module (
+    <span class="hljs-keyword">input</span> clk,
+    <span class="hljs-keyword">input</span> reset,
+    <span class="hljs-keyword">input</span> [<span class="hljs-number">3</span>:<span class="hljs-number">1</span>] s,
+    <span class="hljs-keyword">output</span> fr3,
+    <span class="hljs-keyword">output</span> fr2,
+    <span class="hljs-keyword">output</span> fr1,
+    <span class="hljs-keyword">output</span> dfr
+); 
+    <span class="hljs-keyword">parameter</span> S1=<span class="hljs-number">2'd0</span>, S2=<span class="hljs-number">2'd1</span>, S3=<span class="hljs-number">2'd2</span>, S4=<span class="hljs-number">2'd3</span>;
+    <span class="hljs-keyword">logic</span> [<span class="hljs-number">1</span>:<span class="hljs-number">0</span>] state, next_state;
+
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (reset) <span class="hljs-keyword">begin</span>
+            state &lt;= S1;
+        <span class="hljs-keyword">end</span>
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">begin</span>
+            state &lt;= next_state;
+        <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">end</span>
+
+    <span class="hljs-keyword">always_comb</span> <span class="hljs-keyword">begin</span>
+		<span class="hljs-keyword">case</span>(s)
+        	<span class="hljs-number">3'b000</span>: next_state = S1;
+            <span class="hljs-number">3'b001</span>: next_state = S2;
+            <span class="hljs-number">3'b011</span>: next_state = S3;
+            <span class="hljs-number">3'b111</span>: next_state = S4;
+            <span class="hljs-keyword">default</span>: next_state = state;
+        <span class="hljs-keyword">endcase</span>
+    <span class="hljs-keyword">end</span>
+
+    <span class="hljs-keyword">always_comb</span> <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">case</span> (state)
+            S1:{fr3,fr2,fr1} = <span class="hljs-number">3'b111</span>;
+            S2:{fr3,fr2,fr1} = <span class="hljs-number">3'b011</span>;
+            S3:{fr3,fr2,fr1} = <span class="hljs-number">3'b001</span>;
+            S4:{fr3,fr2,fr1} = <span class="hljs-number">3'b000</span>;
+        <span class="hljs-keyword">endcase</span>
+    <span class="hljs-keyword">end</span>
+
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (reset) dfr &lt;= <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (state &gt; next_state) dfr &lt;= <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (state &lt; next_state) dfr &lt;= <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">else</span> dfr &lt;= dfr;
+    <span class="hljs-keyword">end</span>
+
+<span class="hljs-keyword">endmodule</span>
+</div></code></pre>
+<h2 id="vim%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8">VIM文本编辑器</h2>
+<p>三种工作模式</p>
+<ol>
+<li>命令模式：移动光标，复制粘贴替换删除操作</li>
+<li>输入模式：文本写入</li>
+<li>编辑模式：保存查找替换</li>
+</ol>
+<img width = '500' height ='250' src ="4.png">  
+<p>细节：</p>
+<ol>
+<li>命令模式下<code>hjkl</code>移动光标，<code>i</code>键进入输入模式，<code>esc</code>回到命令模式，冒号<code>:</code>进入编辑模式，<code>w</code>保存，<code>q</code>退出。</li>
+<li><code>w</code>：移到下一个单词首，<code>b</code>：移到上一个单词首，<code>e</code>：移到下一个单词尾，<code>nw</code>：向右移动n个单词，<code>nb</code>：向左移动n个单词。</li>
+<li><code>i</code>键输入：当前光标左侧位置进行输入。<code>a</code>键输入：当前光标右侧位置进行输入。<code>o</code>键输入：另起一行进行输入。</li>
+<li><code>/abc</code> 从光标所在位置向前查找字符串abc。<code>n</code> 相同方向重复查找指令。 <code>N</code> 相反方向重复查找指令。取消查找高亮 <code>:nohl</code></li>
+<li>光标在一个单词上，按<code>shift+*</code>可立即查找该单词</li>
+<li><code>r</code> 替换一个字符。<code>R</code> 连续替换字符，<code>esc</code>退出。</li>
+<li><code>:s;a1;a2;g</code> 将当前光标所在行中的所有a1替换成a2.</li>
+<li><code>:n1,n2s;a1;a2;g</code> 将文件中n1到n2行中所有a1替换成a2, <code>$</code>表示最后一行。</li>
+<li><code>:n1,n2s;a1;a2;gc</code> 替换时需要我确认</li>
+<li><code>u</code> 撤销上次操作
+<br>  </br></li>
+</ol>
+<h1 id="103">10.3</h1>
+<h2 id="vim%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8">VIM文本编辑器</h2>
+<p>删除文本</p>
+<ol>
+<li><code>dd</code>删除光标所在行</li>
+<li><code>v</code>选中字符，<code>d</code>删除字符，<code>viw</code>选中单词</li>
+<li><code>ndd</code>删除以下n行</li>
+<li><code>dG</code>删除以下所有文本</li>
+<li><code>D</code>删除光标至行尾</li>
+</ol>
+<p>复制粘贴文本</p>
+<ol>
+<li><code>v</code>选中字符，<code>y</code>进行复制，<code>p</code>进行粘贴</li>
+<li><code>yy</code>复制整行，<code>p</code>在下一行进行粘贴</li>
+</ol>
+<p>保存退出文本</p>
+<ol>
+<li><code>:w</code>保存</li>
+<li><code>:wq</code> 保存并退出</li>
+</ol>
+<p>光标移动</p>
+<ol>
+<li><code>0</code> 光标移至行首</li>
+<li><code>$</code> 光标移至行尾</li>
+<li><code>gg</code> 光标移至文件文本开头</li>
+<li><code>G</code> 光标移至文件文本末尾</li>
+<li><code>:n</code> 光标移动到指定行开头</li>
+<li><code>%</code> 光标移动到匹配的括号，begin...end处
+<br>  </br></li>
+</ol>
+<h1 id="104">10.4</h1>
+<h2 id="lemmings%E6%B8%B8%E6%88%8F">Lemmings游戏</h2>
+<img width = '1000' height ='500' src ="5.png">  
+<p><strong>注意计数器count溢出的情况，count的位数要多</strong></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">module</span> top_module(
+    <span class="hljs-keyword">input</span> clk,
+    <span class="hljs-keyword">input</span> areset,    <span class="hljs-comment">// Freshly brainwashed Lemmings walk left.</span>
+    <span class="hljs-keyword">input</span> bump_left,
+    <span class="hljs-keyword">input</span> bump_right,
+    <span class="hljs-keyword">input</span> ground,
+    <span class="hljs-keyword">input</span> dig,
+    <span class="hljs-keyword">output</span> walk_left,
+    <span class="hljs-keyword">output</span> walk_right,
+    <span class="hljs-keyword">output</span> aaah,
+    <span class="hljs-keyword">output</span> digging ); 
+    
+    <span class="hljs-keyword">parameter</span> LEFT = <span class="hljs-number">3'b000</span>, RIGHT = <span class="hljs-number">3'b001</span>, FALL = <span class="hljs-number">3'b010</span>, DIG = <span class="hljs-number">3'b011</span>, DEAD = <span class="hljs-number">3'b100</span>;
+    <span class="hljs-keyword">logic</span> [<span class="hljs-number">2</span>:<span class="hljs-number">0</span>] state, next_state;
+    <span class="hljs-keyword">logic</span> direction; <span class="hljs-comment">//left is 1 and right is 0</span>
+    <span class="hljs-keyword">logic</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] count;
+    
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk <span class="hljs-keyword">or</span> <span class="hljs-keyword">posedge</span> areset) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (areset) direction &lt;= <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (state == LEFT) direction &lt;= <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (state == RIGHT) direction &lt;= <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">else</span> direction &lt;= direction;
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk <span class="hljs-keyword">or</span> <span class="hljs-keyword">posedge</span> areset) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (areset) count &lt;= <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (state == FALL) count &lt;= count + <span class="hljs-number">1'b1</span>;
+        <span class="hljs-keyword">else</span> count &lt;= <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">always_ff</span>  @(<span class="hljs-keyword">posedge</span> clk <span class="hljs-keyword">or</span> <span class="hljs-keyword">posedge</span> areset) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (areset) state &lt;= LEFT;
+        <span class="hljs-keyword">else</span> state &lt;= next_state;
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">always_comb</span> <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">case</span> (state)
+            LEFT: <span class="hljs-keyword">if</span>(!ground) next_state = FALL;
+            	<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (dig) next_state = DIG; 
+            <span class="hljs-keyword">else</span> next_state = ({bump_left, bump_right} == <span class="hljs-number">2'b00</span> | {bump_left, bump_right} == <span class="hljs-number">2'b01</span>) ? LEFT:RIGHT;
+            RIGHT:<span class="hljs-keyword">if</span>(!ground) next_state = FALL;
+            	<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (dig) next_state = DIG; 
+            <span class="hljs-keyword">else</span> next_state = ({bump_left, bump_right} == <span class="hljs-number">2'b00</span> | {bump_left, bump_right} == <span class="hljs-number">2'b10</span>) ? RIGHT:LEFT;
+            FALL: <span class="hljs-keyword">if</span> (ground &amp; count &gt;= <span class="hljs-number">20</span>) next_state = DEAD; 
+                <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (ground &amp; direction) next_state = LEFT;
+            	<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (ground &amp; !direction) next_state = RIGHT;
+            	<span class="hljs-keyword">else</span> next_state = FALL;
+            DIG: <span class="hljs-keyword">if</span> (!ground) next_state = FALL;
+            	<span class="hljs-keyword">else</span> next_state = DIG;
+            DEAD: next_state = DEAD;
+        <span class="hljs-keyword">endcase</span>
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">assign</span> walk_left = state != DEAD &amp; state == LEFT;
+    <span class="hljs-keyword">assign</span> walk_right = state != DEAD &amp; state == RIGHT;
+    <span class="hljs-keyword">assign</span> aaah = state != DEAD &amp; state == FALL;
+    <span class="hljs-keyword">assign</span> digging = state != DEAD &amp; state == DIG;
+
+<span class="hljs-keyword">endmodule</span>
+</div></code></pre>
+<h2 id="vim%E9%85%8D%E7%BD%AE%E5%92%8C%E6%8F%92%E4%BB%B6">VIM配置和插件</h2>
+<ol>
+<li>vim编辑器的功能通过<code>.vimrc</code>文件进行设置</li>
+<li>系统配置通过<code>echo $VIM</code>确定系统<code>.vimrc</code>位置</li>
+<li>用户配置通过<code>~/.vimrc</code>文件进行配置，用户配置文件优先级高于系统配置文件</li>
+</ol>
+<p>VIM多窗口编辑命令</p>
+<ol>
+<li><code>ws</code>横向切割新窗口，<code>wv</code>纵向切割新窗口，<code>wc</code>关闭当前窗口，<code>ctrl + h/j/k/l</code>在窗口之间切换</li>
+</ol>
+<p>VIM树形浏览窗口</p>
+<ol>
+<li><code>vt</code> VSTreeExplorer插件</li>
+<li><code>r</code> 打开并更新文件夹</li>
+<li><code>u</code> 返回上一级目录</li>
+<li>在上面路径处按 <code>r</code> 折叠所有打开的文件夹</li>
+</ol>
+<p>VIM自动补全</p>
+<ol>
+<li><code>TAB</code> 进行自动补全，上下键和回车进行选择</li>
+</ol>
+<p>VIM代码标记</p>
+<ol>
+<li><code>mm</code> 标记当前行代码</li>
+<li><code>mn</code> 找到上一个标记的代码行，<code>mp</code> 找到下一个标记的代码行<br>
+<br>  </br></li>
+</ol>
+<h1 id="105">10.5</h1>
+<h2 id="systemverilog%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">SystemVerilog数据类型</h2>
+<h3 id="%E5%86%85%E5%BB%BA%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">内建数据类型</h3>
+<p><code>logic</code> 四值逻辑 x,z,0,1. <code>bit</code> 二值逻辑0，1.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">四值逻辑</th>
+<th style="text-align:center">二值逻辑</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">integer</td>
+<td style="text-align:center">byte</td>
+</tr>
+<tr>
+<td style="text-align:center">logic</td>
+<td style="text-align:center">shortint</td>
+</tr>
+<tr>
+<td style="text-align:center">reg</td>
+<td style="text-align:center">int</td>
+</tr>
+<tr>
+<td style="text-align:center">wire</td>
+<td style="text-align:center">longint</td>
+</tr>
+<tr>
+<td style="text-align:center">tri</td>
+<td style="text-align:center">bit</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">有符号型</th>
+<th style="text-align:center">无符号型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">byte</td>
+<td style="text-align:center">bit</td>
+</tr>
+<tr>
+<td style="text-align:center">shortint</td>
+<td style="text-align:center">logic</td>
+</tr>
+<tr>
+<td style="text-align:center">int</td>
+<td style="text-align:center">reg</td>
+</tr>
+<tr>
+<td style="text-align:center">longint</td>
+<td style="text-align:center">wire</td>
+</tr>
+<tr>
+<td style="text-align:center">integer</td>
+<td style="text-align:center">tri</td>
+</tr>
+</tbody>
+</table>
+<p><strong>要避免不一致的变量进行操作，有符号数高位扩展补符号位，无符号数高位扩展补0</strong><br>
+<strong>不同类型转换要注意<code>逻辑数值类型</code>，<code>符号类型</code>，<code>矢量位宽</code></strong></p>
+<ol>
+<li>静态转换： <code>unsigned'(signed_vec)</code>，没有返回值</li>
+<li>动态转换：<code>$cast(tgt, src)</code>，成功返回1，失败返回0</li>
+<li><code>x,z</code> 转换成二值逻辑只会转换为0</li>
+</ol>
+<h3 id="%E5%AE%9A%E5%AE%BD%E6%95%B0%E7%BB%84">定宽数组</h3>
+<ol>
+<li>二维数组声明时，若两个维度写在变量名同侧（左或右），左侧维度为高维度，右侧维度为低维度。若写在变量名称异侧，变量名右侧的为高纬度，左侧的为低维度。 <em><strong><code>待验证</code></strong></em></li>
+<li><code>int ascend[4] = '{0,1,2,3};</code> 赋值顺序为从低到高。   <em><strong><code>待验证</code></strong></em></li>
+<li><code>bit [3][7:0] b_pack</code>：合并数组，<code>bit [7:0] b_unpack[3]</code>：非合并数组</li>
+<li><code>for</code>和<code>foreach</code>循环</li>
+</ol>
+<pre class="hljs"><code><div>    <span class="hljs-keyword">bit</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] src[<span class="hljs-number">5</span>], dst[<span class="hljs-number">5</span>];
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">$size</span>(src); i++) <span class="hljs-comment">// $size(src, num), 返回变量src在num这个维度上的size，$size(src)默认返回最高维度的size</span>
+        src[i] = i;
+    <span class="hljs-keyword">foreach</span> (dst[j])
+        dst[j] = src[j] * <span class="hljs-number">2</span>;
+</div></code></pre>
+
+</body>
+</html>
