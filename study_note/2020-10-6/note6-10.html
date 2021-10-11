@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2021.10.6-2021.10.10</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="106">10.6</h1>
+<h2 id="fsm-serial">FSM serial</h2>
+<p><strong>少写<code>if-else</code>，多写 <code>?:</code></strong><br>
+<img width = '1000' height ='500' src ="1.png"></p>
+<p><strong>注意开始状态需要一个高电平向低电平转换的过程，因此ERR状态不能直接转换到DATA状态</strong></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">module</span> top_module(
+    <span class="hljs-keyword">input</span> clk,
+    <span class="hljs-keyword">input</span> in,
+    <span class="hljs-keyword">input</span> reset,    <span class="hljs-comment">// Synchronous reset</span>
+    <span class="hljs-keyword">output</span> done
+); 
+    <span class="hljs-keyword">parameter</span> IDLE = <span class="hljs-number">2'b00</span>, DATA = <span class="hljs-number">2'b01</span>, STOP = <span class="hljs-number">2'b10</span>, ERR = <span class="hljs-number">2'b11</span>;
+    <span class="hljs-keyword">logic</span> [<span class="hljs-number">1</span>:<span class="hljs-number">0</span>] state, next_state;
+    <span class="hljs-keyword">logic</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] count;
+    
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (reset) state &lt;= IDLE;
+        <span class="hljs-keyword">else</span> state &lt;= next_state;
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (reset) count &lt;= <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (state == DATA) count &lt;= count + <span class="hljs-number">1'b1</span>;
+        <span class="hljs-keyword">else</span> count &lt;= <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">always_comb</span> <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">case</span> (state)
+            IDLE: next_state = in ? IDLE : DATA;
+            DATA: next_state = (count == <span class="hljs-number">8</span>)? (in? STOP : ERR) : DATA; 
+            STOP: next_state = in? IDLE : DATA;
+            ERR: next_state = in? IDLE : ERR;
+        <span class="hljs-keyword">endcase</span>
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">assign</span> done = state == STOP;
+
+<span class="hljs-keyword">endmodule</span>
+</div></code></pre>
+<h2 id="%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E5%8A%A8%E6%80%81%E6%95%B0%E7%BB%84">数据类型-动态数组</h2>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> dyn[]; <span class="hljs-comment">//声明动态数组</span>
+<span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+    dyn = <span class="hljs-keyword">new</span>[<span class="hljs-number">5</span>]; <span class="hljs-comment">//分配5个元素空间</span>
+    <span class="hljs-keyword">foreach</span>(dyn[j]) dyn[j] = j; <span class="hljs-comment">//元素初始化</span>
+    dyn = <span class="hljs-keyword">new</span>[<span class="hljs-number">20</span>](dyn); <span class="hljs-comment">//分配20可元素空间并对前五个值进行复制，其他值为0（int的默认值）</span>
+    dyn = <span class="hljs-keyword">new</span>[<span class="hljs-number">100</span>]; <span class="hljs-comment">//重新分配100个数值（全部为0（int的默认值）），旧值不存在</span>
+    dyn<span class="hljs-variable">.delete</span>(); <span class="hljs-comment">//删除所有元素</span>
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<h2 id="%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E9%98%9F%E5%88%97">数据类型-队列</h2>
+<ol>
+<li>声明 <code>[$]</code>，队列标号从<code>0</code>到<code>$</code></li>
+<li>可以在任何地方添加，访问，删除元素</li>
+<li>不需要 <code>new[]</code> 去创建空间，初始空间为0，需要用队列的方法增减元素。</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>, q2[$] = {<span class="hljs-number">3</span>, <span class="hljs-number">4</span>}, q[$] = {<span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">5</span>}; <span class="hljs-comment">//队列赋值不使用'. ？？？？？？？？？什么时候使用'{}，什么时候使用{}？？？？？？</span>
+<span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+    q<span class="hljs-variable">.insert</span>(<span class="hljs-number">1</span>, j); <span class="hljs-comment">// {0,1,2,5}</span>
+    q<span class="hljs-variable">.insert</span>(<span class="hljs-number">3</span>, q2); <span class="hljs-comment">// {0, 1, 2, 3, 4, 5}</span>
+    q<span class="hljs-variable">.delete</span>(<span class="hljs-number">1</span>); <span class="hljs-comment">// {0, 2, 3, 4, 5}</span>
+
+    q<span class="hljs-variable">.push_front</span>(<span class="hljs-number">6</span>); <span class="hljs-comment">// {6, 0, 2, 3, 4, 5}</span>
+    j = q<span class="hljs-variable">.pop_back</span>(); <span class="hljs-comment">// {6, 0, 2, 3, 4}</span>
+    q<span class="hljs-variable">.push_back</span>(<span class="hljs-number">8</span>); <span class="hljs-comment">// (6, 0, 2, 3, 4, 8)</span>
+    j = q<span class="hljs-variable">.pop_front</span>(); <span class="hljs-comment">// {0, 2, 3, 4, 8}</span>
+    <span class="hljs-keyword">foreach</span> (q[i]) <span class="hljs-built_in">$display</span>(q[i]); <span class="hljs-comment">//打印整个队列</span>
+    q<span class="hljs-variable">.delete</span>() <span class="hljs-comment">//删除整个队列</span>
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<h2 id="%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B-%E5%85%B3%E8%81%94%E6%95%B0%E7%BB%84">数据类型-关联数组</h2>
+<ol>
+<li>类似于python的dictionary</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">bit</span> [<span class="hljs-number">63</span>:<span class="hljs-number">0</span>] assoc[<span class="hljs-keyword">int</span>], idx = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">repeat</span>(<span class="hljs-number">64</span>) <span class="hljs-keyword">begin</span>
+    assoc[idx] = idx;
+    idx = idx &lt;&lt; <span class="hljs-number">1</span>; <span class="hljs-comment">//稀疏分布的元素</span>
+<span class="hljs-keyword">end</span>
+<span class="hljs-keyword">foreach</span> (assoc[i]) 
+    <span class="hljs-built_in">$display</span>(<span class="hljs-string">"assoc[%h] = %h"</span>, i, assoc[i]);
+
+assoc<span class="hljs-variable">.first</span>(idx); <span class="hljs-comment">//找到第一个索引赋值给idx</span>
+assoc<span class="hljs-variable">.next</span>(idx); <span class="hljs-comment">//找到下一个索引赋值给idx</span>
+assoc<span class="hljs-variable">.delete</span>(idx); <span class="hljs-comment">//删除第一个元素</span>
+</div></code></pre>
+<h2 id="%E8%BD%AF%E4%BB%B6%E5%B8%B8%E7%94%A8%E7%B1%BB%E5%9E%8B-%E7%BB%93%E6%9E%84%E4%BD%93">软件常用类型-结构体</h2>
+<ol>
+<li>使用 <code>struct</code> 创建结构， 是一个数据的结合</li>
+<li>结构体伴随 <code>typedef</code> 创建新的类型，并用新类型声明更多变量</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">struct</span> {<span class="hljs-keyword">bit</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] r, g, b;} pixel; <span class="hljs-comment">//创建一个pixel结构体</span>
+<span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> {<span class="hljs-keyword">bit</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] r, g, b;} pixel_s; <span class="hljs-comment">//创建pixel_s类型</span>
+pixel_s my_pixel; <span class="hljs-comment">//声明新类型变量</span>
+my_pixel = '{<span class="hljs-number">'h10</span>, <span class="hljs-number">'h10</span>, <span class="hljs-number">'h10</span>}; <span class="hljs-comment">//结构体类型赋值</span>
+</div></code></pre>
+<p><em><strong>‘{}表示非合并，{}表示合并</strong></em></p>
+<h2 id="%E8%BD%AF%E4%BB%B6%E5%B8%B8%E7%94%A8%E7%B1%BB%E5%9E%8B-%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B">软件常用类型-枚举类型</h2>
+<ol>
+<li><code>enum</code> 和 <code>typedef</code>搭配便于自定义枚举类型，常用于状态机</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">enum</span> {INIT, DECODE, IDLE} fsmstate_e;
+fsmstate_e pstate, nstate;
+</div></code></pre>
+<p><em><strong>注意枚举类型可以赋值给整型（整数0，1，2，...），整形不能直接赋值给枚举类型，可以通过转换赋值 <code>enum = fsmstate_e'(int)</code></strong></em></p>
+<h2 id="%E8%BD%AF%E4%BB%B6%E5%B8%B8%E7%94%A8%E7%B1%BB%E5%9E%8B-%E5%AD%97%E7%AC%A6%E4%B8%B2">软件常用类型-字符串</h2>
+<ol>
+<li>使用 <code>string</code> 保存处理字符串</li>
+<li><code>$sformatf()</code> 字符串格式化函数</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">string</span> s;
+s = <span class="hljs-string">"IEEE "</span>;
+s<span class="hljs-variable">.getc</span>(<span class="hljs-number">0</span>); <span class="hljs-comment">// I</span>
+s<span class="hljs-variable">.tolower</span>(); <span class="hljs-comment">// ieee </span>
+s<span class="hljs-variable">.putc</span>(s<span class="hljs-variable">.len</span>()-<span class="hljs-number">1</span>, <span class="hljs-string">"-"</span>); <span class="hljs-comment">// IEEE-</span>
+s = {s, <span class="hljs-string">"P1800"</span>}; <span class="hljs-comment">// IEEE-P1800</span>
+s<span class="hljs-variable">.substr</span>(<span class="hljs-number">2</span>, <span class="hljs-number">5</span>); <span class="hljs-comment">// EE-P</span>
+<span class="hljs-built_in">$sformatf</span>(<span class="hljs-string">"%s, %5d"</span>, s, <span class="hljs-number">42</span>); <span class="hljs-comment">// IEEE-P1800,    42</span>
+</div></code></pre>
+<p><br>  </br></p>
+<h1 id="107">10.7</h1>
+<h2 id="fsm-serial-with-datapath">FSM serial with datapath</h2>
+<img width = '1000' height ='350' src ="2.png">  
+<pre class="hljs"><code><div><span class="hljs-keyword">module</span> top_module(
+    <span class="hljs-keyword">input</span> clk,
+    <span class="hljs-keyword">input</span> in,
+    <span class="hljs-keyword">input</span> reset,    <span class="hljs-comment">// Synchronous reset</span>
+    <span class="hljs-keyword">output</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] out_byte,
+    <span class="hljs-keyword">output</span> done
+); 
+    <span class="hljs-keyword">parameter</span> IDLE = <span class="hljs-number">2'b00</span>, DATA = <span class="hljs-number">2'b01</span>, STOP = <span class="hljs-number">2'b10</span>, ERR = <span class="hljs-number">2'b11</span>;
+    <span class="hljs-keyword">logic</span> [<span class="hljs-number">1</span>:<span class="hljs-number">0</span>] state, next_state;
+    <span class="hljs-keyword">logic</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] count;
+    <span class="hljs-keyword">logic</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] out_byte_r;
+    
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (reset) state &lt;= IDLE;
+        <span class="hljs-keyword">else</span> state &lt;= next_state;
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (reset) count &lt;= <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (state == DATA) count &lt;= count + <span class="hljs-number">1'b1</span>;
+        <span class="hljs-keyword">else</span> count &lt;= <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (reset) out_byte_r &lt;= <span class="hljs-number">8'b0000_0000</span>;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (state == DATA &amp; count == <span class="hljs-number">0</span>) out_byte_r &lt;= {out_byte_r[<span class="hljs-number">7</span>:<span class="hljs-number">1</span>], in};
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (state == DATA &amp; count == <span class="hljs-number">1</span>) out_byte_r &lt;= {out_byte_r[<span class="hljs-number">7</span>:<span class="hljs-number">2</span>], in, out_byte_r[<span class="hljs-number">0</span>]};
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (state == DATA &amp; count == <span class="hljs-number">2</span>) out_byte_r &lt;= {out_byte_r[<span class="hljs-number">7</span>:<span class="hljs-number">3</span>], in, out_byte_r[<span class="hljs-number">1</span>:<span class="hljs-number">0</span>]};
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (state == DATA &amp; count == <span class="hljs-number">3</span>) out_byte_r &lt;= {out_byte_r[<span class="hljs-number">7</span>:<span class="hljs-number">4</span>], in, out_byte_r[<span class="hljs-number">2</span>:<span class="hljs-number">0</span>]};
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (state == DATA &amp; count == <span class="hljs-number">4</span>) out_byte_r &lt;= {out_byte_r[<span class="hljs-number">7</span>:<span class="hljs-number">5</span>], in, out_byte_r[<span class="hljs-number">3</span>:<span class="hljs-number">0</span>]};
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (state == DATA &amp; count == <span class="hljs-number">5</span>) out_byte_r &lt;= {out_byte_r[<span class="hljs-number">7</span>:<span class="hljs-number">6</span>], in, out_byte_r[<span class="hljs-number">4</span>:<span class="hljs-number">0</span>]};
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (state == DATA &amp; count == <span class="hljs-number">6</span>) out_byte_r &lt;= {out_byte_r[<span class="hljs-number">7</span>], in, out_byte_r[<span class="hljs-number">5</span>:<span class="hljs-number">0</span>]};
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (state == DATA &amp; count == <span class="hljs-number">7</span>) out_byte_r &lt;= {in, out_byte_r[<span class="hljs-number">6</span>:<span class="hljs-number">0</span>]};
+        <span class="hljs-keyword">else</span> out_byte_r &lt;= out_byte_r;
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">always_comb</span> <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">case</span> (state)
+            IDLE: next_state = in ? IDLE : DATA;
+            DATA: next_state = (count == <span class="hljs-number">8</span>)? (in? STOP : ERR) : DATA; 
+            STOP: next_state = in? IDLE : DATA;
+            ERR: next_state = in? IDLE : ERR;
+        <span class="hljs-keyword">endcase</span>
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">assign</span> done = state == STOP;
+    <span class="hljs-keyword">assign</span> out_byte = out_byte_r;
+
+
+<span class="hljs-keyword">endmodule</span>
+</div></code></pre>
+<h2 id="fsm-serial-with-datapath-and-odd-parity">FSM serial with datapath and odd parity</h2>
+<img width = '1000' height ='750' src ="3.png">  
+<pre class="hljs"><code><div><span class="hljs-keyword">module</span> top_module(
+    <span class="hljs-keyword">input</span> clk,
+    <span class="hljs-keyword">input</span> in,
+    <span class="hljs-keyword">input</span> reset,    <span class="hljs-comment">// Synchronous reset</span>
+    <span class="hljs-keyword">output</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] out_byte,
+    <span class="hljs-keyword">output</span> done
+); 
+
+    <span class="hljs-keyword">parameter</span> IDLE = <span class="hljs-number">2'b00</span>, DATA = <span class="hljs-number">2'b01</span>, STOP = <span class="hljs-number">2'b10</span>, ERR = <span class="hljs-number">2'b11</span>;
+    <span class="hljs-keyword">logic</span> [<span class="hljs-number">1</span>:<span class="hljs-number">0</span>] state, next_state;
+    <span class="hljs-keyword">logic</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] count;
+    <span class="hljs-keyword">logic</span> [<span class="hljs-number">8</span>:<span class="hljs-number">0</span>] out_byte_r;
+    
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (reset) state &lt;= IDLE;
+        <span class="hljs-keyword">else</span> state &lt;= next_state;
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (reset) count &lt;= <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (state == DATA) count &lt;= count + <span class="hljs-number">1'b1</span>;
+        <span class="hljs-keyword">else</span> count &lt;= <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (reset) out_byte_r &lt;= <span class="hljs-number">8'b0000_0000</span>;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (state == DATA &amp; count == <span class="hljs-number">0</span>) out_byte_r &lt;= {out_byte_r[<span class="hljs-number">8</span>:<span class="hljs-number">1</span>], in};
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (state == DATA &amp; count == <span class="hljs-number">1</span>) out_byte_r &lt;= {out_byte_r[<span class="hljs-number">8</span>:<span class="hljs-number">2</span>], in, out_byte_r[<span class="hljs-number">0</span>]};
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (state == DATA &amp; count == <span class="hljs-number">2</span>) out_byte_r &lt;= {out_byte_r[<span class="hljs-number">8</span>:<span class="hljs-number">3</span>], in, out_byte_r[<span class="hljs-number">1</span>:<span class="hljs-number">0</span>]};
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (state == DATA &amp; count == <span class="hljs-number">3</span>) out_byte_r &lt;= {out_byte_r[<span class="hljs-number">8</span>:<span class="hljs-number">4</span>], in, out_byte_r[<span class="hljs-number">2</span>:<span class="hljs-number">0</span>]};
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (state == DATA &amp; count == <span class="hljs-number">4</span>) out_byte_r &lt;= {out_byte_r[<span class="hljs-number">8</span>:<span class="hljs-number">5</span>], in, out_byte_r[<span class="hljs-number">3</span>:<span class="hljs-number">0</span>]};
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (state == DATA &amp; count == <span class="hljs-number">5</span>) out_byte_r &lt;= {out_byte_r[<span class="hljs-number">8</span>:<span class="hljs-number">6</span>], in, out_byte_r[<span class="hljs-number">4</span>:<span class="hljs-number">0</span>]};
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (state == DATA &amp; count == <span class="hljs-number">6</span>) out_byte_r &lt;= {out_byte_r[<span class="hljs-number">8</span>:<span class="hljs-number">7</span>], in, out_byte_r[<span class="hljs-number">5</span>:<span class="hljs-number">0</span>]};
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (state == DATA &amp; count == <span class="hljs-number">7</span>) out_byte_r &lt;= {out_byte_r[<span class="hljs-number">8</span>], in, out_byte_r[<span class="hljs-number">6</span>:<span class="hljs-number">0</span>]};
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (state == DATA &amp; count == <span class="hljs-number">8</span>) out_byte_r &lt;= {in, out_byte_r[<span class="hljs-number">7</span>:<span class="hljs-number">0</span>]};
+        <span class="hljs-keyword">else</span> out_byte_r &lt;= out_byte_r;
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">always_comb</span> <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">case</span> (state)
+            IDLE: next_state = in ? IDLE : DATA;
+            DATA: next_state = (count == <span class="hljs-number">9</span>)? (in? STOP : ERR) : DATA; 
+            STOP: next_state = in? IDLE : DATA;
+            ERR: next_state = in? IDLE : ERR;
+        <span class="hljs-keyword">endcase</span>
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">assign</span> done = state == STOP &amp;&amp; (^out_byte_r);
+    <span class="hljs-keyword">assign</span> out_byte = out_byte_r[<span class="hljs-number">7</span>:<span class="hljs-number">0</span>];
+
+<span class="hljs-keyword">endmodule</span>
+</div></code></pre>
+<h2 id="sv%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84-%E7%BB%84%E5%90%88%E5%9E%8B%E5%92%8C%E9%9D%9E%E7%BB%84%E5%90%88%E5%9E%8B%E6%95%B0%E7%BB%84">SV数据结构-组合型和非组合型数组</h2>
+<h3 id="%E9%9D%9E%E7%BB%84%E5%90%88%E5%9E%8Bunpacked">非组合型(unpacked)</h3>
+<p>数组成员存储数据互相独立<br>
+维度声明在名字左侧为连续存储，声明在名字右侧为独立存储</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">reg</span> [<span class="hljs-number">15</span>:<span class="hljs-number">0</span>] RAM [<span class="hljs-number">0</span>:<span class="hljs-number">4095</span>];
+<span class="hljs-keyword">wire</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] <span class="hljs-keyword">table</span> [<span class="hljs-number">3</span>:<span class="hljs-number">0</span>];
+</div></code></pre>
+<img width = '450' height ='200' src ="4.png">  
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> a1 [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] [<span class="hljs-number">1023</span>:<span class="hljs-number">0</span>];
+<span class="hljs-keyword">int</span> a2 [<span class="hljs-number">1</span>:<span class="hljs-number">8</span>] [<span class="hljs-number">1</span>:<span class="hljs-number">1024</span>];
+a2 = a1; <span class="hljs-comment">// 非组合型数组复制</span>
+a2[<span class="hljs-number">3</span>] = a1[<span class="hljs-number">0</span>]; <span class="hljs-comment">//数组片段复制</span>
+</div></code></pre>
+<h3 id="%E7%BB%84%E5%90%88%E5%9E%8Bpacked">组合型(packed)</h3>
+<pre class="hljs"><code><div><span class="hljs-keyword">wire</span> [<span class="hljs-number">3</span>:<span class="hljs-number">0</span>] select;
+<span class="hljs-keyword">reg</span> [<span class="hljs-number">63</span>:<span class="hljs-number">0</span>] data;
+<span class="hljs-keyword">logic</span> [<span class="hljs-number">3</span>:<span class="hljs-number">0</span>] [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] data;
+</div></code></pre>
+<img width = '550' height ='80' src ="5.png"> 
+<p>组合型数据可以用来定义结构体的存储方式</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">struct</span> <span class="hljs-keyword">packed</span>{
+    <span class="hljs-keyword">logic</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] crc;
+    <span class="hljs-keyword">logic</span> [<span class="hljs-number">63</span>:<span class="hljs-number">0</span>] data;
+} data_word;
+
+data_word [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] darray;
+</div></code></pre>
+<p>组合型数组和其他数组片段可以灵活拷贝和赋值</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">logic</span> [<span class="hljs-number">3</span>:<span class="hljs-number">0</span>][<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] data;
+<span class="hljs-keyword">wire</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] out = data; <span class="hljs-comment">//复制整个数组</span>
+<span class="hljs-keyword">wire</span> sign;
+<span class="hljs-keyword">assign</span> sign = data[<span class="hljs-number">3</span>][<span class="hljs-number">7</span>]; <span class="hljs-comment">//复制一个bit</span>
+<span class="hljs-keyword">wire</span> [<span class="hljs-number">3</span>:<span class="hljs-number">0</span>] nib = data[<span class="hljs-number">0</span>][<span class="hljs-number">3</span>:<span class="hljs-number">0</span>]; <span class="hljs-comment">//部分复制</span>
+
+<span class="hljs-keyword">byte</span> high_byte;
+<span class="hljs-keyword">assign</span> high_byte = data[<span class="hljs-number">3</span>]; <span class="hljs-comment">//复制8-bit slice</span>
+<span class="hljs-keyword">logic</span> [<span class="hljs-number">15</span>:<span class="hljs-number">0</span>] word;
+<span class="hljs-keyword">assign</span> word = data[<span class="hljs-number">1</span>:<span class="hljs-number">0</span>]; <span class="hljs-comment">//复制2 slices</span>
+</div></code></pre>
+<h3 id="%E5%88%9D%E5%A7%8B%E5%8C%96">初始化</h3>
+<ol>
+<li>组合型数组初始化用 <code>{}</code>，或者可以直接赋值</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">logic</span> [<span class="hljs-number">3</span>:<span class="hljs-number">0</span>][<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] a = <span class="hljs-number">32'h0</span>;
+<span class="hljs-keyword">logic</span> [<span class="hljs-number">3</span>:<span class="hljs-number">0</span>][<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] b = {<span class="hljs-number">16'hz</span>, <span class="hljs-number">16'h0</span>};
+<span class="hljs-keyword">logic</span> [<span class="hljs-number">3</span>:<span class="hljs-number">0</span>][<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] c = {<span class="hljs-number">16</span>{<span class="hljs-number">2'b01</span>}};
+
+<span class="hljs-keyword">logic</span> [<span class="hljs-number">1</span>:<span class="hljs-number">0</span>][<span class="hljs-number">1</span>:<span class="hljs-number">0</span>][<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] a;
+a = <span class="hljs-number">32'hF1A3C5E7</span>;
+a[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>][<span class="hljs-number">3</span>:<span class="hljs-number">0</span>] = <span class="hljs-number">4'hF</span>;
+a[<span class="hljs-number">0</span>] = <span class="hljs-number">16'hFACE</span>;
+a = {<span class="hljs-number">16'bz</span>, <span class="hljs-number">16'b0</span>};
+</div></code></pre>
+<ol start="2">
+<li>非组合型数组初始化用 <code>'{}</code> 对数组每一个维度进行赋值</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> d [<span class="hljs-number">0</span>:<span class="hljs-number">1</span>] [<span class="hljs-number">0</span>:<span class="hljs-number">3</span>] = '{'{<span class="hljs-number">7</span>,<span class="hljs-number">3</span>,<span class="hljs-number">0</span>,<span class="hljs-number">5</span>}, '{<span class="hljs-number">2</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">6</span>}};
+<span class="hljs-comment">// d[0][0] = 7</span>
+<span class="hljs-comment">// d[0][1] = 3</span>
+<span class="hljs-comment">// ...</span>
+<span class="hljs-comment">// d[1][0] = 2</span>
+<span class="hljs-comment">// ...</span>
+<span class="hljs-comment">// d[1][3] = 6</span>
+<span class="hljs-keyword">byte</span> a [<span class="hljs-number">0</span>:<span class="hljs-number">3</span>][<span class="hljs-number">0</span>:<span class="hljs-number">3</span>];
+a[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>] = <span class="hljs-number">8'h5</span>;
+a[<span class="hljs-number">3</span>] = '{<span class="hljs-number">'hF</span>, <span class="hljs-number">'hA</span>, <span class="hljs-number">'hC</span>, <span class="hljs-number">'hE</span>};
+</div></code></pre>
+<ol start="3">
+<li>非组合数组可以通过 <code>'{}</code> 和 <code>default</code> 进行初始化：</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> a1 [<span class="hljs-number">0</span>:<span class="hljs-number">7</span>] [<span class="hljs-number">0</span>:<span class="hljs-number">1023</span>] = '{<span class="hljs-keyword">default</span>:<span class="hljs-number">8'h55</span>};
+</div></code></pre>
+<h3 id="%E6%8B%B7%E8%B4%9D">拷贝</h3>
+<ol>
+<li>组合型数组赋值在左右两侧操作数的大小和维度不同时，也可以赋值，尺寸不当会<code>截取</code>或<code>扩展</code>右操作数。</li>
+<li>非组合型数组要求左右两侧操作数的维度和大小必须严格一致。</li>
+<li>非组合型数组和组合型数组无法互相直接赋值。</li>
+</ol>
+<h2 id="sv%E8%BF%87%E7%A8%8B%E5%9D%97%E5%92%8C%E6%96%B9%E6%B3%95">SV过程块和方法</h2>
+<h3 id="initial-%E5%92%8C-always"><code>initial</code> 和 <code>always</code></h3>
+<ol>
+<li><code>module/endmodule</code>, <code>interface/endinterface</code> 被视为硬件世界。<code>program/endprogram</code>, <code>class/endclass</code>被视为软件世界。</li>
+<li><code>always</code> 用来描述硬件时序电路和组合电路，只可以用在 <code>module</code> 或者 <code>interface</code> 中。</li>
+<li><code>initial</code> 符合软件执行方式，只执行一次。可以用在 <code>module</code>, <code>interface</code>, <code>program</code> 中使用。</li>
+</ol>
+<h3 id="%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95-%E5%87%BD%E6%95%B0-function">软件方法-函数 <code>function</code></h3>
+<ol>
+<li>可以在参数列表中指定输入参数<code>input</code>，输出参数<code>output</code>，输入输出参数<code>inout</code>，引用参数<code>ref</code>，默认参数为 <code>input</code>.</li>
+<li>可以返回数值或者不返回数值<code>void</code></li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">function</span> <span class="hljs-keyword">int</span> double(<span class="hljs-keyword">input</span> a);
+    <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>*a;
+<span class="hljs-keyword">endfunction</span>
+</div></code></pre>
+<ol start="3">
+<li><code>function</code> 默认数据类型为 <code>logic</code> 例如<code>input [7:0] addr</code>，<code>addr</code> 是 <code>logic</code> 类型的四值逻辑。</li>
+<li>数组可以作为形式参数传递。</li>
+<li><code>function</code> 有返回值需要关键词 <code>return</code>，没有返回值时应该在声明是采用 <code>void function()</code></li>
+<li>只有数据变量可以在形式参数列表中被声明为 <code>ref</code>，硬件信号不行。</li>
+<li>使用 <code>ref</code> 时，可以通过 <code>const</code> 来限定 <code>ref</code> 声明的参数来保护数据对象只被读取不被写入。</li>
+<li>声明参数时可以给入默认数值 <code>input [7:0] addr = 0</code></li>
+</ol>
+<h3 id="%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95-%E4%BB%BB%E5%8A%A1-task">软件方法-任务 <code>task</code></h3>
+<ol>
+<li><code>task</code> 无法通过 <code>return</code> 返回结果，只能通过 <code>output</code>, <code>inout</code>, <code>reg</code>返回</li>
+<li><code>task</code> 内可以置入耗时语句，<code>function</code> 不行，耗时语句包括 <code>@event</code>, <code>wait event</code>, <code>#delay</code>等</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">task</span> mytask1 (<span class="hljs-keyword">output</span> <span class="hljs-keyword">logic</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] x, <span class="hljs-keyword">input</span> <span class="hljs-keyword">logic</span> y);
+    ...
+<span class="hljs-keyword">endtask</span>
+</div></code></pre>
+<ol start="3">
+<li><code>function</code> 和 <code>task</code> 均可调用 <code>function</code>，只有 <code>task</code> 可以调用 <code>task</code>.</li>
+</ol>
+<h3 id="%E8%BD%AF%E4%BB%B6%E6%96%B9%E6%B3%95-%E5%8F%98%E9%87%8F%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F">软件方法-变量生命周期</h3>
+<ol>
+<li>生命周期分为动态 <code>automatic</code> 和 静态 <code>static</code>。</li>
+<li>局部变量的生命周期是动态的，伴随其所在域，例如 <code>function/task</code> 中的局部变量，方法调用结束后，变量的生命周期也就终结。</li>
+<li>全局变量从程序执行开始到结束一直存在，例如 <code>module</code> 中的变量默认为全局变量，硬件信号全部都是静态生命周期。</li>
+<li>如果某数据变量被声明为 <code>automatic</code>，那么在进入该进程/方法后，该变量会被创建，离开该进程/方法后，该变量会被销毁。</li>
+<li><code>static</code> 变量在仿真开始时被创建，可以被多个进程和方法共享。</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">module</span> test();
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">automatic</span> <span class="hljs-keyword">int</span> auto_cnt(<span class="hljs-keyword">input</span> a); <span class="hljs-comment">// 该函数中所有变量都为automatic</span>
+        <span class="hljs-keyword">int</span> cnt = <span class="hljs-number">0</span>;
+        cnt += a;
+        <span class="hljs-keyword">return</span> cnt;
+    <span class="hljs-keyword">endfunction</span>
+
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> static_cnt(<span class="hljs-keyword">input</span> a); <span class="hljs-comment">// 该函数中所有变量都为static</span>
+        <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> cnt = <span class="hljs-number">0</span>;
+        cnt += a;
+        <span class="hljs-keyword">return</span> cnt;
+    <span class="hljs-keyword">endfunction</span>
+
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">int</span> def_cnt(<span class="hljs-keyword">input</span> a); <span class="hljs-comment">// 默认函数都是static的</span>
+        <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> cnt = <span class="hljs-number">0</span>; <span class="hljs-comment">//static写不写没有区别</span>
+        cnt += a;
+        <span class="hljs-keyword">return</span> cnt;
+    <span class="hljs-keyword">endfunction</span>
+
+    <span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+        <span class="hljs-built_in">$display</span> (<span class="hljs-string">"@1 auto_cnt = %0d"</span>, auto_cnt(<span class="hljs-number">1</span>)); <span class="hljs-comment">// 输出结果：@1 auto_cnt = 1</span>
+        <span class="hljs-built_in">$display</span> (<span class="hljs-string">"@2 auto_cnt = %0d"</span>, auto_cnt(<span class="hljs-number">1</span>)); <span class="hljs-comment">// 输出结果：@2 auto_cnt = 1 </span>
+        <span class="hljs-built_in">$display</span> (<span class="hljs-string">"@1 static_cnt = %0d"</span>, static_cnt(<span class="hljs-number">1</span>)); <span class="hljs-comment">// 输出结果：@1 static_cnt = 1</span>
+        <span class="hljs-built_in">$display</span> (<span class="hljs-string">"@2 static_cnt = %0d"</span>, static_cnt(<span class="hljs-number">1</span>)); <span class="hljs-comment">// 输出结果：@2 static_cnt = 2</span>
+        <span class="hljs-built_in">$display</span> (<span class="hljs-string">"@1 def_cnt = %0d"</span>, def_cnt(<span class="hljs-number">1</span>)); <span class="hljs-comment">// 输出结果：@1 def_cnt = 1</span>
+        <span class="hljs-built_in">$display</span> (<span class="hljs-string">"@2 def_cnt = %0d"</span>, def_cnt(<span class="hljs-number">1</span>)); <span class="hljs-comment">// 输出结果：@2 def_cnt = 2</span>
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">endmodule</span>
+</div></code></pre>
+<ol start="6">
+<li>对于 <code>automatic</code> 或者 <code>static</code> 方法，可以对内部定义的变量做单个声明。</li>
+<li>在<code>module</code>, <code>program</code>, <code>interface</code>, <code>task</code>, <code>function</code>之外声明的变量拥有静态生命周期。</li>
+<li>在<code>module</code>, <code>interface</code>, <code>program</code> 内部声明，且在 <code>task</code>, <code>process</code>, <code>function</code> 外部声明的变量也具有静态生命周期，作用域在该块中。</li>
+<li>在<code>module</code>, <code>program</code>, <code>interface</code> 中定义的<code>task</code>, <code>function</code>默认都是静态方法。</li>
+<li>在<code>task</code>, <code>function</code>, <code>process</code> 中定义的变量，其类型默认跟随过程块的类型，但可以自定义显式声明。<br>
+<br>  </br></li>
+</ol>
+<h1 id="108">10.8</h1>
+<p>搞了一天企图在M1-mbp上装vmware fusion并启动OScents7虚拟机最终以失败告终 <img class="emoji" alt="worried" src="data:image/png;base64,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" /><img class="emoji" alt="persevere" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAVVklEQVR42u1bC5RV1Xn+9jn3NXMHHIaBAQaaSFGsjxBFQW1iU43LZEWNBpPaIAYkakxcpiH1kUqEGIlR8f2MWVZqm0dNGjDRLkLVhBaNilGjUkTlzTBzmRfznnvvOWf3//beZ+bOMDxGIXGtBv3XPfecvb//+/797//sfe4ZD//P/3l/DsCfA/DnABzSf4vFx7sXYcqW2Th/yxws3Hoxlm27GCt3zFMv7JirXjcmxzzHa2zDtuyz+I/A71A5UJvnYOami7Fk/jy8WFau/pCp9H9RXp38bnZ86kvZ2vRZZbXpmWUT08cZk2Oe4zW2YVv2YV9iEIuYH/gAvHwOyoXs3K1zsTqT9Z6vGJ34p7IJ6RPLJmbKM5OSSI9XSI3VSNWIjRlkPCfX2IZt2Yd9iUEsYhKbPj5wAfjNJ5AguZox6sXykf6j2XHpj6dr0156QgJpI9BHalw1MlM+ivSxZyE9/WJkTr4CZad+3RiPeY7X2IZt2Yd9DYZgEZPY9EFf9PmBCMCGL2LG5A9hJcmVj0sdm5mUltEEUtUe0hM/jPS0Wcj8zWKkT78PyY8tRfKkxUgc+zX4U78E74gLjfGY53iNbdjW9JG+xCAWMYlNH/RFn/T9pwyA2jQb3xyRVc9ma1JnpGozksIeElUycpOnI3PK1UiddgcS074Or+ZjUOXV1lvYBQTt1ood1uLvvCZt2JZ92JcYxCImsemDvuiTvsnh/dSH9xIA9fLncZhU7Meylf7SzIRMNjUuhdSoCKlJRyI982okZyyGV3s6kEyJwDaosAMq6hHLQ+mCtaiwl+O8bRt2mL7EIBYxiU0fxpf4pG9yIBdyei+BGG4A1CvnYnx1FivKRiUuStWmkZT0TI5KInXMZ5E4aSG8cadIMxERiPCoV0QVARFlTB+gufbsazAEi5jEpg/6ok/6JgdyISdyG24QvGGLr8KK8tHJT6THZ5A8TMSPrkLyo5fCnzIbyvetcBlJGBta2H5tj6C47CC2+KAv+jS+hQO5kBO5DTcIBxoAtfIsjBIHP8mMTp6UHpeGX6lkBKqR/Mhl8MbOkJRtM6lrhfYeGtPx9GgzPumbHMiFnMiNHMn1QINwIAEgkHfUONyTGZU4LT1WxI+Uka8ahcTRc+CN/DBUsdWNXO+hE98XhF47PcQnfZMDuZATuZEjuTpt6v0GwIh/+yIsKBvpz06OTSFR6SM5Io3E5M9AVUyS6r3bpvtQZMODZEMGomB8kwO5GE7kJhzJlZwPJAje/sQ//3lMryhXi5LVKZlvKfhZBb92JlTlVCHXDh2L/2OM/oAs6LW+hQO5kBO5kSO5kjO57y8I3r7Ez6lBpnYEbkuPTmZZdRMVHvxRE+BVHy8EugwJM++HIomDNCW0wxriWr/vLsOJ3MiRXMmZ3KlhX0HYZwCu/yT+rqzCPy0hgH5FEl6ZD2/0sYAv3cLuEgLyGToj4WQRvZ1tiApdA68N16QvMYhFTINdcq0vCMKFnLzRxxmO5ErO5E4Nww2AEf+tGRiZTatrjPgRYhkFr6JaVmnjxGGn3JZKxMfmS0p6eSx/fA0uufKf0ZBrFrT8wDbDMelLDGIRk9jGx4B2vZYLOZXXGI7kSs7kTg3UsrcgeHsJiv/3UzArPdKfmhiZkKiKpT0pOLUCoSXq3QNHHnKcCZHbuQtLb3kCd9/zNLLZClSNlbtRofO9Z4D0JQaxiEls+qAv43NAJnRbbsKRXMmZ3KmBWqhpKL3eEKOvZlYhPSKj5idGSspnExJREZ9OQ2UOc2nv5qSS0UiH6O3uxIqfvYSF3/45XlizARPHZXDlP5yHTFpIBe9j/ktfYhCLmMSmD/qiT/o2HCJ3a+QagRyFKzmTOzVQCzXF+vYXAP/7p+EEeSBxol8hI5+RIKQkAKkyqITsQH0Rnw6ARBHNjS341YpX8a0bfoV///HvoIXU2KoULrt2NqYdLW3bcjZY7/n2lzcYxCImsemDvuiTvsmBXAwn4aYSScOVnMmdGqiFmlwW7DMAJv1rKrxzkxW+55ULQEqWtwmZ/6k0CvkCtm7K4ZlVb+HOu9fgukW/xo9/9BI6m1oxKq1RM3EMLl00F6edIvuSXe9I0SoehLtA0WARk9j0QV/0Sd/kQC7kRG6FvOwZUhnDmdypgVqoaahp4A0ufpNHIVmW0X+rpKOXFvFJufXJZ6tk3JULV+OKf1yF+x96CWt/txmquwujy4CqUWX46/NOxoJbvojjj5CRqPvf/mkywA50PzBEP8EkNn3QF33SNzmQCzmRGzm2dkaGM7kbDaKFmqhtcDHcIwCLpmNyOqOm+nI7UYxg0rbPVmVw6qeOwdSPjMeUI0dj6rE1+MjHj8TZl5+Bq267ELPnTcPo3neB+s0yahKEiKNfKJkCrAcSxYDbXD4LkBUkl9DGdttzvMY2bBtPAYNRtJiCTR/0RZ/0TQ7kYjgJN3LMVpUZzuRODdRCTdS2vwD4k0bguETaKzOVVNIIvoJWsu0UYnO/UIOl95yFhXd8Gtfechau/Nap+NQnq1GrdwCb3gA6ZD6yGlNQoVHWLw1SrHeKyfXeOvcplpfjvJzP1zvbac/F1/va7rQYxCImselDfNEnfZMDuZATuc39wjjDlZzJnRqohZqobXAd2CMDKsu8o/20kvQRk8WF8pQxBDIamzfA37oeI5s3IbNjA9pffg3YskGICknNkWxyZOX+zz182NU/jzmC0INvOEMUZm3bxvXDPEFqs5gGu8n6os8tlgO5jGzeaLhh81uGa8zbaBAt1ERt+8oAHnvphP5LlfBsR4kgPD6jUrYLRyAvI9HdCi1PbJ5+pRFfWbwBjy+vQ65BiCaFfJrtvZJ6U2rqAG1wP99iElt80Bd90jc5kAu6dltuZj0Ay9mzGowW0URtJaADAhB79iVYY+FSXyknns20sgPI+RjyiU8eZ58zGiedNR4P/Xy3kKnD0h824vV1sk5gxphAHIxfGGCxBJPY9EFf9Enf5EAutl4ULUftOCungQMpmoy2/imghpoCST+BSjPyFO7bkwZT65JmfLgpj7tbujH/gkrc+fAxmDQ5i2f/uw033pfDDffk8PzaTmkifTIuewak//7+adtH+hKDWMQkNn3Q150/OAbzZ1UaDuSinXB+kmufN99mAzVRGzXuswZIoDPKDZ4FcwcuCH3G/wJZiW1swbTqAEvuOAIXzK3FSHkOuvHdbtz9aCOuvyuH517qtIK4DkN0YJa2QWBfYhCLmMSmjyW3H4FpYwLjmxy0Ixp/IubsvprhtkmU2VsNiE94ymR6KQiBI+hIiGln8bEhLG0aOjGioRWXzBuDS647HBPkiW1NBdCUy+PeZU349r05/IFTg8I8vXfhvg0U27IP+xKDWMQkNn2MyEkNqmelt1iG32AzHHX/4Ml/SvVp3mMKxBnjhZHsMkIYEKku8hmYT3scf9prknvSUcwTh71yv36nCR+b5uGKxX+BsRPTqBmhcPgYD/U78rj5wUY88ngLCqzuiZCeBpqcK8gcZhu2ZR/2JQaxiEls+tA94suPrP+YRx9fsSjs426/R2wCo81q1rHmPfYCQYR2dtChdA7t7UsLaQ2aPZb7kb1NyTmzGaHJNlV7YltbMPmwLlwwv1Ie6XuolHk8eayPiZUefrmqE088LQuejN02D7CygrnGNmzLPuxLDGIRU29rMT6QKPT7heVGTqUcDc9IBk80WC0RqG1fu0ETkXyAJhOxqCSaCPruzVrFwSj0m7IGkkuKNXdgfKobCdmRyd0HFSKkSh5XVUo1j2Qdb9r4exqvsQ3bsg/7EoNYxDTCPefP+WYQFGwgjJmBsXzJ3fCPbIZQG/rrOgZPAXOyraC26qLMGKmsdq4HJpKMbF8glHyn0aFnv5trqmiPMwFeeK4Hba0hPN+Wi84OjVPOTODcC8RlsWB3cKUm586d5Zk2bMs+7EsMYhHTYMc+vJhH0XCBKuFhssBxZTYHgieaqG2w3sEZEGxtjzaa5bcEIGJn7YqWIqPIzlcV2u8yD7V86ngey3mVDbB+fYBfroxQllLolVnX3K4x/VwPl1ylUCZrCNPfH2RyjtfYZvo5nunDvsQgFjGJbX3HtSOS6i4m/BR90/hd2XPkTg1Gi2iiNlMwhsiA+B4VPFePTWFe1qDFyGSBmQ6soKzecRBUVFLAgr5PlQ2xdWuE+5dFptgXuZKVG8/ZV2nMmhMitVvEF7hvdyNYajwn11Itecy6KDR92JcYxCImsenDjn6pbzcgfYNkB9jWMjmWyU9N1ObmSrS3ABQfW4cdnT3YGOW1SR2TQi5jlM9biQ2GDYj7Ll29jMY2IXjbA9yvKLP+mHJqhEuXhJgxnVvkwBAx1dvbi/GaFCvsDDDjhMD0JQaxiEls+qAvFd+CYXkMMLdOMdwl9amFmqhtXwEgWr6riGKuXb2gGYBiyW0aey7T4y2ClyEx4MbbFXZuAz50BHDhNRHmfyNCDYXl4rX5ASz/3cqNfdh3/oLIYBGT2PSxbYs0SZfczIfCK63dPbJ/EE3UZp+xDz0FtItOz9PbozVBt450r6RhwS57TaCVXVENMCGyRcRfs0Q6hgpzvgFcvTTEyceL8Dqxbm0XOMyYvuDpvVgcBDlOaNtXMIhFTGLTxzXfE58MQnJQAFX/CpacQ4oXDUGvjqiJ2pxGvbdHYhzr7jvW4q2WNv1m2C0pVJAiUtT2SrzLckNvtsny/9q3FU77nIc7lymc/zmNEVLFsQt9+4k9Rp79hrLBGRFng2CNaNM4/3yNOx+1vta+o0qw3Ho/xuCdj5U/L3O/JwK1UBO1lab/3gLQ015Ez2s79QrdGZkIxrPGrH6NIyeevSOFWXL7+uqXgbGcv9vZnruveEesBgrieT6wkeWted0p645TJYHqyxTV3y+Q4x0aY6WOfHU+jE9ufmIuKp4LdoFoU5/TuCMCtVCTy4B9BkC7Ru3Xr8HqtpZoS9hho8hMMCR0SRZ4dtvsdWpDDnn5nlT95Ps22bad2RlKAN78g8JjjyjcerOH22/18B8/Vdi+zQUkPcRDkr5AKOtDfBmfbtseZ5ApiTJFTNYKZ3Jva422UAs1OW16fz+McCXRsbENHb/brh8LWwWsS5vfH2wmOHKD0zdZMuq+Kvl05GWkWby+c6OP7yz28dRyH2+s9fDq8x5++m8+rr3Ox0P3e+jocoHwSqeKw0q4DBok3GQA/yO3+EGSBCjcHYEaqIWanLb9/jLECHEPu/uKZ7A61xS9ErSFCKQeRPnIPt2Kg6BUv8jBFpNnICoUXnlRYdFCHxvfkHV+tcLRkzwcNUGs1sMxYuOzHn670seNizw01Eu/cjUoCP0ZN8CHb7mQk017m7HkTO7UQC1Okz7QH0d5q9jd1ov2H7ym7+9pDnsDiWZRohr1uiDEU2EoUqXERci6V4C7bvNQLnN2yjjZF8i5rG+znbMiK9V8jATpyFqFpu0ebv2eQmuzmw6lgfSGCDDcQxAWPuFWlGwN2mTb1xL2kjs1uADkh/PrsHZzpvmul7Hxxc3qkbA5RLTbTgfdlwnx46e4isefbpEgwloaFB68R57HyQiNkGliNpiSxkn52TA7UWyCZPRIO7P4c/8YKYiN2xUefkA2TlF/he9beMSZh3jk3TPXXjdVRTy5kjO5U4PToof7ggRXAPIMGk3nLY+e2Lg9WlVsDOTptDhotzWh72EvicbTQqv+VZM8jPzRv8oaXH4kqqoCjjtd4byrPcy7ReHy24Av3wTMl3v65UuBOTLqn/6abJ1PUDhMngGsfgb47dPueWD8PDIOtvNnUt79WBzKrZfcCsKRXMmZ3J2Gwnt5QySuBQRonfOkfjhXF71WzIXGUdQuWcC7akG5HaiQCh05be9n+XaF+maFs7+UwNfvTmD2NxWOP0lWh9kIGVmdJaVKp8TK5XY1qTrCqWdofOU7Hr52awIzz/SxYYu7rcUPOSPnw1R6mDsCOZBLUYp1cVeIXcKRXMnZce/c1wPJ/b0jFLr5s+utFjR8eaW+dVdduL7YEBqHrLIh1wrdQqRXjLeowOsjmZKUv+HmFC5f4GFChSipF2viCk/ZtULgjMedXPDItVyEv5qsseiWBOZdJnOox2WAwfREuPPVo4zvsM2Jz1F8uJ4cyRV2KbbbaXhfb4n1uGjm1mzHzvlP6e/u3Bq+WpQNS7FJqm2znXd8Y4ak+JacFSbP4oV0pscJ70B/dvQ9Yo8zxo1y5ILXyueMoTw40vY6gxoo99qgsm/nyKgHLdpwIBdymv+kvkk41sHuPlod94PynmCHKyYNDMJ5P9NLNm6MVhW2Bwg4JZolAPLgIpJ01uatGJcNsYVOeKRKzHPB8Oxx5OpHHIigv78R3dOf7vRFn4GkfGFHgHc2Rf/12V/o76/ZYXZ7DY5rx8F+U5Tp1EgH77Sh8cR/0ff+Zp1+sHN7sbcgW91CI0fEFUgJRNSt+1767Ev3sES0LtlW6kHBcNPCFDhT5ATLpLs2Pgoy6gUZdfomhxnC5d0W1DvxjY7rQX9VVsf1QIzOWmb9IvrPm5/V19RtCl9hNhTqZWQaQxuI3QwEiWvza1WcFWYOF9xanWkd9Fdzc42j3avsmy/s264NFjGLTTLiDXbU6ZO+hcNTrtrXO/Ftw/kVZrgvS0cuCDnnsOGe3+OtEx/RS1b8Pry9+d1gc36LBGKHBIKFUgpaUWpE2GKLVdhuzQRGEtR+9h+b623OWmzf4q7IYBXqQuS3BqAP+qJP+nZcSotedKhfl48XSY0uCPU9UoAveQrPfnyZvu6Jl8Pb6t8OXu/ZVNQmGEK6UMdCJSbFMMhRlJhMmbDJGo95LmjUpg3bFmjbAiO6Z3NR128IXic2fdAXfcb+HZf2Yf7+9r7/YKLTpR6jv5OfdZ3IzXsSq496UN+wZFW04OU3oh81vh1s6NwoL65sLqIgAYmDEmyTUd1qzR7LtU2BbSNt2Yd9iUGsox7SNxCbPkp9Og6df6o/mcm7xUbOEdrpRoRL6PVn/iR6fOoD+rqvLNdXLfuf8MbnXo0e3fBm8Ott64K19euK65vWFzfReMxzvMY2bMs+7EsMYrnKXl/iJ+d85//UfzTFOdc1KBtiojJ70bLibWxa8Axe/Mzj0fKZy/RDx/1Q33Tkg/r6w+/TC2g85jleYxu2ZZ/QCtwD0/nqGu58P9R/Nhe4e29pIOpKRiwetZwbzWa3WGkt+Z4blE2lGLHwIff1H6Q/nAzc6LSUFMpYyHb3WTcoOKXntpdciwtci8MMDjbZQ/mnqdrtwrrc7anZjWCu5DZaWjfi802u7W7Xt/BeqvuB/vs/8tQOuB8amhEAAAAASUVORK5CYII=" /><img class="emoji" alt="cry" src="data:image/png;base64,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" />
+<br>  </br></p>
+<h1 id="109">10.9</h1>
+<img width = '1050' height ='280' src ="6.png">  
+<img width = '700' height ='700' src ="7.png">  
+<p><strong>注意分析<code>COUNT</code>的状态转换</strong></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">module</span> top_module(
+    <span class="hljs-keyword">input</span> clk,
+    <span class="hljs-keyword">input</span> reset,    <span class="hljs-comment">// Synchronous reset</span>
+    <span class="hljs-keyword">input</span> in,
+    <span class="hljs-keyword">output</span> disc,
+    <span class="hljs-keyword">output</span> flag,
+    <span class="hljs-keyword">output</span> err);
+
+    <span class="hljs-keyword">parameter</span> IDLE = <span class="hljs-number">1</span>, COUNT = <span class="hljs-number">2</span>, DISC = <span class="hljs-number">3</span>, FLAG = <span class="hljs-number">4</span>, ERROR = <span class="hljs-number">5</span>;
+    <span class="hljs-keyword">logic</span> [<span class="hljs-number">2</span>:<span class="hljs-number">0</span>] state, next_state;
+    <span class="hljs-keyword">logic</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] count;
+    
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (reset) state &lt;= IDLE;
+        <span class="hljs-keyword">else</span> state &lt;= next_state;
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (reset) count &lt;= <span class="hljs-number">8'b0000_0000</span>;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (state == COUNT) count &lt;= count + <span class="hljs-number">1'b1</span>;
+        <span class="hljs-keyword">else</span> count &lt;= <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">always_comb</span> <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">case</span>(state)
+            IDLE: <span class="hljs-keyword">if</span> (!in) next_state = IDLE;
+            	<span class="hljs-keyword">else</span> next_state = COUNT;
+            COUNT: <span class="hljs-keyword">if</span> (count &lt; <span class="hljs-number">4</span> &amp; !in) next_state = IDLE;
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (count == <span class="hljs-number">4</span> &amp; !in) next_state = DISC;
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (count == <span class="hljs-number">5</span> &amp; !in) next_state = FLAG;
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (count == <span class="hljs-number">5</span> &amp; in) next_state = ERROR;
+            	<span class="hljs-keyword">else</span> next_state = COUNT;
+            DISC: <span class="hljs-keyword">if</span> (in) next_state = COUNT;
+            	<span class="hljs-keyword">else</span> next_state = IDLE;
+            FLAG: <span class="hljs-keyword">if</span> (in) next_state = COUNT;
+            	<span class="hljs-keyword">else</span> next_state = IDLE;
+            ERROR: <span class="hljs-keyword">if</span> (in) next_state = ERROR;
+            	<span class="hljs-keyword">else</span> next_state = IDLE;
+        <span class="hljs-keyword">endcase</span>
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">assign</span> disc = state == DISC;
+    <span class="hljs-keyword">assign</span> flag = state == FLAG;
+    <span class="hljs-keyword">assign</span> err = state == ERROR;
+<span class="hljs-keyword">endmodule</span>
+</div></code></pre>
+<h2 id="vcs-%E4%B8%89%E6%AD%A5%E4%BB%BF%E7%9C%9F">VCS 三步仿真</h2>
+<ol>
+<li><code>vlogan</code> 编译</li>
+<li><code>vcs</code> elaborate， 链接设计文件和验证文件，生成 <code>.simv</code> 可执行文件</li>
+<li>执行 <code>.simv</code> 文件 <code>./*.simv</code> 进行仿真</li>
+</ol>
+<p><br>  </br></p>
+<h1 id="1010">10.10</h1>
+<h2 id="%E7%AE%97%E8%A1%A5%E7%A0%81moore-fsm">算补码moore FSM</h2>
+<img width = '1050' height ='200' src ="8.png">  
+<p>首先0保持不变，第一个1保持不变，之后每一位都取反。</p>
+<img width = '400' height ='400' src ="9.jpg">  
+<pre class="hljs"><code><div><span class="hljs-keyword">module</span> top_module (
+    <span class="hljs-keyword">input</span> clk,
+    <span class="hljs-keyword">input</span> areset,
+    <span class="hljs-keyword">input</span> x,
+    <span class="hljs-keyword">output</span> z
+); 
+    
+    <span class="hljs-keyword">parameter</span> S1 = <span class="hljs-number">0</span>, S2 = <span class="hljs-number">1</span>, S3 = <span class="hljs-number">2</span>;
+    <span class="hljs-keyword">logic</span> [<span class="hljs-number">1</span>:<span class="hljs-number">0</span>] state, next_state;
+    
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk <span class="hljs-keyword">or</span> <span class="hljs-keyword">posedge</span> areset) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (areset) state &lt;= S1;
+        <span class="hljs-keyword">else</span> state &lt;= next_state;
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">always_comb</span> <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">case</span>(state)
+        	S1: next_state = x? S2:S1;
+            S2: next_state = x? S3:S2;
+            S3: next_state = x? S3:S2;
+        <span class="hljs-keyword">endcase</span>
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">assign</span> z = state == S2;
+
+<span class="hljs-keyword">endmodule</span>
+</div></code></pre>
+<h2 id="%E7%AE%97%E8%A1%A5%E7%A0%81mealy-fsm">算补码mealy FSM</h2>
+<img width = '1050' height ='350' src ="10.png">  
+<pre class="hljs"><code><div><span class="hljs-keyword">module</span> top_module (
+    <span class="hljs-keyword">input</span> clk,
+    <span class="hljs-keyword">input</span> areset,
+    <span class="hljs-keyword">input</span> x,
+    <span class="hljs-keyword">output</span> z
+); 
+    
+    <span class="hljs-keyword">parameter</span> S1 = <span class="hljs-number">2'b01</span>, S2 = <span class="hljs-number">2'b10</span>;
+    <span class="hljs-keyword">logic</span> [<span class="hljs-number">1</span>:<span class="hljs-number">0</span>] state, next_state;
+    
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk <span class="hljs-keyword">or</span> <span class="hljs-keyword">posedge</span> areset) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (areset) state &lt;= S1;
+        <span class="hljs-keyword">else</span> state &lt;= next_state;
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">always_comb</span> <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">case</span>(state)
+        	S1:<span class="hljs-keyword">begin</span>
+                next_state = x? S2:S1;
+                z = x;
+            <span class="hljs-keyword">end</span>
+            S2: <span class="hljs-keyword">begin</span>
+            	next_state = S2;
+                z = !x;
+            <span class="hljs-keyword">end</span>
+        <span class="hljs-keyword">endcase</span>
+    <span class="hljs-keyword">end</span>
+
+<span class="hljs-keyword">endmodule</span>
+</div></code></pre>
+
+</body>
+</html>
