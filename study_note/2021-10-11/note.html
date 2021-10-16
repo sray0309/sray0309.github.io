@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2021.10.11-2021.10.15</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="1011">10.11</h1>
+<h2 id="%E7%AE%80%E5%8D%95fifo%E8%AE%BE%E8%AE%A1">简单FIFO设计</h2>
+<ol>
+<li>输入输出以及握手信号</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">input</span> clk, rstn;
+<span class="hljs-keyword">input</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] data_i; <span class="hljs-comment">// 上级送来的数据</span>
+<span class="hljs-keyword">input</span> valid_i; <span class="hljs-comment">// 上级送来的数据有效（valid）信号</span>
+<span class="hljs-keyword">input</span> ack_i; <span class="hljs-comment">// 下级送来的读有效信号</span>
+
+<span class="hljs-keyword">output</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] data_o; <span class="hljs-comment">// 输出下级数据</span>
+<span class="hljs-keyword">output</span> [<span class="hljs-number">5</span>:<span class="hljs-number">0</span>] margin; <span class="hljs-comment">// 输出fifo余量</span>
+<span class="hljs-keyword">output</span> ready_o; <span class="hljs-comment">// 输出上级可接收（ready）信号</span>
+<span class="hljs-keyword">output</span> valid_o; <span class="hljs-comment">// 输出下级数据有效（valid）信号</span>
+<span class="hljs-keyword">output</span> req_o; <span class="hljs-comment">// 输出下级请求读取信号</span>
+</div></code></pre>
+<ol start="2">
+<li>fifo指针及存储空间定义</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">logic</span> [<span class="hljs-number">5</span>:<span class="hljs-number">0</span>] wr_pointer, rd_pointer; <span class="hljs-comment">// 6位指针，最高位用来表示写地址比读地址低的情况</span>
+<span class="hljs-keyword">logic</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] mem [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>];  <span class="hljs-comment">//32个32 bit寄存器</span>
+</div></code></pre>
+<ol start="3">
+<li>满，空以及余量判断</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">logic</span> full, empty;
+<span class="hljs-keyword">logic</span> [<span class="hljs-number">5</span>:<span class="hljs-number">0</span>] data_cnt;
+
+<span class="hljs-keyword">assign</span> full = {!wr_pointer[<span class="hljs-number">5</span>], wr_pointer[<span class="hljs-number">4</span>:<span class="hljs-number">0</span>]} == rd_pointer; <span class="hljs-comment">// 满信号</span>
+<span class="hljs-keyword">assign</span> empty = wr_pointer == rd_pointer; <span class="hljs-comment">// 空信号</span>
+<span class="hljs-keyword">assign</span> data_cnt = <span class="hljs-number">6'd32</span> - (wr_pointer - rd_pointer); <span class="hljs-comment">// 余量</span>
+<span class="hljs-keyword">assign</span> margin = data_cnt;
+</div></code></pre>
+<ol start="4">
+<li>握手信号逻辑</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">assign</span> ready_o = !full;
+<span class="hljs-keyword">assign</span> req_o = !rstn? <span class="hljs-number">1'b0</span> : !empty; 
+</div></code></pre>
+<ol start="5">
+<li>写指针逻辑</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk <span class="hljs-keyword">or</span> <span class="hljs-keyword">negedge</span> rstn) <span class="hljs-keyword">begin</span>
+    <span class="hljs-keyword">if</span> (!rstn) wr_pointer &lt;= <span class="hljs-number">6'b00_0000</span>;
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (valid_i &amp; ready_o) wr_pointer &lt;= wr_pointer + <span class="hljs-number">1'b1</span>;
+    <span class="hljs-keyword">else</span> wr_pointer &lt;= wr_pointer;
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<ol start="6">
+<li>读指针逻辑</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk <span class="hljs-keyword">or</span> <span class="hljs-keyword">negedge</span> rstn) <span class="hljs-keyword">begin</span>
+    <span class="hljs-keyword">if</span> (!rstn) rd_pointer &lt;= <span class="hljs-number">6'b00_0000</span>;
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (req_o &amp; ack_i) rd_pointer &lt;= rd_pointer + <span class="hljs-number">1'b1</span>;
+    <span class="hljs-keyword">else</span> rd_pointer &lt;= rd_pointer;
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<ol start="7">
+<li>数据输出及有效位</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk <span class="hljs-keyword">or</span> <span class="hljs-keyword">negedge</span> rstn)<span class="hljs-keyword">begin</span>
+    <span class="hljs-keyword">if</span> (!rstn) <span class="hljs-keyword">begin</span>
+        data_o &lt;= <span class="hljs-number">32'h0000_0000</span>;
+        valid_o &lt;= <span class="hljs-number">1'b0</span>;
+    <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (req_o &amp; ack_i) <span class="hljs-keyword">begin</span>
+        data_o &lt;= mem[rd_pointer[<span class="hljs-number">4</span>:<span class="hljs-number">0</span>]];
+        valid_o &lt;= <span class="hljs-number">1'b1</span>;
+    <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">begin</span>
+        data_o &lt;= <span class="hljs-number">32'h0000_0000</span>;
+        valid_o &lt;= <span class="hljs-number">1'b0</span>;
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<ol start="8">
+<li>数据输入</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span>
+    <span class="hljs-keyword">if</span> (rstn &amp; valid_i &amp; ready_o) mem[wr_pointer[<span class="hljs-number">4</span>:<span class="hljs-number">0</span>]] &lt;= data_i;
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<p><br></br></p>
+<h1 id="1012">10.12</h1>
+<h2 id="%E7%AE%80%E5%8D%95%E8%BD%AE%E8%AF%A2%E4%BB%B2%E8%A3%81%E5%99%A8%E8%AE%BE%E8%AE%A1">简单轮询仲裁器设计</h2>
+<p>状态机设计</p>
+<ol>
+<li>输入输出</li>
+</ol>
+<pre class="hljs"><code><div>    <span class="hljs-keyword">input</span> clk, rst
+    <span class="hljs-keyword">input</span> req_0, req_1, req_2;  <span class="hljs-comment">//上级请求request信号</span>
+    <span class="hljs-keyword">output</span> ack_0, ack_1, ack_2; <span class="hljs-comment">//返回上级acknowledge信号</span>
+</div></code></pre>
+<ol start="2">
+<li>独热码状态</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">parameter</span> IDLE = <span class="hljs-number">3'b000</span>, GRANT0 = <span class="hljs-number">3'b001</span>, GRANT1 = <span class="hljs-number">3'b010</span>, GRANT2 = <span class="hljs-number">3'b100</span>;
+<span class="hljs-keyword">logic</span> [<span class="hljs-number">2</span>:<span class="hljs-number">0</span>] state, next_state;
+</div></code></pre>
+<ol start="3">
+<li>状态转换</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span>
+    <span class="hljs-keyword">if</span> (reset) state &lt;= IDLE;
+    <span class="hljs-keyword">else</span> state &lt;= next_state;
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-keyword">always_comb</span> <span class="hljs-keyword">begin</span>
+    <span class="hljs-keyword">case</span>(state)
+        IDLE: <span class="hljs-keyword">begin</span>
+            <span class="hljs-keyword">if</span> (req_0) next_state = GRANT0;
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (req_1) next_state = GRANT1;
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (req_2) next_state = GRANT2;
+            <span class="hljs-keyword">else</span> next_state = IDLE;
+        <span class="hljs-keyword">end</span>
+        GRANT0: <span class="hljs-keyword">begin</span>
+            <span class="hljs-keyword">if</span> (req_1) next_state = GRANT1;
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (req_2) next_state = GRANT2;
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (req_0) next_state = GRANT0;
+            <span class="hljs-keyword">else</span> next_state = IDLE;
+        <span class="hljs-keyword">end</span>
+        GRANT1: <span class="hljs-keyword">begin</span>
+            <span class="hljs-keyword">if</span> (req_2) next_state = GRANT2;
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (req_0) next_state = GRANT0;
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (req_1) next_state = GRANT1;
+            <span class="hljs-keyword">else</span> next_state = IDLE;
+        <span class="hljs-keyword">end</span>
+        GRANT2: <span class="hljs-keyword">begin</span>
+            <span class="hljs-keyword">if</span> (req_0) next_state = GRANT0;
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (req_1) next_state = GRANT1;
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (req_2) next_state = GRANT2;
+            <span class="hljs-keyword">else</span> next_state = IDLE;
+        <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">endcase</span>
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<ol start="4">
+<li>输出逻辑</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">assign</span> {ack_2, ack_1, ack_0} = state;
+</div></code></pre>
+<p><br></br></p>
+<h1 id="1013">10.13</h1>
+<h2 id="vcs-%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C">VCS 常用操作</h2>
+<h3 id="%E7%AA%97%E5%8F%A3%E5%B8%83%E5%B1%80-1">窗口布局-1</h3>
+<ol>
+<li>Hier窗口显示设计层次</li>
+<li>Class窗口显示各种类便于查找</li>
+<li>Object窗口显示验证环境层次</li>
+</ol>
+<h3 id="%E7%AA%97%E5%8F%A3%E5%B8%83%E5%B1%80-2">窗口布局-2</h3>
+<ol>
+<li>Data窗口显示硬件模块的信号变量</li>
+<li>Local窗口显示断点所停位置的局部变量</li>
+<li>Member窗口显示软件对象的成员变量</li>
+</ol>
+<h2 id="%E8%8A%AF%E7%89%87%E9%AA%8C%E8%AF%81%E9%80%9A%E8%AF%86">芯片验证通识</h2>
+<h3 id="%E6%B5%8B%E8%AF%95%E5%B9%B3%E5%8F%B0%E7%BB%93%E6%9E%84">测试平台结构</h3>
+<ol>
+<li>组件相互独立（driver monitor checker ...）</li>
+<li>验证组件与设计之间需要连接</li>
+<li>验证组件之间需要进行通信</li>
+<li>验证环境需要时钟和复位信号驱动</li>
+</ol>
+<h3 id="%E6%BF%80%E5%8A%B1%E5%8F%91%E7%94%9F%E5%99%A8">激励发生器</h3>
+<ol>
+<li>stimulator, driver, bus function model(BFM), behavioral, generator</li>
+<li>模拟与DUT相邻设计的接口协议</li>
+<li>不应违反协议，但不拘束于真实的硬件行为</li>
+<li>应该有时钟和复位，与DUT接口保持同步</li>
+<li>具体分为initiator（发起）和responder（相应）</li>
+</ol>
+<h3 id="%E7%9B%91%E6%B5%8B%E5%99%A8">监测器</h3>
+<ol>
+<li>观察DUT边界或内部信号，并打包整理传送给其他验证平台组件如checker</li>
+<li>分布式monitor优于集中的monitor</li>
+<li>monitor观察的内部信号应当尽量少，且应是表示状态的信号。<br>
+<br></br></li>
+</ol>
+<h1 id="1014">10.14</h1>
+<h2 id="%E8%8A%AF%E7%89%87%E9%AA%8C%E8%AF%81%E9%80%9A%E8%AF%86">芯片验证通识</h2>
+<h3 id="%E6%AF%94%E8%BE%83%E5%99%A8">比较器</h3>
+<ol>
+<li>checker负责模拟设计行为和功能检查</li>
+<li>checker缓存从各个monitor收集到的数据</li>
+<li>将DUT输入接口的数据汇集给reference model，检查实际收集到的DUT输出端接口数据是否同reference model产生的期望数据一致。</li>
+<li>集群搁置的checker更有利于管理维护</li>
+</ol>
+<h2 id="sv%E6%8E%A5%E5%8F%A3">SV接口</h2>
+<p><code>interface</code> 可以定义端口，双向信号，可以使用 <code>initial</code> 和 <code>always</code>，也可以定义 <code>function</code> 和 <code>task</code><br>
+<img width = '600' height ='200' src ="1.png"></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">interface</span> arb_if (<span class="hljs-keyword">input</span> <span class="hljs-keyword">bit</span> clk);
+    <span class="hljs-keyword">logic</span> [<span class="hljs-number">1</span>:<span class="hljs-number">0</span>] grant, request;
+    <span class="hljs-keyword">logic</span> rst;    
+<span class="hljs-keyword">endinterface</span>
+
+<span class="hljs-keyword">module</span> arb(arb_if arbif);
+    ...
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> arbif<span class="hljs-variable">.clk</span> <span class="hljs-keyword">or</span> <span class="hljs-keyword">posedge</span> arbif<span class="hljs-variable">.rst</span>) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (arbif<span class="hljs-variable">.rst</span>)
+            arbif<span class="hljs-variable">.grant</span> &lt;= <span class="hljs-number">2'b00</span>;
+        <span class="hljs-keyword">else</span>
+            arbif<span class="hljs-variable">.grant</span> &lt;= next_grant;
+    <span class="hljs-keyword">end</span>
+    ...
+<span class="hljs-keyword">endmodule</span>
+
+<span class="hljs-keyword">module</span> test (arb_if arbif);
+    ...
+    <span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+        @(<span class="hljs-keyword">posedge</span> arbif<span class="hljs-variable">.clk</span>) arbif<span class="hljs-variable">.request</span> &lt;= <span class="hljs-number">2'b01</span>;
+        <span class="hljs-keyword">repeat</span> (<span class="hljs-number">2</span>) @(<span class="hljs-keyword">posedge</span> arbif<span class="hljs-variable">.clk</span>);
+        <span class="hljs-keyword">if</span> (arbif<span class="hljs-variable">.grant</span> !- <span class="hljs-number">2'b01</span>) <span class="hljs-built_in">$display</span>(<span class="hljs-string">"ERROR"</span>);
+        <span class="hljs-built_in">$finish</span>;
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">endmodule</span>
+
+<span class="hljs-keyword">module</span> top;
+    <span class="hljs-keyword">bit</span> clk;
+    <span class="hljs-keyword">always</span> #<span class="hljs-number">5</span> clk = ~clk;
+    arb_if arbif(clk);
+    arb a1 (arbif);
+    test t1(arbif);
+<span class="hljs-keyword">endmodule</span>
+</div></code></pre>
+<ol>
+<li>将有关信号封装在同一个接口中，便于维护和使用</li>
+<li>interface是SV中唯一的硬件和软件环境的交互媒介</li>
+<li>接口可以例化，使得对于多组相同的总线，在例化和使用时变得更加灵活</li>
+<li>interface在端口列表中只需要定义时钟，复位等公共信号。或不定义任何端口信号。在变量列表中定义各个需要跟DUT和TB连接的logic变量</li>
+<li>interface可以依靠参数化方式提高复用性</li>
+<li>对于有对应interface的DUT和TB组件，在其例化时，只需要传递匹配的interface变量名即可完成interface的变量传递</li>
+<li>接口里可以例化接口，但不可以例化module
+<br> </br></li>
+</ol>
+<h1 id="1015">10.15</h1>
+<img width = '1200' height ='600' src ="2.png">  
+<p>方法1</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">module</span> top_module (
+    <span class="hljs-keyword">input</span> clk,
+    <span class="hljs-keyword">input</span> reset,   <span class="hljs-comment">// Synchronous reset</span>
+    <span class="hljs-keyword">input</span> s,
+    <span class="hljs-keyword">input</span> w,
+    <span class="hljs-keyword">output</span> z
+);
+    <span class="hljs-keyword">parameter</span> A = <span class="hljs-number">0</span>, B = <span class="hljs-number">1</span>, C = <span class="hljs-number">2</span>, D = <span class="hljs-number">3</span>;
+    <span class="hljs-keyword">logic</span> [<span class="hljs-number">2</span>:<span class="hljs-number">0</span>] state, next_state;
+    <span class="hljs-keyword">logic</span> [<span class="hljs-number">1</span>:<span class="hljs-number">0</span>] flag;
+    
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (reset) state &lt;= A;
+        <span class="hljs-keyword">else</span> state &lt;= next_state;
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">always_comb</span> <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">case</span>(state)
+            A: next_state = s? B : A;
+            B: next_state = C;
+            C: next_state = D;
+            D: next_state = B;
+        <span class="hljs-keyword">endcase</span>
+    <span class="hljs-keyword">end</span>
+            
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (reset) flag &lt;= <span class="hljs-number">2'b00</span>;
+        <span class="hljs-keyword">else</span>
+            <span class="hljs-keyword">case</span>(state)
+                B: flag &lt;= w? {flag[<span class="hljs-number">1</span>], <span class="hljs-number">1'b1</span>} : flag;
+                C: flag &lt;= w? {<span class="hljs-number">1'b1</span>, flag[<span class="hljs-number">0</span>]} : flag;
+                D: flag &lt;= <span class="hljs-number">2'b00</span>;
+                <span class="hljs-keyword">default</span>: flag &lt;= flag; 
+            <span class="hljs-keyword">endcase</span>
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (reset) z &lt;= <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (state == D &amp; ((flag == <span class="hljs-number">2'b11</span> &amp; !w) | (^flag == <span class="hljs-number">1</span> &amp; w))) z &lt;= <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">else</span> z &lt;= <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">endmodule</span>
+
+</div></code></pre>
+<p>方法2</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">module</span> top_module (
+    <span class="hljs-keyword">input</span> clk,
+    <span class="hljs-keyword">input</span> reset,   <span class="hljs-comment">// Synchronous reset</span>
+    <span class="hljs-keyword">input</span> s,
+    <span class="hljs-keyword">input</span> w,
+    <span class="hljs-keyword">output</span> z
+);
+    <span class="hljs-keyword">parameter</span> A = <span class="hljs-number">0</span>, B = <span class="hljs-number">1</span>, C = <span class="hljs-number">2</span>, D = <span class="hljs-number">3</span>;
+    <span class="hljs-keyword">logic</span> [<span class="hljs-number">2</span>:<span class="hljs-number">0</span>] state, next_state;
+    <span class="hljs-keyword">logic</span> [<span class="hljs-number">1</span>:<span class="hljs-number">0</span>] count;
+    
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (reset) state &lt;= A;
+        <span class="hljs-keyword">else</span> state &lt;= next_state;
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">always_comb</span> <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">case</span>(state)
+            A: next_state = s? B : A;
+            B: next_state = C;
+            C: next_state = D;
+            D: next_state = B;
+        <span class="hljs-keyword">endcase</span>
+    <span class="hljs-keyword">end</span>
+            
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (reset | next_state == B) count &lt;= <span class="hljs-number">2'b00</span>;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (w) count &lt;= count + <span class="hljs-number">1'b1</span>;
+        <span class="hljs-keyword">else</span> count &lt;= count;
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">logic</span> [<span class="hljs-number">1</span>:<span class="hljs-number">0</span>] final_count;
+    <span class="hljs-keyword">assign</span> final_count = count + w;
+
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (reset) z &lt;= <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (state == D &amp; final_count == <span class="hljs-number">2</span>) z &lt;= <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">else</span> z &lt;= <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">endmodule</span>
+</div></code></pre>
+<h2 id="sv%E9%87%87%E6%A0%B7%E5%92%8C%E6%95%B0%E6%8D%AE%E9%A9%B1%E5%8A%A8">SV采样和数据驱动</h2>
+<ol>
+<li>时钟对于组合电路的驱动会添加一个无限小的时间单位延迟（delta-cycle）来模拟竞争</li>
+<li>驱动时应添加相应的认为延迟来模拟真实的电路情况</li>
+</ol>
+<p><em><strong>@(posedge clk) $display(); 和 @(posedge clk); $display();S 有区别吗</strong></em></p>
+<h3 id="%E6%8E%A5%E5%8F%A3%E4%B8%AD%E7%9A%84clocking">接口中的clocking</h3>
+<pre class="hljs"><code><div><span class="hljs-keyword">clocking</span> bus @(<span class="hljs-keyword">posedge</span> clock1);
+    <span class="hljs-keyword">default</span> <span class="hljs-keyword">input</span> #<span class="hljs-number">10</span>ns <span class="hljs-keyword">output</span> #<span class="hljs-number">2</span>ns;
+    <span class="hljs-keyword">input</span> data, ready, enable; <span class="hljs-comment">//在时钟上升沿10ns前做采样</span>
+    <span class="hljs-keyword">output</span> <span class="hljs-keyword">negedge</span> ack; <span class="hljs-comment">//在时钟下降沿2ns后驱动</span>
+    <span class="hljs-keyword">input</span> #<span class="hljs-number">1</span>step addr; <span class="hljs-comment">//自身定义的采样事件，clock1上升沿前的一个时间片采样</span>
+<span class="hljs-keyword">endclocking</span>
+</div></code></pre>
+<ol>
+<li><code>clocking</code> 可以定义在 <code>interface</code>, <code>module</code>, <code>program</code> 中</li>
+<li><code>clocking</code> 中列举的信号应该由 <code>interface</code> 或其他声明 <code>clocking</code> 的模块定义</li>
+<li><code>clocking</code> 中如果没有定义 <code>default input/output</code> 会默认在一个时间片之前采样，一个时间片之后驱动</li>
+<li>可以在定义信号方向时，用新的采样事件对默认事件做覆盖。</li>
+<li>@一个时钟块和@一个时钟块定义的事件是等同的（<code>如果有一个clocking ck @(posedge clk); ... endclocking，那么@ck等价于@ (posedge clk)</code>）</li>
+</ol>
+<img width = '1000' height ='500' src ="3.png">  
+<img width = '600' height ='300' src ="4.png">  
+<img width = '1000' height ='400' src ="5.png">  
+<img width = '400' height ='250' src ="6.png">
+</body>
+</html>
