@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2021.10.16-2021.10.20</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="1016">10.16</h1>
+<h2 id="sv%E6%B5%8B%E8%AF%95%E7%9A%84%E5%BC%80%E5%A7%8B%E5%92%8C%E7%BB%93%E6%9D%9F">SV测试的开始和结束</h2>
+<ol>
+<li>结束仿真 <code>$finish</code>, 暂停仿真 <code>$stop</code></li>
+<li><code>program</code> 隐式结束<br>
+sv将program作为一个独立的测试，如果tb中只有一个program，则会在执行完该program中最后一个initial过程块后自动结束仿真。若有多个program，则需等待所有program中最后一个initial过程块完成后才会结束仿真。</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">program</span> pgm1;
+    <span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>:proc1
+        #<span class="hljs-number">100</span>ns;
+        <span class="hljs-built_in">$display</span>(<span class="hljs-string">"@%0t p1.proc1 finished"</span>, <span class="hljs-built_in">$time</span>);
+    <span class="hljs-keyword">end</span>
+
+    <span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>:proc2
+        #<span class="hljs-number">400</span>ns;
+        <span class="hljs-built_in">$display</span>(<span class="hljs-string">"@%0t p1.proc2 finished"</span>, <span class="hljs-built_in">$time</span>);
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">endprogram</span>
+
+<span class="hljs-keyword">program</span> pgm2;
+    <span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>:proc1
+        #<span class="hljs-number">200</span>ns;
+        <span class="hljs-built_in">$display</span>(<span class="hljs-string">"@%0t p2.proc1 finished"</span>, <span class="hljs-built_in">$time</span>);
+    <span class="hljs-keyword">end</span>
+
+    <span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>:proc2
+        #<span class="hljs-number">300</span>ns;
+        <span class="hljs-built_in">$display</span>(<span class="hljs-string">"@%0t p2.proc2 finished"</span>, <span class="hljs-built_in">$time</span>);
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">endprogram</span>
+
+<span class="hljs-keyword">module</span> tb;
+    <span class="hljs-keyword">bit</span> clk;
+
+    <span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">forever</span> #<span class="hljs-number">5</span>ns clk &lt;= !clk;
+    <span class="hljs-keyword">end</span>
+
+    counter dut(clk);
+    pgm1 p1();
+    pgm2 p2();
+
+<span class="hljs-keyword">endmodule</span>
+
+执行结果
+@<span class="hljs-number">100</span> p1<span class="hljs-variable">.proc1</span> finished
+@<span class="hljs-number">200</span> p2<span class="hljs-variable">.proc1</span> finished
+@<span class="hljs-number">300</span> p2<span class="hljs-variable">.proc2</span> finished
+@<span class="hljs-number">400</span> p1<span class="hljs-variable">.proc2</span> finished
+</div></code></pre>
+<ol start="3">
+<li><code>program</code> 显示结束：在目标program内置系统函数 <code>$exit()</code> 强行结束。</li>
+<li>program多用于放置测试采样部分，不可出现硬件行文相关语句例如always，module，interface和其他program的例化</li>
+<li>可以在program内部定义变量，以及发起多个initial</li>
+<li>program内部变量赋值应用阻塞赋值，program内部在驱动外部硬件信号时应该采用非阻塞赋值
+<br></br></li>
+</ol>
+<h1 id="1017">10.17</h1>
+<h2 id="rkv-mcdt%E9%AA%8C%E8%AF%81%E7%8E%AF%E5%A2%831">RKV-MCDT验证环境1</h2>
+<ol>
+<li>生成动态数组并包含100个数据</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">logic</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] chnl0_arr[]
+<span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+chnl0_arr = <span class="hljs-keyword">new</span>[<span class="hljs-number">100</span>];
+<span class="hljs-keyword">foreach</span> (chnl0_arr[i]) chnl0_arr[i] = <span class="hljs-number">'h00c0_0000</span> + i;
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<ol start="2">
+<li>initiator实现输入握手（valid-ready）判断</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">module</span> chnl_init;
+    ...
+    <span class="hljs-keyword">task</span> chnl_write(<span class="hljs-keyword">input</span> <span class="hljs-keyword">logic</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] data);
+        @(<span class="hljs-keyword">posedge</span> clk);
+        ch_valid &lt;= <span class="hljs-number">1</span>;
+        ch_data &lt;= data;
+        @(<span class="hljs-keyword">negedge</span> clk);
+        <span class="hljs-keyword">wait</span> (ch_ready === <span class="hljs-number">'b1</span>);
+    <span class="hljs-keyword">endtask</span>
+    ...
+<span class="hljs-keyword">endmodule</span>
+</div></code></pre>
+<ol start="3">
+<li>通过initiator发送数据</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+    <span class="hljs-keyword">foreach</span>(chnl0_arr[i]) chnl_init<span class="hljs-variable">.chnl_write</span>(chnl0_arr[i]);
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<p><br></br></p>
+<h1 id="1018">10.18</h1>
+<h2 id="hdlbits-fsm">HDLbits FSM</h2>
+<img width = '1000' height ='700' src ="1.png">  
+<pre class="hljs"><code><div><span class="hljs-keyword">module</span> top_module (
+    <span class="hljs-keyword">input</span> clk,
+    <span class="hljs-keyword">input</span> resetn,    <span class="hljs-comment">// active-low synchronous reset</span>
+    <span class="hljs-keyword">input</span> [<span class="hljs-number">3</span>:<span class="hljs-number">1</span>] r,   <span class="hljs-comment">// request</span>
+    <span class="hljs-keyword">output</span> [<span class="hljs-number">3</span>:<span class="hljs-number">1</span>] g   <span class="hljs-comment">// grant</span>
+); 
+    <span class="hljs-keyword">typedef</span> <span class="hljs-keyword">enum</span> {A, B, C ,D} STATE;
+    STATE state, next_state;
+    
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (!resetn) state &lt;= A;
+        <span class="hljs-keyword">else</span> state &lt;= next_state;
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">always_comb</span> <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">case</span>(state)
+            A: <span class="hljs-keyword">if</span> (r==<span class="hljs-number">3'b000</span>) next_state = A;
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (r[<span class="hljs-number">1</span>]) next_state = B;
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (r[<span class="hljs-number">2</span>]) next_state = C;
+            <span class="hljs-keyword">else</span> next_state = D;
+            B: next_state = r[<span class="hljs-number">1</span>]? B:A;
+            C: next_state = r[<span class="hljs-number">2</span>]? C:A;
+            D: next_state = r[<span class="hljs-number">3</span>]? D:A;
+        <span class="hljs-keyword">endcase</span>
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">assign</span> g[<span class="hljs-number">1</span>] = state == B;
+    <span class="hljs-keyword">assign</span> g[<span class="hljs-number">2</span>] = state == C;
+    <span class="hljs-keyword">assign</span> g[<span class="hljs-number">3</span>] = state == D;
+
+<span class="hljs-keyword">endmodule</span>
+</div></code></pre>
+<img width = '1000' height ='200' src ="2.png">  
+<pre class="hljs"><code><div><span class="hljs-keyword">module</span> top_module (
+    <span class="hljs-keyword">input</span> clk,
+    <span class="hljs-keyword">input</span> resetn,    <span class="hljs-comment">// active-low synchronous reset</span>
+    <span class="hljs-keyword">input</span> x,
+    <span class="hljs-keyword">input</span> y,
+    <span class="hljs-keyword">output</span> f,
+    <span class="hljs-keyword">output</span> g
+); 
+    <span class="hljs-keyword">typedef</span> <span class="hljs-keyword">enum</span> {A, B, C, D, E, F, G, H, I} STATE;
+    STATE state, next_state;
+    
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (!resetn) state &lt;= A;
+        <span class="hljs-keyword">else</span> state &lt;= next_state;
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">always_comb</span> <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">case</span> (state)
+        	A: next_state = B;
+            B: next_state = C;
+            C: next_state = x? D:C;
+            D: next_state = x? D:E;
+            E: next_state = x? F:C;
+            F: next_state = y? G:H;
+            G: next_state = G;
+            H: next_state = y? G:I;
+            I: next_state = I;
+        <span class="hljs-keyword">endcase</span>
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">assign</span> f = state == B;
+    <span class="hljs-keyword">assign</span> g = state == F | state == H | state == G;
+
+<span class="hljs-keyword">endmodule</span>
+</div></code></pre>
+<p><br></br></p>
+<h1 id="1019">10.19</h1>
+<img width = '1000' height ='225' src ="3.png">
+<pre class="hljs"><code><div><span class="hljs-keyword">module</span> top_module (
+    <span class="hljs-keyword">input</span> clk,
+    <span class="hljs-keyword">input</span> reset,      <span class="hljs-comment">// Synchronous reset</span>
+    <span class="hljs-keyword">output</span> shift_ena);
+    
+    <span class="hljs-keyword">logic</span> [<span class="hljs-number">3</span>:<span class="hljs-number">0</span>] count;
+    
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (reset) count &lt;= <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (count == <span class="hljs-number">3</span>) count &lt;= count;
+        <span class="hljs-keyword">else</span> count &lt;= count + <span class="hljs-number">1'b1</span>;
+    <span class="hljs-keyword">end</span>
+
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (reset) shift_ena &lt;= <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (count == <span class="hljs-number">3</span>) shift_ena &lt;= <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">else</span> shift_ena &lt;= <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">endmodule</span>
+</div></code></pre>
+<img width = '1000' height ='700' src ="4.png">
+<pre class="hljs"><code><div><span class="hljs-keyword">module</span> top_module (
+    <span class="hljs-keyword">input</span> clk,
+    <span class="hljs-keyword">input</span> reset,      <span class="hljs-comment">// Synchronous reset</span>
+    <span class="hljs-keyword">input</span> data,
+    <span class="hljs-keyword">output</span> shift_ena,
+    <span class="hljs-keyword">output</span> counting,
+    <span class="hljs-keyword">input</span> done_counting,
+    <span class="hljs-keyword">output</span> done,
+    <span class="hljs-keyword">input</span> ack );
+    
+    <span class="hljs-keyword">typedef</span> <span class="hljs-keyword">enum</span> {IDLE, A, B, C, S1, S2, S3, S4, COUNT, DONE} STATE;
+    STATE state, next_state;
+    
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (reset) state &lt;= IDLE;
+        <span class="hljs-keyword">else</span> state &lt;= next_state;
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">always_comb</span> <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">case</span> (state)
+        	IDLE: next_state = data? A:IDLE;
+            A: next_state = data? B:IDLE;
+            B: next_state = data? B:C;
+            C: next_state = data? S1:IDLE;
+            S1: next_state = S2;
+            S2: next_state = S3;
+            S3: next_state = S4;
+            S4: next_state = COUNT;
+            COUNT: next_state = done_counting? DONE:COUNT;
+            DONE: next_state = ack? IDLE:DONE;
+        <span class="hljs-keyword">endcase</span>
+    <span class="hljs-keyword">end</span>
+    
+	<span class="hljs-keyword">assign</span> shift_ena = state == S1 | state == S2 | state == S3 | state == S4;
+    <span class="hljs-keyword">assign</span> counting = state == COUNT;
+    <span class="hljs-keyword">assign</span> done = state == DONE;
+
+<span class="hljs-keyword">endmodule</span>
+
+</div></code></pre>
+<p><br></br></p>
+<h1 id="1020">10.20</h1>
+<img width = '1000' height ='800' src ="5.png">
+<pre class="hljs"><code><div><span class="hljs-keyword">module</span> shifter (
+    <span class="hljs-keyword">input</span> clk,
+    <span class="hljs-keyword">input</span> shift_ena,
+    <span class="hljs-keyword">input</span> count_ena,
+    <span class="hljs-keyword">input</span> data,
+    <span class="hljs-keyword">output</span> [<span class="hljs-number">3</span>:<span class="hljs-number">0</span>] q);
+    
+    <span class="hljs-keyword">logic</span> [<span class="hljs-number">3</span>:<span class="hljs-number">0</span>] q_r;
+    
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (shift_ena) q_r &lt;= {q_r[<span class="hljs-number">2</span>:<span class="hljs-number">0</span>], data};
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (count_ena) q_r &lt;= q_r - <span class="hljs-number">1'b1</span>;
+        <span class="hljs-keyword">else</span> q_r &lt;= q_r;
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">assign</span> q = q_r;
+<span class="hljs-keyword">endmodule</span>
+
+<span class="hljs-keyword">module</span> counter (
+    <span class="hljs-keyword">input</span> clk,
+    <span class="hljs-keyword">input</span> reset,
+    <span class="hljs-keyword">output</span> [<span class="hljs-number">9</span>:<span class="hljs-number">0</span>] q);
+    
+    <span class="hljs-keyword">logic</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] count;
+    
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (reset) count &lt;= <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (count == <span class="hljs-number">999</span>) count &lt;= <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">else</span> count &lt;= count + <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">assign</span> q = count[<span class="hljs-number">9</span>:<span class="hljs-number">0</span>];
+
+<span class="hljs-keyword">endmodule</span>
+
+<span class="hljs-keyword">module</span> top_module (
+    <span class="hljs-keyword">input</span> clk,
+    <span class="hljs-keyword">input</span> reset,      <span class="hljs-comment">// Synchronous reset</span>
+    <span class="hljs-keyword">input</span> data,
+    <span class="hljs-keyword">output</span> [<span class="hljs-number">3</span>:<span class="hljs-number">0</span>] count,
+    <span class="hljs-keyword">output</span> counting,
+    <span class="hljs-keyword">output</span> done,
+    <span class="hljs-keyword">input</span> ack );
+    
+    <span class="hljs-keyword">logic</span> shift_ena, done_counting;
+    <span class="hljs-keyword">logic</span> [<span class="hljs-number">9</span>:<span class="hljs-number">0</span>] counter_q;
+    
+    <span class="hljs-keyword">typedef</span> <span class="hljs-keyword">enum</span> {IDLE, A, B, C, S1, S2, S3, S4, COUNT, DONE} STATE;
+    STATE state, next_state;
+    
+    <span class="hljs-keyword">always_ff</span> @(<span class="hljs-keyword">posedge</span> clk) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">if</span> (reset) state &lt;= IDLE;
+        <span class="hljs-keyword">else</span> state &lt;= next_state;
+    <span class="hljs-keyword">end</span>
+    
+    <span class="hljs-keyword">always_comb</span> <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">case</span> (state)
+        	IDLE: next_state = data? A:IDLE;
+            A: next_state = data? B:IDLE;
+            B: next_state = data? B:C;
+            C: next_state = data? S1:IDLE;
+            S1: next_state = S2;
+            S2: next_state = S3;
+            S3: next_state = S4;
+            S4: next_state = COUNT;
+            COUNT: next_state = done_counting? DONE:COUNT;
+            DONE: next_state = ack? IDLE:DONE;
+        <span class="hljs-keyword">endcase</span>
+    <span class="hljs-keyword">end</span>
+    
+	<span class="hljs-keyword">assign</span> shift_ena = state == S1 | state == S2 | state == S3 | state == S4;
+    <span class="hljs-keyword">assign</span> counting = state == COUNT;
+    <span class="hljs-keyword">assign</span> done = state == DONE;
+    
+    shifter shifter(
+        <span class="hljs-variable">.clk</span>(clk),
+        <span class="hljs-variable">.shift_ena</span>(shift_ena),
+        <span class="hljs-variable">.count_ena</span>(counter_q == <span class="hljs-number">999</span>),
+        <span class="hljs-variable">.data</span>(data),
+        <span class="hljs-variable">.q</span>(count)
+    );
+    
+    counter counter(
+        <span class="hljs-variable">.clk</span>(clk),
+        <span class="hljs-variable">.reset</span>(state != COUNT),
+        <span class="hljs-variable">.q</span>(counter_q)
+    );
+    
+    <span class="hljs-keyword">assign</span> done_counting = count == <span class="hljs-number">0</span> &amp; counter_q == <span class="hljs-number">999</span>;
+
+<span class="hljs-keyword">endmodule</span>
+
+</div></code></pre>
+<p><strong>刷完了HDLbits上所有关于verilog设计的题目</strong><br>
+<strong>完结撒花<img class="emoji" alt="wink" src="data:image/png;base64,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" /></strong></p>
+<h2 id="%E5%87%BD%E6%95%B0%E5%92%8C%E4%BB%BB%E5%8A%A1%E4%B8%AD%E7%9A%84%E4%B8%8D%E5%90%8C%E5%8F%82%E6%95%B0">函数和任务中的不同参数</h2>
+<pre class="hljs"><code><div><span class="hljs-keyword">int</span> a = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">int</span> b = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">int</span> c = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">task</span> add (<span class="hljs-keyword">input</span> x, <span class="hljs-keyword">input</span> y, <span class="hljs-keyword">output</span> z);
+    #<span class="hljs-number">10</span>ns
+    z = x + y;
+    #<span class="hljs-number">10</span>ns
+<span class="hljs-keyword">endtask</span>
+
+<span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+    a = <span class="hljs-number">10</span>;
+    b = <span class="hljs-number">10</span>;
+    #<span class="hljs-number">10</span>ns
+    add (a, b, c);
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<ol>
+<li>上述代码中c最终会在30ns处变为20.</li>
+<li>input的值只会在task入口处采样，output的值只会在task出口处改变，中间过程不会影响外部变量</li>
+<li>inout也只会在入口采样，出口改变</li>
+<li>ref会即时改变值，若上述代码中 <code>output z</code> 改为 <code>ref z</code>，则c在20ns处变为20.ref声明的变量表示该变量和传入变量是同一个变量。</li>
+<li>const ref表示监测外部变量，但不能修改外部变量</li>
+</ol>
+
+</body>
+</html>

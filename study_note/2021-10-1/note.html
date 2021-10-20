@@ -367,7 +367,7 @@ code {
   </script>
 <h1 id="101">10.1</h1>
 <h2 id="%E4%B8%89%E6%AE%B5%E5%BC%8F%E7%8A%B6%E6%80%81%E6%9C%BA">三段式状态机</h2>
-<img width = '600' height ='250' src ="https://sray0309.github.io/study_note/2020-10-1/1.PNG">  
+<img width = '600' height ='250' src ="1.PNG">  
 <pre class="hljs"><code><div><span class="hljs-keyword">module</span> top_module(
     <span class="hljs-keyword">input</span> clk,
     <span class="hljs-keyword">input</span> areset,    <span class="hljs-comment">// Asynchronous reset to state B</span>
@@ -396,7 +396,7 @@ code {
 <span class="hljs-keyword">endmodule</span>
 </div></code></pre>
 <h2 id="%E7%8B%AC%E7%83%AD%E7%A0%81%E7%8A%B6%E6%80%81%E6%9C%BA">独热码状态机</h2>
-<img width = '300' height ='300' src ="https://sray0309.github.io/study_note/2020-10-1/2.PNG">  
+<img width = '300' height ='300' src ="2.PNG">  
 <p><em>For example, in the above state machine, how can the state machine can reach state A?<br>
 It must use one of the two incoming edges: &quot;Currently in state A and in=0&quot; or &quot;Currently in state C and in = 0&quot;.<br>
 Due to the one-hot encoding, the logic equation to test for &quot;currently in state A&quot; is simply the state bit for state A.<br>
@@ -405,7 +405,7 @@ The one-hot encoding guarantees that at most one clause (product term) will be &
 <br>  </br></p>
 <h1 id="102">10.2</h1>
 <h2 id="%E8%B7%9F%E5%89%8D%E4%B8%80%E4%B8%AA%E7%8A%B6%E6%80%81%E6%9C%89%E5%85%B3%E7%9A%84%E5%80%BC%E8%B7%9F%E6%97%B6%E5%BA%8F%E6%9C%89%E5%85%B3%E9%9C%80%E8%A6%81%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91">跟前一个状态有关的值（跟时序有关）需要时序逻辑</h2>
-<img width = '800' height ='600' src ="https://sray0309.github.io/study_note/2020-10-1/3.PNG">  
+<img width = '800' height ='600' src ="3.PNG">  
 <pre class="hljs"><code><div><span class="hljs-keyword">module</span> top_module (
     <span class="hljs-keyword">input</span> clk,
     <span class="hljs-keyword">input</span> reset,
@@ -462,7 +462,7 @@ The one-hot encoding guarantees that at most one clause (product term) will be &
 <li>输入模式：文本写入</li>
 <li>编辑模式：保存查找替换</li>
 </ol>
-<img width = '500' height ='250' src ="https://sray0309.github.io/study_note/2020-10-1/4.PNG">  
+<img width = '500' height ='250' src ="4.PNG">  
 <p>细节：</p>
 <ol>
 <li>命令模式下<code>hjkl</code>移动光标，<code>i</code>键进入输入模式，<code>esc</code>回到命令模式，冒号<code>:</code>进入编辑模式，<code>w</code>保存，<code>q</code>退出。</li>
@@ -509,7 +509,7 @@ The one-hot encoding guarantees that at most one clause (product term) will be &
 </ol>
 <h1 id="104">10.4</h1>
 <h2 id="lemmings%E6%B8%B8%E6%88%8F">Lemmings游戏</h2>
-<img width = '1000' height ='500' src ="https://sray0309.github.io/study_note/2020-10-1/5.PNG">  
+<img width = '1000' height ='500' src ="5.PNG">  
 <p><strong>注意计数器count溢出的情况，count的位数要多</strong></p>
 <pre class="hljs"><code><div><span class="hljs-keyword">module</span> top_module(
     <span class="hljs-keyword">input</span> clk,
