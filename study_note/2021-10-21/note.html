@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2021.10.21-2021.10.25</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="1021">10.21</h1>
+<p>安装VMware和Ubuntu操作系统，安装verilator和gtkwave，配置一生一芯oscpu开发环境
+<br></br></p>
+<h1 id="1022">10.22</h1>
+<h2 id="1-%E8%A6%86%E7%9B%96%E7%8E%87">1. 覆盖率</h2>
+<ol>
+<li>代码覆盖率，功能覆盖率，断言覆盖率</li>
+<li>要给出一些错误的激励来测试设计的稳定性和纠错能力</li>
+</ol>
+<h2 id="2-%E5%9B%9E%E5%BD%92%E6%B5%8B%E8%AF%95">2. 回归测试</h2>
+<ol>
+<li>将所有功能点的用例合并为一个测试集</li>
+<li>在设计经过缺陷修复或者性能提高后，测试原有的所有功能点，保证设计仍然可以正常工作</li>
+<li>确保新的设计变化不会影响之前的功能，避免修改后的设计对于别的模块造成的功能失效</li>
+</ol>
+<h2 id="3-%E4%BB%A3%E7%A0%81%E8%A6%86%E7%9B%96%E7%8E%87">3. 代码覆盖率</h2>
+<ol>
+<li>衡量RTL代码是否被充分运行</li>
+<li>语句覆盖率，条件覆盖率，决策覆盖率，事件覆盖率，跳转覆盖率，状态机覆盖率</li>
+</ol>
+<h2 id="4-%E5%8A%9F%E8%83%BD%E8%A6%86%E7%9B%96%E7%8E%87">4. 功能覆盖率</h2>
+<ol>
+<li>对于输入，检测数据端的输入和命令组合，控制信号与数据传输的组合</li>
+<li>对于输出，检测是否有完整的数据传输类别和各种情况的反馈时序</li>
+</ol>
+<h2 id="5-%E5%A4%8D%E4%B9%A0pipeline">5. 复习pipeline</h2>
+<p><br></br></p>
+<h1 id="1023">10.23</h1>
+<h2 id="%E5%A4%8D%E4%B9%A0pipeline">复习pipeline</h2>
+<h2 id="systemverilog%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1">SystemVerilog类和对象</h2>
+<ol>
+<li>对象是一个实体，类是将相同的个体抽象出来的描述方式<br>
+<strong>第一个transaction事务类</strong></li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> Transaction;
+    <span class="hljs-keyword">bit</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] addr, crc, data[<span class="hljs-number">8</span>];  <span class="hljs-comment">//class中不能定义wire或者reg</span>
+
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> display;
+        <span class="hljs-built_in">$display</span>(<span class="hljs-string">"Transaction: %h"</span>, addr);
+    <span class="hljs-keyword">endfunction</span>
+
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> calc_crc;
+        crc = addr ^ data<span class="hljs-variable">.xor</span>;
+    <span class="hljs-keyword">endfunction</span>
+<span class="hljs-keyword">endclass</span>
+</div></code></pre>
+<ol start="2">
+<li>OOP概念要素
+<ul>
+<li>Class类：包含成员变量和方法</li>
+<li>Object对象：类的实例</li>
+<li>Handle句柄（指针）：用来指向对象的指针</li>
+<li>Property属性（变量）：在类中声明的存储数据的变量</li>
+<li>Method方法：类中可以使用task或者function来定义方法以便处理自身或者外部传入的数据</li>
+</ul>
+</li>
+<li>创建对象</li>
+</ol>
+<pre class="hljs"><code><div>Transaction tr; <span class="hljs-comment">// 声明句柄</span>
+tr = <span class="hljs-keyword">new</span>(); <span class="hljs-comment">// 创建对象</span>
+</div></code></pre>
+<p>创建对象时，可以通过自定义构建函数完成变量的初始化和其他初始操作</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> Transaction;
+    <span class="hljs-keyword">logic</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] addr, crc, data[<span class="hljs-number">8</span>];
+
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>();
+        addr = <span class="hljs-number">3</span>;
+        <span class="hljs-keyword">foreach</span>(data[i]) data[i] = <span class="hljs-number">5</span>;
+    <span class="hljs-keyword">endfunction</span>
+
+<span class="hljs-keyword">endclass</span>
+</div></code></pre>
+<p>构建函数 <code>new()</code> 是系统预定义函数，不需要返回值，函数会隐式地返回例化后的对象指针<br>
+构建函数可以定义多个参数作为初始化时外部传入数值的手段</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> Transaction;
+    <span class="hljs-keyword">logic</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] addr = <span class="hljs-number">'h10</span>;
+    <span class="hljs-keyword">logic</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] crc, data[<span class="hljs-number">8</span>];
+
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">logic</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] a=<span class="hljs-number">3</span>, d=<span class="hljs-number">5</span>);
+        addr = a;
+        <span class="hljs-keyword">foreach</span> (data[i]) data[i] = d;
+    <span class="hljs-keyword">endfunction</span>
+<span class="hljs-keyword">endclass</span>
+
+<span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+    Transaction tr;
+    tr = <span class="hljs-keyword">new</span>(<span class="hljs-number">10</span>) <span class="hljs-comment">// tr.addr = 10</span>
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<ol start="4">
+<li>句柄的传递：创建了对象之后，对象的空间位置不会更改，而指向该空间的句柄可以有多个</li>
+</ol>
+<pre class="hljs"><code><div>Transaction t1, t2; <span class="hljs-comment">//声明句柄t1, t2，两个句柄悬空</span>
+t1 = <span class="hljs-keyword">new</span>(); <span class="hljs-comment">//例化对象，将其句柄赋给t1</span>
+t2 = t1; <span class="hljs-comment">// 将t1的值赋给t2，即t1和t2指向同一个对象</span>
+t1 = <span class="hljs-keyword">new</span>(); <span class="hljs-comment">// 例化第二个对象，将句柄赋给t1</span>
+</div></code></pre>
+<p><strong>当没有任何一个句柄指向某个对象时，该对象会被自动销毁</strong></p>
+<ol start="5">
+<li>句柄的使用
+<ul>
+<li>句柄可以用来创建多个对象，也可以前后指向不同对象</li>
+<li>可以通过句柄来使用对象中的成员变量或者成员方法</li>
+</ul>
+</li>
+</ol>
+<pre class="hljs"><code><div>Transaction t;
+t = <span class="hljs-keyword">new</span>();
+t<span class="hljs-variable">.addr</span> = <span class="hljs-number">32'h42</span>;
+t<span class="hljs-variable">.display</span>();
+</div></code></pre>
+<ol start="6">
+<li>静态变量
+<ul>
+<li><code>class</code> 中声明的变量默认为动态变量，可以用static来声明静态变量</li>
+<li>对于静态变量可以通过例化对象引用 <code>object.var</code>，或者直接引用该变量 <code>class::var</code></li>
+<li>类中静态变量声明以后，无论例化多少个对象，只可以共享一个同名的静态变量。因此要注意静态变量的共享资源保护</li>
+</ul>
+</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> Transaction;
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">int</span> id;
+
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>();
+        id = count++;
+    <span class="hljs-keyword">endfunction</span>
+<span class="hljs-keyword">endclass</span>
+
+Transaction t1, t2;
+
+<span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+    t1 = <span class="hljs-keyword">new</span>(); <span class="hljs-comment">// id = 0, count = 1</span>
+    t2 = <span class="hljs-keyword">new</span>(); <span class="hljs-comment">// id = 1, count = 2</span>
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<ol start="7">
+<li>静态方法
+<ul>
+<li>类中定义的方法默认为动态方法，可以通过 <code>static</code> 修改其类型为静态方法。</li>
+<li>静态方法内可以声明并使用动态变量，但是不能使用类的动态成员变量。</li>
+<li>静态方法中可以使用类的静态变量，因为静态方法同静态变量一样在编译阶段就已经为其分配好了内存空间</li>
+</ul>
+</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> Transaction;
+    <span class="hljs-keyword">static</span> Config cfg;
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">int</span> id;
+    <span class="hljs-comment">//通过静态方法来操作静态变量</span>
+    <span class="hljs-keyword">static</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> display_statics();
+        <span class="hljs-built_in">$display</span>(<span class="hljs-string">"Transaction cfg.mode=%s, count=%0d"</span>, cfg<span class="hljs-variable">.mode</span><span class="hljs-variable">.name</span>(), count);
+    <span class="hljs-keyword">endfunction</span>
+<span class="hljs-keyword">endclass</span>
+Config cfg;
+<span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+    cfg = <span class="hljs-keyword">new</span>(MODE_ON);
+    Transaction::cfg = cfg; <span class="hljs-comment">// 静态变量赋值</span>
+    Transaction::display_statics(); <span class="hljs-comment">// 调用静态方法</span>
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<p><br></br></p>
+<h1 id="1024">10.24</h1>
+<h2 id="systemverilog%E7%B1%BB%E7%9A%84%E6%88%90%E5%91%98">SystemVerilog类的成员</h2>
+<ol>
+<li>单一职责原则：一个类的功能应尽可能简单，不应承担不符合它的职责和承担过多的职责</li>
+<li>类将属性和方法封装在内部，不会直接将成员变量暴露给外部，通过 <code>protected</code> 和 <code>local</code> 关键词来设置成员变量和方法的外部访问权限。封装属性在设计模式中称之为开放封闭原则。</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> clock
+    <span class="hljs-keyword">local</span> <span class="hljs-keyword">bit</span> is_summer = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">local</span> <span class="hljs-keyword">int</span> nclock = <span class="hljs-number">6</span>;
+
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">int</span> get_clock();
+        <span class="hljs-keyword">if</span> (!is_summer) <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span><span class="hljs-variable">.nclock</span>;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span><span class="hljs-variable">.nclock</span>+<span class="hljs-number">1</span>；
+    <span class="hljs-keyword">endfunction</span>
+
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">bit</span> set_summer(<span class="hljs-keyword">bit</span> s);
+        <span class="hljs-keyword">this</span><span class="hljs-variable">.is_summer</span> = s;
+    <span class="hljs-keyword">endfunction</span>
+<span class="hljs-keyword">endclass</span>
+
+clock ck;
+
+<span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+    ck = <span class="hljs-keyword">new</span>();
+    <span class="hljs-built_in">$display</span>(<span class="hljs-string">"now time is %0d"</span>, ck<span class="hljs-variable">.get_clock</span>()); <span class="hljs-comment">// 打印6</span>
+    ck<span class="hljs-variable">.set_summer</span>(<span class="hljs-number">1</span>);
+    <span class="hljs-built_in">$display</span>(<span class="hljs-string">"now time is %0d"</span>, ck<span class="hljs-variable">.nclock</span>); <span class="hljs-comment">// 报错。local不能从外部访问</span>
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<ol start="3">
+<li>类的成员的默认类型是可以被子类或外部访问，<code>protected</code>：只有该类或者子类可以访问，外部无法访问。<code>local</code>：只有该类可以访问，子类和外部均无法访问。</li>
+<li><code>this.X</code> 表明所调用的成员是当前类的成员，而非同名的局部变量或者形式参数，自己的类中找不到就到父类中找。</li>
+</ol>
+<h2 id="%E7%B1%BB%E7%9A%84%E7%BB%A7%E6%89%BF">类的继承</h2>
+<ol>
+<li><code>class 子类 extends 父类</code></li>
+<li>默认情况下，父类和子类同名的方法没有任何关系，通过 <code>super.function()</code> 来继承</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> basic_test;
+    <span class="hljs-keyword">int</span> def = <span class="hljs-number">100</span>;
+    <span class="hljs-keyword">int</span> fin;
+
+    <span class="hljs-keyword">task</span> test(stm_ini ini);
+        <span class="hljs-built_in">$display</span>(<span class="hljs-string">"basic_test::test"</span>);
+    <span class="hljs-keyword">endtask</span>
+
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">int</span> val);
+        ...
+    <span class="hljs-keyword">endfunction</span>
+<span class="hljs-keyword">endclass</span>
+
+<span class="hljs-keyword">class</span> test_wr <span class="hljs-keyword">extends</span> basic_test;
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>();
+        <span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(def)
+        <span class="hljs-built_in">$display</span>(<span class="hljs-string">"test_wr::new"</span>);
+    <span class="hljs-keyword">endfunction</span>
+
+    <span class="hljs-keyword">task</span> test(stm_ini ini);
+        <span class="hljs-keyword">super</span><span class="hljs-variable">.test</span>(ini);
+        <span class="hljs-built_in">$display</span>(<span class="hljs-string">"test_wr::test"</span>);
+    <span class="hljs-keyword">endtask</span>
+<span class="hljs-keyword">endclass</span>
+
+<span class="hljs-keyword">class</span> test_rd <span class="hljs-keyword">extends</span> basic_test;
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>();
+        <span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(def);
+        <span class="hljs-built_in">$display</span>(<span class="hljs-string">"test_rd::new"</span>);
+    <span class="hljs-keyword">endfunction</span>
+
+    <span class="hljs-keyword">task</span> test(stm_ini ini);
+        <span class="hljs-keyword">super</span><span class="hljs-variable">.test</span>(ini);
+        <span class="hljs-built_in">$display</span>(<span class="hljs-string">"test_rd::test"</span>);
+    <span class="hljs-keyword">endtask</span>
+<span class="hljs-keyword">endclass</span>
+</div></code></pre>
+<ol start="3">
+<li>test_wr和test_rd继承了basic_test的成员变量int fin，也通过super继承了test()</li>
+<li>子类在定义new函数时，应该首先调用父类的new函数（<code>super.new()</code>），如果父类的new函数没有参数，子类也可以省略该调用，系统会自动处理</li>
+<li>子类的实例对象在初始化时首先会调用父类的构造函数，</li>
+</ol>
+<h2 id="%E6%88%90%E5%91%98%E8%A6%86%E7%9B%96">成员覆盖</h2>
+<ol>
+<li>在父类和子类里，可以定义相同名称的成员变量和方法（形式参数和返回类型也应该相同），在引用时，将按照句柄类型来确定作用域</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> basic_test;
+    <span class="hljs-comment">// 同上</span>
+<span class="hljs-keyword">endclass</span>
+
+<span class="hljs-keyword">class</span> test_wr <span class="hljs-keyword">extends</span> basic_test;
+    <span class="hljs-keyword">int</span> def = <span class="hljs-number">200</span>;
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>();
+        <span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(def);
+    <span class="hljs-keyword">endfunction</span>
+<span class="hljs-keyword">endclass</span>
+
+<span class="hljs-keyword">module</span> tb
+    basic_test t;
+    test_wr wr;
+
+    <span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+        wr = <span class="hljs-keyword">new</span>();
+        t = wr;
+        <span class="hljs-built_in">$display</span>(<span class="hljs-string">"wr.def = %0d"</span>, wr<span class="hljs-variable">.def</span>); <span class="hljs-comment">// 200</span>
+        <span class="hljs-built_in">$display</span>(<span class="hljs-string">"t.def = %0d"</span>, t<span class="hljs-variable">.def</span>);   <span class="hljs-comment">// 100</span>
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">endmodule</span>
+</div></code></pre>
+<ol start="2">
+<li>把子类句柄赋值给父类，父类句柄指向一个子类对象，父类句柄只可以引用到父类的成员变量</li>
+</ol>
+<h2 id="%E5%8F%A5%E6%9F%84%E4%BD%BF%E7%94%A8">句柄使用</h2>
+<ol>
+<li>子类句柄访问父类的同名成员：<code>wr.super.def</code></li>
+<li>子类句柄可以赋值给父类句柄，当父类句柄指向子类对象时，父类句柄只能引用到父类的成员变量和方法</li>
+<li>父类句柄不可以直接赋值给子类句柄，只能用 <code>$cast(dst, src)</code> 动态转换，成功返回1，失败返回0</li>
+<li>句柄可以作为形式参数通过方法来完成对象指针的传递，从外部传入方法内部，<strong>传递的不是对象</strong></li>
+</ol>
+<pre class="hljs"><code><div>    <span class="hljs-keyword">task</span> transmit (Transaction t); <span class="hljs-comment">//传递句柄，而非对象</span>
+    ...
+    <span class="hljs-keyword">endtask</span>
+</div></code></pre>
+<ol start="5">
+<li>句柄可以在方法内部首先完成修改，而后再由外部完成使用</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> create(<span class="hljs-keyword">ref</span> Transaction tr);<span class="hljs-comment">//注意ref</span>
+    tr = <span class="hljs-keyword">new</span>();
+    tr<span class="hljs-variable">.addr</span> = <span class="hljs-number">100</span>;
+<span class="hljs-keyword">endfunction</span>
+
+Transaction t;
+<span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+    create(t);
+    t<span class="hljs-variable">.addr</span> = <span class="hljs-number">10</span>;
+    <span class="hljs-built_in">$display</span>(t<span class="hljs-variable">.addr</span>);
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<ol start="6">
+<li>程序执行时，可以在任何时刻为句柄创建新的对象，并将新的指针赋值给句柄</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">task</span> <span class="hljs-keyword">generate</span> trans();
+    Transaction t;
+    Transaction fifo[$];
+    t = <span class="hljs-keyword">new</span>();
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>; i&lt;<span class="hljs-number">3</span>; i++) <span class="hljs-keyword">begin</span>
+        t<span class="hljs-variable">.addr</span> = i &lt;&lt; <span class="hljs-number">2</span>;
+        fifo<span class="hljs-variable">.push_back</span>(t);
+    <span class="hljs-keyword">end</span>
+    t = fifo<span class="hljs-variable">.pop_front</span>();
+<span class="hljs-keyword">endtask</span>
+</div></code></pre>
+<p><strong>上述代码中最终 <code>t.addr</code> 的值为8，因为t只例化了一次，如果 <code>t=new()</code> 在 <code>for</code> 循环内，则最终 <code>t.addr</code> 的值为0</strong></p>
+<h2 id="sv%E7%9A%84%E5%8C%85">SV的包</h2>
+<ol>
+<li>SV提供了一种在多个module，interface，program中共享parameter，data，type，task，function，class等的方法，即利用package实现</li>
+<li>利用package会将一簇相关的类组织在了单一的命名空间下，使得分属不同模块验证环境环境的类来自于不同的package，可以解决类的归属问题（不同模块的同名类的问题）</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">module</span> mcdf_tb;
+    regs_pkg::monitor mon1 = <span class="hljs-keyword">new</span>();
+    arb_pkg::monitor mon2 = <span class="hljs-keyword">new</span>();
+<span class="hljs-keyword">endmodule</span>
+</div></code></pre>
+<ol start="3">
+<li>package内部定义的类也应该独一无二命名，这样在顶层引用可以通过 <code>import pkg_name::*</code> 来处理。建议所有类的命名加一个独一无二的前缀（<code>regs_mon</code>）</li>
+<li>在包中可以定义类，静态变量，静态方法</li>
+<li>使用 `include 完成类在包中的封装，注意编译的前后顺序</li>
+<li>使用类可以通过import完成包中所有类或者某一个类的导入，使得新的环境可以识别出该类</li>
+<li>package中不可以定义module，interface等硬件模块
+<br></br></li>
+</ol>
+<h1 id="1025">10.25</h1>
+<ol>
+<li>复习pipeline</li>
+<li>熟悉ysyx处理器开发框架配置</li>
+</ol>
+
+</body>
+</html>

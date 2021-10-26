@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>pipeline.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="pipeline-review"><strong>PIPELINE REVIEW</strong></h1>
+<h3 id="based-on-computer-architecture-a-quantitative-approach-appendix-c">based on <em>Computer Architecture, A Quantitative Approach (Appendix C)</em></h3>
+<h1 id="introduction"><strong>Introduction</strong></h1>
+<ol>
+<li>In a computer pipeline, each step in the pipeline completes a part of an instruction. Different steps are completing different parts of different instructions in <strong>parallel</strong>.</li>
+<li>The <strong>throughput</strong> of an instruction pipeline is determined by how often an instruction exits the pipeline.</li>
+<li>The time required between moving an instruction one step down the pipeline is a <strong>processor cycle</strong></li>
+<li>The length of aprocessor cycle is determined by the time required for the <strong>slowest pipe stage</strong></li>
+<li>Designer's goal is to balance the length of each pipeline stage. The ideal time per instruction is equal to<br>
+$$\frac{Time\ per\ instruction\ on\ unpipelined\ machine}{Number\ of\ pipe\ stages}$$</li>
+<li>Ideally the speedup from pipelining equals the number of pipe stages. However, the stages will not be perfectly balanced and pipelining does involve some overhead.</li>
+<li><strong>Thus, the time per instruction on the pepelined processor will not have its minimum possible value. Pipelining yields a reduction in the average execution time per instruction. Pipelining reduces the CPI</strong></li>
+<li>Pipelining is an implementation technique that exploits parallelism among the instructins in a sequentilal instruction stream. It is not visible to the programmer.</li>
+</ol>
+<h1 id="the-basics-of-the-risc-v-instruction-set-and-pipeline"><strong>The Basics of the RISC-V Instruction Set and Pipeline</strong></h1>
+<h2 id="all-risc-architectures-features"><strong>All RISC architectures' features</strong></h2>
+<ol>
+<li>All operations on data apply to data in registers and typically change the entire register(32 or 64 bits).</li>
+<li>The only operations that affect memory are load and store operations that move data form memory to a register or to memory from a memory. Load and store operations that load or store less than a full register(8, 16, 32 bits) are available.</li>
+<li>All instructions are in one size. For RISC-V, rs1, rs2 and rd are always in the same place.</li>
+</ol>
+<h2 id="a-multi-cycle-version-implementation-of-a-risc-isa"><strong>A multi-cycle version implementation of a RISC ISA</strong></h2>
+<ol>
+<li>Instruction fetch cycle(IF)
+<ul>
+<li>Send PC to memory and fetch the current inst from memory.</li>
+<li>Update the PC to the next sequential instruction by adding 4.</li>
+</ul>
+</li>
+<li>Instruction decode/register fetch cycle(ID)
+<ul>
+<li>Decode the instruction</li>
+<li>Read the registers from register file.</li>
+<li>Do the equality test on the registers as they are read, for a possible branch</li>
+<li>Sign-extend the offset field of the instruction in case it is needed.</li>
+<li>Compute the possible branch target address by adding the sign-extended offset to the incremented PC</li>
+<li>Decode is done in parallel with reading registers due to <em>fixed-field decoding</em></li>
+<li>For loads and ALU imme operations, the imme field is always in the same place. For a more complete RISC-V implementation, the imme field for store is in a different location.</li>
+</ul>
+</li>
+<li>Execution/effective address cycle(EX)
+<ul>
+<li>The ALU operates on the operands prepared in the prior cycle, performing one of three functions, depending on the instruction type</li>
+<li>Memory reference - ALU adds the base register and the offset to form the effective address.</li>
+<li>Register-Register ALU instruction - The ALU performs the operation specified by the ALU opcode on the values read from the register file.</li>
+<li>Register-Immediated ALU instruction - The ALU performs the operation specified by the ALU opcode on the <em><strong>first</strong></em> value read from the register file and the sign-extended immediate</li>
+<li>Conditional branch - Determine whether the condition is true.</li>
+</ul>
+</li>
+<li>Memory access(MEM)
+<ul>
+<li>For load, the memory does a read using the effective address computed in the previous cycle</li>
+<li>For store,the memory writes the data from the second register read from the register file using the effective address</li>
+</ul>
+</li>
+<li>Write-back cycle(WB)
+<ul>
+<li>For register-register ALU instruction or load instruction: Write the result into the register file, whether it comes from the memory system or from the ALU.</li>
+</ul>
+</li>
+</ol>
+<h2 id="classic-five-stage-pipeline-for-a-risc-processor"><strong>Classic Five-Stage Pipeline for a RISC Processor</strong></h2>
+<div align = center><img width = '800' height ='200' src ="1.png"></div>
+<div align = center><img width = '800' height ='550' src ="2.png"></div>
+<p>Three observations to avoid functional units' conflict</p>
+<ol>
+<li>Use separate instruction and data memories. Typically implement separate instruction and data caches to avoid IF and MEM conflict.</li>
+<li>The register file is used in two stages: EX and WB. So we need to perform two reads and one write every clock cycle and perform the register write in the first half of the clock cycle and the read on the second half.</li>
+<li>During IF, we must increment and store PC every clock. Also we must have an adder to compute the potential branch target address during ID.</li>
+</ol>
+<p align = center><strong>Also we need pipeline registers between successive stages of the pipeline</strong></p>
+<div align = center><img width = '700' height ='600' src ="3.png"></div>  
+<h2 id="basic-performance-issues-in-pipelining"><strong>Basic Performance Issues in Pipelining</strong></h2>
+<ol>
+<li>Pipeline increase the latency of executing a single instruction.</li>
+<li>Imbalance among the pipe stages reduces the performance.</li>
+<li>Pipeline overhead arises from the combination of pipeline register delay(setup time) and clock skew.</li>
+<li>Pipeline register delay contributes to the lower limit on the clock cycle. Once the clock cycle is as small as the sum of the clock skew and latch overhead, no further pipelining is useful because there is no time left in the cycle for useful work.</li>
+</ol>
+<h1 id="pipeline-hazards"><strong>Pipeline Hazards</strong></h1>
+<h2 id="three-classes-of-hazards"><strong>Three classes of hazards</strong></h2>
+<ol>
+<li>Structural hazards: resource conflicts. Structural hazards occur primarily in special purpose functional units that are less frequently used (such as floating point divide or other complex long running instructions).</li>
+<li>Data hazards: An instruction depends on the results of a previous instruction.</li>
+<li>Control hazards: From pipelining of branches and other instructions that change the PC.</li>
+</ol>
+<h2 id="data-hazards"><strong>Data Hazards</strong></h2>
+<p><strong>Data hazards occur when the pipeline changes the order of read/write accesses to operands so that the order differs from the order seen by sequentially executing instructions on an unpipelined processor.</strong><br>
+<strong>Assum instruction <code>i</code> occurs in program order before instruction <code>j</code> and both instructions use register <code>x</code>, then there are three different types of hazards</strong></p>
+<ol>
+<li>Read after Write(RAW): when a read of register x by instruction j occurs before the write of register x by instruction i.</li>
+<li>Write after Read(WAR): when read of register x by instruction i occurs after a write of register x by instruction j. This will occur when instructions are reordered like dynamically scheduled pipelines.</li>
+<li>Write after write(WAW): when write of register x by instruction i occurs after a write of register x by instruction j. This will occur in OoO machine.</li>
+</ol>
+<h2 id="minimizing-data-hazard-stalls-by-forwarding"><strong>Minimizing Data Hazard Stalls by Forwarding</strong></h2>
+<ol>
+<li>The ALU result from both the EX/MEM and MEM/WB pipeline registers is always fet back to the ALU inputs.</li>
+<li>If the forwarding hardware detects that the previous ALU operation has written the register corresponding to a source for the current ALU operation, control logic selects the forwarded result as the ALU input rather than the value read from the register file.</li>
+</ol>
+<pre class="hljs"><code><div>add  x1, x2, x3
+sub  x4, x1, x5
+and  x6, x1, x7
+or   x8, x1, x9
+xor  x10, x1, x11
+</div></code></pre>
+<div align = center><img width = '700' height ='500' src ="4.png"></div>  
+<pre class="hljs"><code><div>add  x1, x2, x3
+ld   x4, 0(x1)
+sd   x4, 12(x1)
+</div></code></pre>
+<div align = center><img width = '700' height ='400' src ="5.png"></div>  
+<ol start="3">
+<li>Data Hazards requring stalls: ld stall<br>
+The ld instruction does not have the data until the end of clock cycle 4(MEM cycle). Thus the data hazard from using the result of a load instruction connot be completely eliminated with simple hardware.</li>
+</ol>
+<pre class="hljs"><code><div>ld   x1, 0(x2)
+sub  x4, x1, x5
+and  x6, x1, x7
+or   x8, x1, x9
+</div></code></pre>
+<div align = center><img width = '700' height ='470' src ="6.png"></div>  
+<p><strong>For load instruction, we need to add pipeline interlock, which detects a hazard and stalls the pipeline until the hazard is cleared.</strong></p>
+<div align = center><img width = '800' height ='150' src ="7.png"></div>  
+<h2 id="branch-hazards"><strong>Branch Hazards</strong></h2>
+
+</body>
+</html>
