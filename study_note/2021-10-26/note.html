@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2021.10.26-2021.10.31</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="1026">10.26</h1>
+<h2 id="ysyx-verilator%E4%BD%BF%E7%94%A8">ysyx verilator使用</h2>
+<p>注意在上升沿赋值时，verilator会对改变的值进行采样，不能完全模拟硬件的行为，因此verilator使用过程中要在下降沿进行赋值<br>
+<strong>上述结论是使用C++进行测试后的结果，如果用verilog写testbench进行测试可能会符合硬件行为</strong></p>
+<h2 id="rkv%E9%AA%8C%E8%AF%81">RKV验证</h2>
+<p>fifo_full_test 设计思路，注意 <code>fork join_none</code> 和 <code>fork join</code> 以及 <code>disable</code> 的配合使用</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">task</span> <span class="hljs-keyword">automatic</span> fifo_full_test();
+    <span class="hljs-comment">// verification component initializationi</span>
+    chnl0_gen<span class="hljs-variable">.initialize</span>(<span class="hljs-number">0</span>);
+    chnl1_gen<span class="hljs-variable">.initialize</span>(<span class="hljs-number">1</span>);
+    chnl2_gen<span class="hljs-variable">.initialize</span>(<span class="hljs-number">2</span>);
+    chnl0_init<span class="hljs-variable">.set_name</span>(<span class="hljs-string">"chnl0_init"</span>);
+    chnl1_init<span class="hljs-variable">.set_name</span>(<span class="hljs-string">"chnl1_init"</span>);
+    chnl2_init<span class="hljs-variable">.set_name</span>(<span class="hljs-string">"chnl2_init"</span>);
+    chnl0_init<span class="hljs-variable">.set_idle_cycles</span>(<span class="hljs-number">0</span>);
+    chnl1_init<span class="hljs-variable">.set_idle_cycles</span>(<span class="hljs-number">0</span>);
+    chnl2_init<span class="hljs-variable">.set_idle_cycles</span>(<span class="hljs-number">0</span>);
+    <span class="hljs-built_in">$display</span>(<span class="hljs-string">"fifo_full_test started testing DUT"</span>);
+    <span class="hljs-keyword">fork</span>: fork_all_run
+	  <span class="hljs-keyword">forever</span> chnl0_init<span class="hljs-variable">.chnl_write</span>(chnl0_gen<span class="hljs-variable">.get_data</span>());
+	  <span class="hljs-keyword">forever</span> chnl1_init<span class="hljs-variable">.chnl_write</span>(chnl1_gen<span class="hljs-variable">.get_data</span>());
+	  <span class="hljs-keyword">forever</span> chnl2_init<span class="hljs-variable">.chnl_write</span>(chnl2_gen<span class="hljs-variable">.get_data</span>());
+    <span class="hljs-keyword">join_none</span>
+    <span class="hljs-built_in">$display</span>(<span class="hljs-string">"fifo_full_test: 3 initiators running now"</span>);
+
+    <span class="hljs-built_in">$display</span>(<span class="hljs-string">"fifo_full_test: waiting 3 channel fifos to be full"</span>);
+    <span class="hljs-keyword">fork</span>
+      <span class="hljs-keyword">wait</span>(chnl0_init<span class="hljs-variable">.intf</span><span class="hljs-variable">.ch_margin</span> == <span class="hljs-number">0</span>);
+      <span class="hljs-keyword">wait</span>(chnl1_init<span class="hljs-variable">.intf</span><span class="hljs-variable">.ch_margin</span> == <span class="hljs-number">0</span>);
+      <span class="hljs-keyword">wait</span>(chnl2_init<span class="hljs-variable">.intf</span><span class="hljs-variable">.ch_margin</span> == <span class="hljs-number">0</span>);
+    <span class="hljs-keyword">join</span>
+    <span class="hljs-built_in">$display</span>(<span class="hljs-string">"fifo_full_test: 3 channel fifos have reached full"</span>);
+
+    <span class="hljs-built_in">$display</span>(<span class="hljs-string">"fifo_full_test: stop 3 initiators running"</span>);
+    <span class="hljs-keyword">disable</span> fork_all_run;
+    <span class="hljs-built_in">$display</span>(<span class="hljs-string">"fifo_full_test: set and ensure all agents' initiator are idle state"</span>);
+    <span class="hljs-keyword">fork</span>
+      chnl0_init<span class="hljs-variable">.chnl_idle</span>();
+      chnl1_init<span class="hljs-variable">.chnl_idle</span>();
+      chnl2_init<span class="hljs-variable">.chnl_idle</span>();
+    <span class="hljs-keyword">join</span>
+
+    <span class="hljs-built_in">$display</span>(<span class="hljs-string">"fifo_full_test waiting DUT transfering all of data"</span>);
+    <span class="hljs-keyword">fork</span>
+      <span class="hljs-keyword">wait</span>(chnl0_init<span class="hljs-variable">.intf</span><span class="hljs-variable">.ch_margin</span> == <span class="hljs-number">'h20</span>);
+      <span class="hljs-keyword">wait</span>(chnl1_init<span class="hljs-variable">.intf</span><span class="hljs-variable">.ch_margin</span> == <span class="hljs-number">'h20</span>);
+      <span class="hljs-keyword">wait</span>(chnl2_init<span class="hljs-variable">.intf</span><span class="hljs-variable">.ch_margin</span> == <span class="hljs-number">'h20</span>);
+    <span class="hljs-keyword">join</span>
+    <span class="hljs-built_in">$display</span>(<span class="hljs-string">"fifo_full_test: 3 channel fifos have transferred all data"</span>);
+
+    <span class="hljs-built_in">$display</span>(<span class="hljs-string">"fifo_full_test finished testing DUT"</span>);
+  <span class="hljs-keyword">endtask</span>
+</div></code></pre>
+<h1 id="1027">10.27</h1>
+<h2 id="mcdt%E5%88%9D%E7%BA%A7%E9%AA%8C%E8%AF%81%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA">MCDT初级验证环境搭建</h2>
+<ol>
+<li>接口信号</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">interface</span> chnl_intf(<span class="hljs-keyword">input</span> clk, <span class="hljs-keyword">input</span> rstn);
+  <span class="hljs-keyword">logic</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] ch_data;
+  <span class="hljs-keyword">logic</span>        ch_valid;
+  <span class="hljs-keyword">logic</span>        ch_ready;
+  <span class="hljs-keyword">logic</span> [ <span class="hljs-number">5</span>:<span class="hljs-number">0</span>] ch_margin;
+  <span class="hljs-keyword">clocking</span> drv_ck @(<span class="hljs-keyword">posedge</span> clk);
+    <span class="hljs-keyword">default</span> <span class="hljs-keyword">input</span> #<span class="hljs-number">1</span>ns <span class="hljs-keyword">output</span> #<span class="hljs-number">1</span>ns;
+    <span class="hljs-keyword">output</span> ch_data, ch_valid;
+    <span class="hljs-keyword">input</span> ch_ready, ch_margin;
+  <span class="hljs-keyword">endclocking</span>
+<span class="hljs-keyword">endinterface</span>
+</div></code></pre>
+<ol start="2">
+<li>将验证组件封装在package中</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">package</span> chnl_pkg;
+</div></code></pre>
+<ol start="3">
+<li>声明每次发送的数据包类</li>
+</ol>
+<pre class="hljs"><code><div>  <span class="hljs-keyword">class</span> chnl_trans;
+    <span class="hljs-keyword">int</span> data;
+    <span class="hljs-keyword">int</span> id;
+    <span class="hljs-keyword">int</span> num;
+  <span class="hljs-keyword">endclass</span>: chnl_trans
+</div></code></pre>
+<ol start="4">
+<li>声明initiator类</li>
+</ol>
+<pre class="hljs"><code><div>  <span class="hljs-keyword">class</span> chnl_initiator;
+    <span class="hljs-keyword">local</span> <span class="hljs-keyword">string</span> name;
+    <span class="hljs-keyword">local</span> <span class="hljs-keyword">int</span> idle_cycles;
+    <span class="hljs-keyword">local</span> <span class="hljs-keyword">virtual</span> chnl_intf intf;
+  
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">string</span> name = <span class="hljs-string">"chnl_initiator"</span>);
+      <span class="hljs-keyword">this</span><span class="hljs-variable">.name</span> = name;
+      <span class="hljs-keyword">this</span><span class="hljs-variable">.idle_cycles</span> = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">endfunction</span>
+  
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> set_idle_cycles(<span class="hljs-keyword">int</span> n);
+      <span class="hljs-keyword">this</span><span class="hljs-variable">.idle_cycles</span> = n;
+    <span class="hljs-keyword">endfunction</span>
+  
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> set_name(<span class="hljs-keyword">string</span> s);
+      <span class="hljs-keyword">this</span><span class="hljs-variable">.name</span> = s;
+    <span class="hljs-keyword">endfunction</span>
+  
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> set_interface(<span class="hljs-keyword">virtual</span> chnl_intf intf);
+      <span class="hljs-keyword">if</span>(intf == <span class="hljs-literal">null</span>)
+        <span class="hljs-built_in">$error</span>(<span class="hljs-string">"interface handle is NULL, please check if target interface has been intantiated"</span>);
+      <span class="hljs-keyword">else</span>
+        <span class="hljs-keyword">this</span><span class="hljs-variable">.intf</span> = intf;
+    <span class="hljs-keyword">endfunction</span>
+  
+    <span class="hljs-keyword">task</span> chnl_write(<span class="hljs-keyword">input</span> chnl_trans t); <span class="hljs-comment">//发送一个数据包</span>
+      @(<span class="hljs-keyword">posedge</span> intf<span class="hljs-variable">.clk</span>);
+      intf<span class="hljs-variable">.drv_ck</span><span class="hljs-variable">.ch_valid</span> &lt;= <span class="hljs-number">1</span>;
+      intf<span class="hljs-variable">.drv_ck</span><span class="hljs-variable">.ch_data</span> &lt;= t<span class="hljs-variable">.data</span>;
+      <span class="hljs-keyword">wait</span>(intf<span class="hljs-variable">.ch_ready</span> === <span class="hljs-number">'b1</span>);
+      <span class="hljs-built_in">$display</span>(<span class="hljs-string">"%t channel initiator [%s] sent data %x"</span>, <span class="hljs-built_in">$time</span>, name, t<span class="hljs-variable">.data</span>);
+      <span class="hljs-keyword">repeat</span>(idle_cycles) chnl_idle();
+    <span class="hljs-keyword">endtask</span>
+    
+    <span class="hljs-keyword">task</span> chnl_idle();
+      @(<span class="hljs-keyword">posedge</span> intf<span class="hljs-variable">.clk</span>);
+      intf<span class="hljs-variable">.drv_ck</span><span class="hljs-variable">.ch_valid</span> &lt;= <span class="hljs-number">0</span>;
+      intf<span class="hljs-variable">.drv_ck</span><span class="hljs-variable">.ch_data</span> &lt;= <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">endtask</span>
+  <span class="hljs-keyword">endclass</span>: chnl_initiator
+</div></code></pre>
+<ol start="5">
+<li>声明generator类</li>
+</ol>
+<pre class="hljs"><code><div>  <span class="hljs-keyword">class</span> chnl_generator;
+    chnl_trans trans[$];
+    <span class="hljs-keyword">int</span> num;
+    <span class="hljs-keyword">int</span> id;
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">int</span> n);
+      <span class="hljs-keyword">this</span><span class="hljs-variable">.id</span> = n;
+      <span class="hljs-keyword">this</span><span class="hljs-variable">.num</span> = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">endfunction</span>
+    <span class="hljs-keyword">function</span> chnl_trans get_trans(); <span class="hljs-comment">//返回一个数据包</span>
+      chnl_trans t = <span class="hljs-keyword">new</span>();
+      t<span class="hljs-variable">.data</span> = <span class="hljs-number">'h00C0_0000</span> + (<span class="hljs-keyword">this</span><span class="hljs-variable">.id</span>&lt;&lt;<span class="hljs-number">16</span>) + <span class="hljs-keyword">this</span><span class="hljs-variable">.num</span>;
+      t<span class="hljs-variable">.id</span> = <span class="hljs-keyword">this</span><span class="hljs-variable">.id</span>;
+      t<span class="hljs-variable">.num</span> = <span class="hljs-keyword">this</span><span class="hljs-variable">.num</span>;
+      <span class="hljs-keyword">this</span><span class="hljs-variable">.num</span>++;
+      <span class="hljs-keyword">this</span><span class="hljs-variable">.trans</span><span class="hljs-variable">.push_back</span>(t);
+      <span class="hljs-keyword">return</span> t;
+    <span class="hljs-keyword">endfunction</span>
+  <span class="hljs-keyword">endclass</span>: chnl_generator
+</div></code></pre>
+<ol start="6">
+<li>将initiator和generator封装在agent中</li>
+</ol>
+<pre class="hljs"><code><div>  <span class="hljs-keyword">class</span> chnl_agent;
+    chnl_generator gen;
+    chnl_initiator init;
+    <span class="hljs-keyword">local</span> <span class="hljs-keyword">int</span> ntrans;
+    <span class="hljs-keyword">virtual</span> chnl_intf vif; <span class="hljs-comment">//没有设置为local是因为才test中需要接口信号来进行判断</span>
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">string</span> name = <span class="hljs-string">"chnl_agent"</span>, <span class="hljs-keyword">int</span> id = <span class="hljs-number">0</span>, <span class="hljs-keyword">int</span> ntrans = <span class="hljs-number">1</span>);
+      <span class="hljs-keyword">this</span><span class="hljs-variable">.gen</span> = <span class="hljs-keyword">new</span>(id);
+      <span class="hljs-keyword">this</span><span class="hljs-variable">.init</span> = <span class="hljs-keyword">new</span>(name);
+      <span class="hljs-keyword">this</span><span class="hljs-variable">.ntrans</span> = ntrans;
+    <span class="hljs-keyword">endfunction</span>
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> set_ntrans(<span class="hljs-keyword">int</span> n);
+      <span class="hljs-keyword">this</span><span class="hljs-variable">.ntrans</span> = n;
+    <span class="hljs-keyword">endfunction</span>
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> set_interface(<span class="hljs-keyword">virtual</span> chnl_intf vif);
+      <span class="hljs-keyword">this</span><span class="hljs-variable">.vif</span> = vif;
+      init<span class="hljs-variable">.set_interface</span>(vif);
+    <span class="hljs-keyword">endfunction</span>
+    <span class="hljs-keyword">task</span> run();
+      <span class="hljs-keyword">repeat</span>(<span class="hljs-keyword">this</span><span class="hljs-variable">.ntrans</span>) <span class="hljs-keyword">this</span><span class="hljs-variable">.init</span><span class="hljs-variable">.chnl_write</span>(<span class="hljs-keyword">this</span><span class="hljs-variable">.gen</span><span class="hljs-variable">.get_trans</span>());<span class="hljs-comment">//通过generator得到数据，通过init发送数据，总共发送ntrans个数据包</span>
+    <span class="hljs-keyword">endtask</span>
+  <span class="hljs-keyword">endclass</span>: chnl_agent
+</div></code></pre>
+<ol start="7">
+<li>root_test类</li>
+</ol>
+<pre class="hljs"><code><div>  <span class="hljs-keyword">class</span> chnl_root_test;
+    chnl_agent agent[<span class="hljs-number">3</span>];
+    <span class="hljs-keyword">protected</span> <span class="hljs-keyword">string</span> name;
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">int</span> ntrans = <span class="hljs-number">100</span>, <span class="hljs-keyword">string</span> name = <span class="hljs-string">"chnl_root_test"</span>);
+      <span class="hljs-keyword">foreach</span>(agent[i]) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">this</span><span class="hljs-variable">.agent</span>[i] = <span class="hljs-keyword">new</span>(<span class="hljs-built_in">$sformatf</span>(<span class="hljs-string">"chnl_agent%0d"</span>,i), i, ntrans); <span class="hljs-comment">// 例化三个agent</span>
+      <span class="hljs-keyword">end</span>
+      <span class="hljs-keyword">this</span><span class="hljs-variable">.name</span> = name;
+      <span class="hljs-built_in">$display</span>(<span class="hljs-string">"%s instantiate objects"</span>, <span class="hljs-keyword">this</span><span class="hljs-variable">.name</span>);
+    <span class="hljs-keyword">endfunction</span>
+    <span class="hljs-keyword">task</span> run();
+      <span class="hljs-built_in">$display</span>(<span class="hljs-string">"%s started testing DUT"</span>, <span class="hljs-keyword">this</span><span class="hljs-variable">.name</span>);
+      <span class="hljs-keyword">fork</span>
+        agent[<span class="hljs-number">0</span>]<span class="hljs-variable">.run</span>();
+        agent[<span class="hljs-number">1</span>]<span class="hljs-variable">.run</span>();
+        agent[<span class="hljs-number">2</span>]<span class="hljs-variable">.run</span>();
+      <span class="hljs-keyword">join</span>
+      <span class="hljs-built_in">$display</span>(<span class="hljs-string">"%s finished testing DUT"</span>, <span class="hljs-keyword">this</span><span class="hljs-variable">.name</span>);
+    <span class="hljs-keyword">endtask</span>
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> set_interface(<span class="hljs-keyword">virtual</span> chnl_intf ch0_vif, <span class="hljs-keyword">virtual</span> chnl_intf ch1_vif, <span class="hljs-keyword">virtual</span> chnl_intf ch2_vif); <span class="hljs-comment">//传递接口</span>
+      agent[<span class="hljs-number">0</span>]<span class="hljs-variable">.set_interface</span>(ch0_vif);
+      agent[<span class="hljs-number">1</span>]<span class="hljs-variable">.set_interface</span>(ch1_vif);
+      agent[<span class="hljs-number">2</span>]<span class="hljs-variable">.set_interface</span>(ch2_vif);
+    <span class="hljs-keyword">endfunction</span>
+  <span class="hljs-keyword">endclass</span>
+</div></code></pre>
+<ol start="8">
+<li>basic_test类</li>
+</ol>
+<pre class="hljs"><code><div>  <span class="hljs-comment">// each channel send data with idle_cycles inside [1:3]</span>
+  <span class="hljs-comment">// each channel send out 200 data</span>
+  <span class="hljs-comment">// then to finish the test</span>
+  <span class="hljs-keyword">class</span> chnl_basic_test <span class="hljs-keyword">extends</span> chnl_root_test;
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">int</span> ntrans = <span class="hljs-number">200</span>, <span class="hljs-keyword">string</span> name = <span class="hljs-string">"chnl_basic_test"</span>); <span class="hljs-comment">//相比于root_test，需要另外设置idle_cycles，通过继承new()函数实现</span>
+      <span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(ntrans, name);
+      <span class="hljs-keyword">foreach</span>(agent[i]) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">this</span><span class="hljs-variable">.agent</span>[i]<span class="hljs-variable">.init</span><span class="hljs-variable">.set_idle_cycles</span>($urandom_range(<span class="hljs-number">1</span>, <span class="hljs-number">3</span>));
+      <span class="hljs-keyword">end</span>
+      <span class="hljs-built_in">$display</span>(<span class="hljs-string">"%s configured objects"</span>, <span class="hljs-keyword">this</span><span class="hljs-variable">.name</span>);
+    <span class="hljs-keyword">endfunction</span>
+  <span class="hljs-keyword">endclass</span>: chnl_basic_test
+</div></code></pre>
+<ol start="9">
+<li>burst_test类</li>
+</ol>
+<pre class="hljs"><code><div>  <span class="hljs-comment">// each channel send data with idle_cycles == 0</span>
+  <span class="hljs-comment">// each channel send out 500 data</span>
+  <span class="hljs-comment">// then to finish the test</span>
+  <span class="hljs-keyword">class</span> chnl_burst_test <span class="hljs-keyword">extends</span> chnl_root_test;
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">int</span> ntrans = <span class="hljs-number">500</span>, <span class="hljs-keyword">string</span> name = <span class="hljs-string">"chnl_burst_test"</span>);
+      <span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(ntrans, name);
+      <span class="hljs-keyword">foreach</span>(agent[i]) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">this</span><span class="hljs-variable">.agent</span>[i]<span class="hljs-variable">.init</span><span class="hljs-variable">.set_idle_cycles</span>(<span class="hljs-number">0</span>);
+      <span class="hljs-keyword">end</span>
+      <span class="hljs-built_in">$display</span>(<span class="hljs-string">"%s configured objects"</span>, <span class="hljs-keyword">this</span><span class="hljs-variable">.name</span>);
+    <span class="hljs-keyword">endfunction</span>
+
+    <span class="hljs-keyword">task</span> run();
+      <span class="hljs-keyword">super</span><span class="hljs-variable">.run</span>(); <span class="hljs-comment">//继承root_test的run()函数</span>
+      <span class="hljs-keyword">fork</span>
+        agent[<span class="hljs-number">0</span>]<span class="hljs-variable">.init</span><span class="hljs-variable">.chnl_idle</span>();
+        agent[<span class="hljs-number">1</span>]<span class="hljs-variable">.init</span><span class="hljs-variable">.chnl_idle</span>();
+        agent[<span class="hljs-number">2</span>]<span class="hljs-variable">.init</span><span class="hljs-variable">.chnl_idle</span>();
+      <span class="hljs-keyword">join</span>
+
+      <span class="hljs-keyword">fork</span>
+        <span class="hljs-keyword">wait</span> (agent[<span class="hljs-number">0</span>]<span class="hljs-variable">.vif</span><span class="hljs-variable">.ch_margin</span> == <span class="hljs-number">'h20</span>);
+        <span class="hljs-keyword">wait</span> (agent[<span class="hljs-number">1</span>]<span class="hljs-variable">.vif</span><span class="hljs-variable">.ch_margin</span> == <span class="hljs-number">'h20</span>);
+        <span class="hljs-keyword">wait</span> (agent[<span class="hljs-number">2</span>]<span class="hljs-variable">.vif</span><span class="hljs-variable">.ch_margin</span> == <span class="hljs-number">'h20</span>);
+      <span class="hljs-keyword">join</span>
+
+      <span class="hljs-built_in">$display</span>(<span class="hljs-string">"burst test finished"</span>);
+    <span class="hljs-keyword">endtask</span>
+  <span class="hljs-keyword">endclass</span>: chnl_burst_test
+</div></code></pre>
+<ol start="10">
+<li>fifo_full_test类</li>
+</ol>
+<pre class="hljs"><code><div>  <span class="hljs-comment">// The test should be immediately finished when all of channels</span>
+  <span class="hljs-comment">// have been reached fifo full state, but not all reaching</span>
+  <span class="hljs-comment">// fifo full at the same time</span>
+  <span class="hljs-keyword">class</span> chnl_fifo_full_test <span class="hljs-keyword">extends</span> chnl_root_test;
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">int</span> ntrans = <span class="hljs-number">20000</span>, <span class="hljs-keyword">string</span> name = <span class="hljs-string">"fifo_full_test"</span>);
+      <span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(ntrans, name);
+      <span class="hljs-keyword">foreach</span>(agent[i]) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">this</span><span class="hljs-variable">.agent</span>[i]<span class="hljs-variable">.init</span><span class="hljs-variable">.set_idle_cycles</span>(<span class="hljs-number">0</span>);
+      <span class="hljs-keyword">end</span>
+      <span class="hljs-built_in">$display</span>(<span class="hljs-string">"%s configured objects"</span>, <span class="hljs-keyword">this</span><span class="hljs-variable">.name</span>);
+    <span class="hljs-keyword">endfunction</span>
+
+    <span class="hljs-keyword">task</span> run(); <span class="hljs-comment">//重写并覆盖root_test的run函数，因为需要将root_test中的fork...join修改为fork...join_none，这个无法通过继承实现</span>
+      <span class="hljs-keyword">fork</span>:fifo_full_test
+        agent[<span class="hljs-number">0</span>]<span class="hljs-variable">.run</span>();
+        agent[<span class="hljs-number">1</span>]<span class="hljs-variable">.run</span>();
+        agent[<span class="hljs-number">2</span>]<span class="hljs-variable">.run</span>();
+      <span class="hljs-keyword">join_none</span>
+
+      <span class="hljs-keyword">fork</span>
+        <span class="hljs-keyword">wait</span> (agent[<span class="hljs-number">0</span>]<span class="hljs-variable">.vif</span><span class="hljs-variable">.ch_margin</span> == <span class="hljs-number">'h0</span>);
+        <span class="hljs-keyword">wait</span> (agent[<span class="hljs-number">1</span>]<span class="hljs-variable">.vif</span><span class="hljs-variable">.ch_margin</span> == <span class="hljs-number">'h0</span>);
+        <span class="hljs-keyword">wait</span> (agent[<span class="hljs-number">2</span>]<span class="hljs-variable">.vif</span><span class="hljs-variable">.ch_margin</span> == <span class="hljs-number">'h0</span>);
+      <span class="hljs-keyword">join</span>
+
+      <span class="hljs-keyword">disable</span> fifo_full_test;
+
+      <span class="hljs-keyword">fork</span>
+        agent[<span class="hljs-number">0</span>]<span class="hljs-variable">.init</span><span class="hljs-variable">.chnl_idle</span>();
+        agent[<span class="hljs-number">1</span>]<span class="hljs-variable">.init</span><span class="hljs-variable">.chnl_idle</span>();
+        agent[<span class="hljs-number">2</span>]<span class="hljs-variable">.init</span><span class="hljs-variable">.chnl_idle</span>();
+      <span class="hljs-keyword">join</span>
+
+      <span class="hljs-keyword">fork</span>
+        <span class="hljs-keyword">wait</span> (agent[<span class="hljs-number">0</span>]<span class="hljs-variable">.vif</span><span class="hljs-variable">.ch_margin</span> == <span class="hljs-number">'h20</span>);
+        <span class="hljs-keyword">wait</span> (agent[<span class="hljs-number">1</span>]<span class="hljs-variable">.vif</span><span class="hljs-variable">.ch_margin</span> == <span class="hljs-number">'h20</span>);
+        <span class="hljs-keyword">wait</span> (agent[<span class="hljs-number">2</span>]<span class="hljs-variable">.vif</span><span class="hljs-variable">.ch_margin</span> == <span class="hljs-number">'h20</span>);
+      <span class="hljs-keyword">join</span>
+
+      <span class="hljs-built_in">$display</span>(<span class="hljs-string">"burst test finished"</span>);
+    <span class="hljs-keyword">endtask</span>
+
+  <span class="hljs-keyword">endclass</span>: chnl_fifo_full_test
+
+</div></code></pre>
+<ol start="11">
+<li>结束验证环境包</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">endpackage</span>: chnl_pkg
+</div></code></pre>
+<ol start="12">
+<li>testbench</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">module</span> tb4;
+  <span class="hljs-keyword">logic</span>         clk;
+  <span class="hljs-keyword">logic</span>         rstn;
+  <span class="hljs-keyword">logic</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>]  mcdt_data;
+  <span class="hljs-keyword">logic</span>         mcdt_val;
+  <span class="hljs-keyword">logic</span> [ <span class="hljs-number">1</span>:<span class="hljs-number">0</span>]  mcdt_id;
+  
+  mcdt dut(
+     <span class="hljs-variable">.clk_i</span>       (clk                )
+    ,<span class="hljs-variable">.rstn_i</span>      (rstn               )
+    ,<span class="hljs-variable">.ch0_data_i</span>  (chnl0_if<span class="hljs-variable">.ch_data</span>   )
+    ,<span class="hljs-variable">.ch0_valid_i</span> (chnl0_if<span class="hljs-variable">.ch_valid</span>  )
+    ,<span class="hljs-variable">.ch0_ready_o</span> (chnl0_if<span class="hljs-variable">.ch_ready</span>  )
+    ,<span class="hljs-variable">.ch0_margin_o</span>(chnl0_if<span class="hljs-variable">.ch_margin</span> )
+    ,<span class="hljs-variable">.ch1_data_i</span>  (chnl1_if<span class="hljs-variable">.ch_data</span>   )
+    ,<span class="hljs-variable">.ch1_valid_i</span> (chnl1_if<span class="hljs-variable">.ch_valid</span>  )
+    ,<span class="hljs-variable">.ch1_ready_o</span> (chnl1_if<span class="hljs-variable">.ch_ready</span>  )
+    ,<span class="hljs-variable">.ch1_margin_o</span>(chnl1_if<span class="hljs-variable">.ch_margin</span> )
+    ,<span class="hljs-variable">.ch2_data_i</span>  (chnl2_if<span class="hljs-variable">.ch_data</span>   )
+    ,<span class="hljs-variable">.ch2_valid_i</span> (chnl2_if<span class="hljs-variable">.ch_valid</span>  )
+    ,<span class="hljs-variable">.ch2_ready_o</span> (chnl2_if<span class="hljs-variable">.ch_ready</span>  )
+    ,<span class="hljs-variable">.ch2_margin_o</span>(chnl2_if<span class="hljs-variable">.ch_margin</span> )
+    ,<span class="hljs-variable">.mcdt_data_o</span> (mcdt_data          )
+    ,<span class="hljs-variable">.mcdt_val_o</span>  (mcdt_val           )
+    ,<span class="hljs-variable">.mcdt_id_o</span>   (mcdt_id            )
+  );
+  
+  <span class="hljs-comment">// clock generation</span>
+  <span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span> 
+    clk &lt;= <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">forever</span> <span class="hljs-keyword">begin</span>
+      #<span class="hljs-number">5</span> clk &lt;= !clk;
+    <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">end</span>
+  
+  <span class="hljs-comment">// reset trigger</span>
+  <span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span> 
+    #<span class="hljs-number">10</span> rstn &lt;= <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">repeat</span>(<span class="hljs-number">10</span>) @(<span class="hljs-keyword">posedge</span> clk);
+    rstn &lt;= <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">end</span>
+
+  <span class="hljs-comment">// import defined class from chnl_pkg</span>
+  <span class="hljs-keyword">import</span> chnl_pkg::*;
+
+  chnl_intf chnl0_if(.*);
+  chnl_intf chnl1_if(.*);
+  chnl_intf chnl2_if(.*);
+
+  chnl_basic_test basic_test;
+  chnl_burst_test burst_test;
+  chnl_fifo_full_test fifo_full_test;
+
+  <span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span> 
+    <span class="hljs-comment">// Instantiate the three test environment</span>
+    basic_test = <span class="hljs-keyword">new</span>();
+    burst_test = <span class="hljs-keyword">new</span>();
+    fifo_full_test = <span class="hljs-keyword">new</span>();
+
+    <span class="hljs-comment">// assign the interface handle to each chnl_initiator objects</span>
+    basic_test<span class="hljs-variable">.set_interface</span>(chnl0_if, chnl1_if, chnl2_if);
+    burst_test<span class="hljs-variable">.set_interface</span>(chnl0_if, chnl1_if, chnl2_if);
+    fifo_full_test<span class="hljs-variable">.set_interface</span>(chnl0_if, chnl1_if, chnl2_if);
+
+    <span class="hljs-comment">// START TESTs</span>
+    basic_test<span class="hljs-variable">.run</span>();
+    burst_test<span class="hljs-variable">.run</span>();
+    fifo_full_test<span class="hljs-variable">.run</span>();
+    <span class="hljs-built_in">$display</span>(<span class="hljs-string">"*****************all of tests have been finished********************"</span>);
+    <span class="hljs-built_in">$finish</span>();
+  <span class="hljs-keyword">end</span>
+
+<span class="hljs-keyword">endmodule</span>
+</div></code></pre>
+<p><strong>验证环境示意图</strong></p>
+<div align = center><img width = '500' height ='800' src ="lab2.drawio.png"></div>
+<h1 id="1028">10.28</h1>
+<h2 id="foreach-%E5%92%8C-forkjoin%E9%85%8D%E5%90%88%E4%BD%BF%E7%94%A8">foreach 和 fork...join配合使用</h2>
+<pre class="hljs"><code><div><span class="hljs-keyword">fork</span>
+    agent[<span class="hljs-number">0</span>]<span class="hljs-variable">.run</span>();
+    agent[<span class="hljs-number">1</span>]<span class="hljs-variable">.run</span>();
+    agent[<span class="hljs-number">2</span>]<span class="hljs-variable">.run</span>();
+<span class="hljs-keyword">join</span>
+</div></code></pre>
+<p>上述代码可以用foreach循环来简化</p>
+<ol>
+<li>使用 <code>fork begin ... end join</code> 来隔离线程，防止 <code>wait join</code> 对之前的线程产生影响。</li>
+<li>使用内部定义变量来代替foreach的循环变量，因为每个独立线程需要独立变量，而foreach中的循环变量是同一个</li>
+<li>利用 <code>fork ... join_none</code> 来实现每个循环中的函数同时并行运行。</li>
+<li>利用 <code>wait fork;</code> 来等待前面所有并行线程的结束，实现 <code>fork ... join</code> 的效果</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">fork</span> <span class="hljs-keyword">begin</span>
+    <span class="hljs-keyword">foreach</span> (agent[i]) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">automatic</span> <span class="hljs-keyword">int</span> j = i;
+        <span class="hljs-keyword">fork</span>
+          agent[j]<span class="hljs-variable">.run</span>();
+        <span class="hljs-keyword">join_none</span>
+    <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">wait</span> <span class="hljs-keyword">fork</span>;
+<span class="hljs-keyword">end</span>
+<span class="hljs-keyword">join</span>
+</div></code></pre>
+<p><strong>注意这个 <code>begin ... end</code> 非常重要，没有它会使 <code>wait fork;</code> 成为一个独立的线程，无法控制之前的 <code>fork ... join_none</code></strong></p>
+<div align = center><img width = '450' height ='300' src ="2.drawio.png"></div>
+<h1 id="1029">10.29</h1>
+<h2 id="rkv-%E9%AA%8C%E8%AF%81%E9%80%9A%E8%AF%86">RKV 验证通识</h2>
+<p>验证周期 - 模块，子系统，系统，门级网表<br>
+验证管理<br>
+改进ysyxCPU<br>
+https://github.com/sray0309/RISC-V-Processor-design</p>
+<h1 id="1030">10.30</h1>
+<h2 id="%E6%94%B9%E8%BF%9Bysyxcpu">改进ysyxCPU</h2>
+<p><strong>完成重写IF stage，将regfile从顶层放入id stage</strong></p>
+<ol>
+<li><code>inst_addr</code> 和 <code>inst</code> 是同周期送出及返回的，相当于inst memory读取数据在一个周期即可完成</li>
+</ol>
+<h2 id="rkv-%E9%AA%8C%E8%AF%81">RKV 验证</h2>
+<ol>
+<li>验证收敛</li>
+<li>问题追踪
+<ul>
+<li>系统功能定义问题</li>
+<li>硬件设计问题</li>
+<li>验证环境问题</li>
+<li>综合时序问题</li>
+<li>硅前工具问题</li>
+<li>引用库和IP问题</li>
+</ul>
+</li>
+</ol>
+<h1 id="1031">10.31</h1>
+<h2 id="systemverilog-%E9%9A%8F%E6%9C%BA%E4%B8%8E%E7%BA%A6%E6%9D%9F">SystemVerilog 随机与约束</h2>
+<h3 id="%E9%9A%8F%E6%9C%BA%E7%BA%A6%E6%9D%9F%E4%B8%8E%E5%88%86%E5%B8%83">随机约束与分布</h3>
+<ol>
+<li>随机内容
+<ul>
+<li>器件配置</li>
+<li>环境配置</li>
+<li>原始输入数据</li>
+<li>延时</li>
+<li>协议异常</li>
+</ul>
+</li>
+<li>声明随机变量的类
+<ul>
+<li><code>rand</code> 表明随机属性，只有类的成员变量可以随机</li>
+<li><code>randc</code> 表示周期随机性，表示所有可能的值都赋过随机值后才可能重复</li>
+<li>随机属性需要配合预定义的类随机函数 <code>std::randomize()</code> 使用，只有通过声明 <code>rand</code> 变量，在后期可以通过对象调用 <code>randomize()</code> 函数才可以随机化变量</li>
+<li>约束 <code>constraint</code> 也同随机变量一起在类中声明</li>
+</ul>
+</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> Packet;
+    <span class="hljs-keyword">rand</span> <span class="hljs-keyword">bit</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] src, dst, data[<span class="hljs-number">8</span>];
+    <span class="hljs-keyword">randc</span> <span class="hljs-keyword">bit</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] kind;
+
+    <span class="hljs-keyword">constraint</span> c {
+        src &gt; <span class="hljs-number">10</span>;
+        src &lt; <span class="hljs-number">15</span>;
+    }
+<span class="hljs-keyword">endclass</span>
+
+Packet p;
+
+<span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+    p = <span class="hljs-keyword">new</span>();
+    <span class="hljs-keyword">assert</span> (p<span class="hljs-variable">.randomize</span>()) <span class="hljs-keyword">else</span> <span class="hljs-built_in">$fatal</span>(<span class="hljs-number">0</span>, <span class="hljs-string">"Packet::randomize failed"</span>);
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<ol start="3">
+<li>SV只能随机出两值逻辑，随机不出来x和z</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> data;
+    <span class="hljs-keyword">rand</span> <span class="hljs-keyword">bit</span> [<span class="hljs-number">2</span>:<span class="hljs-number">0</span>] month;
+    <span class="hljs-keyword">rand</span> <span class="hljs-keyword">bit</span> [<span class="hljs-number">4</span>:<span class="hljs-number">0</span>] day;
+    <span class="hljs-keyword">rand</span> <span class="hljs-keyword">int</span> year;
+    <span class="hljs-keyword">constraint</span> c_date {
+        month <span class="hljs-keyword">inside</span> {[<span class="hljs-number">1</span>:<span class="hljs-number">12</span>]}; <span class="hljs-comment">//注意month的位宽，最大值为7，随机不出来大于7的数</span>
+        day <span class="hljs-keyword">inside</span> {[<span class="hljs-number">1</span>:<span class="hljs-number">31</span>]};
+        year <span class="hljs-keyword">inside</span> {[<span class="hljs-number">2010</span>:<span class="hljs-number">2030</span>]}; 
+    }
+<span class="hljs-keyword">endclass</span>
+</div></code></pre>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> Stim;
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">bit</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] CONGEST_ADDR = <span class="hljs-number">42</span>;
+
+    <span class="hljs-keyword">typedef</span> <span class="hljs-keyword">enum</span> {READ, WRITE, CONTROL} stim_e;
+    <span class="hljs-keyword">randc</span> stim_e kind;
+    <span class="hljs-keyword">rand</span> <span class="hljs-keyword">bit</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] len, src, dst;
+    <span class="hljs-keyword">bit</span> congestion_test;
+
+    <span class="hljs-keyword">constraint</span> c_stim {
+        len &lt; <span class="hljs-number">1000</span>;
+        len &gt; <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">if</span> (congestion_test) {
+            dst insede {[CONGEST_ADDR-<span class="hljs-number">100</span>:CONGEST_ADDR+<span class="hljs-number">100</span>]};
+            src == CONGEST_ADDR;
+        }
+        <span class="hljs-keyword">else</span>
+        src <span class="hljs-keyword">inside</span> {<span class="hljs-number">0</span>, [<span class="hljs-number">2</span>:<span class="hljs-number">10</span>], [<span class="hljs-number">100</span>:<span class="hljs-number">107</span>]};
+    }
+<span class="hljs-keyword">endclass</span>
+</div></code></pre>
+<ol start="4">
+<li>权重分布
+<ul>
+<li><code>dist</code> 在约束中用来产生随机数值的权重分布，值或权重可以是常数或者变量</li>
+<li>权重不用百分比表示，权重的和也可以不是100</li>
+<li><code>:=</code> 表示范围内每一个值的权重是相同的，<code>:/</code> 表示权重要平均分到值范围内的每一个值</li>
+</ul>
+</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">rand</span> <span class="hljs-keyword">int</span> src, dst;
+<span class="hljs-keyword">constraint</span> c_dist {
+    src <span class="hljs-keyword">dist</span> {<span class="hljs-number">0</span>:=<span class="hljs-number">40</span>, [<span class="hljs-number">1</span>:<span class="hljs-number">3</span>]:=<span class="hljs-number">60</span>};
+    <span class="hljs-comment">// src = 0, weight = 40/220</span>
+    <span class="hljs-comment">// src = 1, weight = 60/220</span>
+    <span class="hljs-comment">// src = 2, weight = 60/220</span>
+    <span class="hljs-comment">// src = 3, weight = 60/220</span>
+    dst <span class="hljs-keyword">dist</span> {<span class="hljs-number">0</span>:/<span class="hljs-number">40</span>, [<span class="hljs-number">1</span>:<span class="hljs-number">3</span>]:/<span class="hljs-number">60</span>};
+    <span class="hljs-comment">// dst = 0, weight = 40/100</span>
+    <span class="hljs-comment">// dst = 1, weight = 20/100</span>
+    <span class="hljs-comment">// dst = 2, weight = 20/100</span>
+    <span class="hljs-comment">// dst = 3, weight = 20/100</span>
+}
+</div></code></pre>
+<ol start="5">
+<li><code>inside</code> 运算符
+<ul>
+<li>表示变量应该属于某一个值的集合，在集合里取值的概率是相等的</li>
+<li>可以使用 <code>$</code> 指定最大值和最小值</li>
+</ul>
+</li>
+<li>条件约束
+<ul>
+<li>可以通过 <code>-&gt;</code> 让一个约束表达式在特定时刻有效</li>
+</ul>
+</li>
+</ol>
+<pre class="hljs"><code><div>    <span class="hljs-keyword">constraint</span> c_io {
+        (io_space_mode) -&gt; addr[<span class="hljs-number">31</span>] == <span class="hljs-number">1'b1</span>;
+    }
+</div></code></pre>
+<ol start="7">
+<li>双向约束
+<ul>
+<li>约束块不是自上向下的程序性代码，是并行的，所有的约束表达式同时有效</li>
+<li>约束是双向的，所有随机变量的约束会同时计算，增加或删除任何一个变量的约束都会直接或间接影响所有相关的值的选取</li>
+</ul>
+</li>
+</ol>
+<h3 id="%E7%BA%A6%E6%9D%9F%E5%BF%AB%E6%8E%A7%E5%88%B6">约束快控制</h3>
+<ol>
+<li>打开或关闭约束
+<ul>
+<li>一个类可以包含多个约束块，一般各个约束块之间的约束内容是互相协调不违背的，其他情况可根据需要选择使能哪些约束快，禁止哪些约束快。</li>
+<li>使用 <code>constraint_mode()</code> 函数打开或者关闭约束</li>
+</ul>
+</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> Packet;
+    <span class="hljs-keyword">rand</span> <span class="hljs-keyword">int</span> length
+    <span class="hljs-keyword">constraint</span> c_short {
+        lenth <span class="hljs-keyword">inside</span> {[<span class="hljs-number">1</span>:<span class="hljs-number">31</span>]};
+    }
+    <span class="hljs-keyword">constraint</span> c_long {
+        length <span class="hljs-keyword">inside</span> {[<span class="hljs-number">1000</span>:<span class="hljs-number">1023</span>]};
+    }
+<span class="hljs-keyword">endclass</span>
+
+Packet p;
+<span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+    p = <span class="hljs-keyword">new</span>();
+    p<span class="hljs-variable">.c_short</span><span class="hljs-variable">.constraint_mode</span>(<span class="hljs-number">0</span>);<span class="hljs-comment">// create long packet</span>
+    <span class="hljs-keyword">assert</span> (p<span class="hljs-variable">.randomize</span>());
+    transmit(p);
+
+    p<span class="hljs-variable">.constraint_mode</span>(<span class="hljs-number">0</span>);
+    p<span class="hljs-variable">.c_short</span><span class="hljs-variable">.constraint_mode</span>(<span class="hljs-number">1</span>);<span class="hljs-comment">// create short packet</span>
+    <span class="hljs-keyword">assert</span> (p<span class="hljs-variable">.randomize</span>());
+    transmit(p);
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<ol start="2">
+<li>内嵌约束
+<ul>
+<li>SV允许使用 <code>randomize() with</code> 来增加额外的约束，要注意内部约束和外部约束之间应该是协调的。</li>
+<li>软约束 <code>soft</code> 可以允许当外部或其他约束与当前约束有冲突时，替换掉当前约束</li>
+</ul>
+</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> Transaction;
+    <span class="hljs-keyword">rand</span> <span class="hljs-keyword">bit</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] addr, data;
+    <span class="hljs-keyword">constraint</span> c1 {
+        <span class="hljs-keyword">soft</span> addr <span class="hljs-keyword">inside</span> {[<span class="hljs-number">0</span>:<span class="hljs-number">100</span>], [<span class="hljs-number">1000</span>:<span class="hljs-number">2000</span>];}
+    }
+<span class="hljs-keyword">endclass</span>
+
+Transaction t;
+
+<span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+    t = <span class="hljs-keyword">new</span>();
+    <span class="hljs-keyword">assert</span> (t<span class="hljs-variable">.randomize</span>() <span class="hljs-keyword">with</span> {addr &gt;= <span class="hljs-number">50</span>; addr &lt;= <span class="hljs-number">1500</span>; data &lt; <span class="hljs-number">10</span>;});
+
+    draveBus(t);
+
+    <span class="hljs-keyword">assert</span> (t<span class="hljs-variable">.randomize</span>() <span class="hljs-keyword">with</span> {addr == <span class="hljs-number">2000</span>; data &gt; <span class="hljs-number">10</span>;});
+    driveBus(t);
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<h3 id="%E9%9A%8F%E6%9C%BA%E5%87%BD%E6%95%B0">随机函数</h3>
+<ol>
+<li><code>pre_randomize()</code> 和 <code>post_randomize()</code>
+<ul>
+<li>可以在类中定义上述两个函数，分别在其中定义随机化前的行为和随机化后的行为。对象在执行 <code>randomize()</code> 之前或之后会分别执行这两个函数。</li>
+<li>这两个函数可以看做是 <code>randomize()</code> 函数的回调函数</li>
+</ul>
+</li>
+<li>随机数函数
+<ul>
+<li><code>$random()</code> 平均分布，返回32位有符号随机数</li>
+<li><code>$urandom()</code> 平均分布，返回32位无符号随机数</li>
+<li><code>$urandom_range()</code> 在指定范围内的平均分布</li>
+</ul>
+</li>
+<li>随机化个别变量
+<ul>
+<li>在调用 <code>randomize()</code> 时可以传递变量的一个子集，这样只会随机化类里的几个变量</li>
+<li>只有参数列表里的变量才会被随机化，其他变量会被当作状态变量而不会被随机化</li>
+<li>所有的约束仍然保持有效</li>
+<li>类里所有被指定或者没有被指定rand的变量都可以作为 <code>randomize()</code> 的参数而被随机化</li>
+</ul>
+</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> Rising;
+    <span class="hljs-keyword">byte</span> low;
+    <span class="hljs-keyword">rand</span> <span class="hljs-keyword">byte</span> med, hi;
+    <span class="hljs-keyword">constraint</span> up {
+        low &lt; med;
+        med &lt; hi;
+    }
+<span class="hljs-keyword">endclass</span>
+
+<span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+    Rising r;
+    r = <span class="hljs-keyword">new</span>();
+    r<span class="hljs-variable">.randomize</span>(); <span class="hljs-comment">// 随机化hi，但不改变low</span>
+    r<span class="hljs-variable">.randomize</span>(med); <span class="hljs-comment">// 只随机化med</span>
+    r<span class="hljs-variable">.randomize</span>(low); <span class="hljs-comment">// 只随机化low</span>
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<p><strong>上述代码如果在initial中只做 <code>r.randomize(low)</code> 会报错，因为med和hi的初始值都为0，不满足 <code>med &lt; hi</code> 的约束条件，因此整个随机会报错。</strong></p>
+
+</body>
+</html>

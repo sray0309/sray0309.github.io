@@ -357,7 +357,6 @@ code {
 <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
 </head>
 <body>
-  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   <script>
     mermaid.initialize({
       startOnLoad: true,
@@ -374,12 +373,12 @@ code {
 <li>The <strong>throughput</strong> of an instruction pipeline is determined by how often an instruction exits the pipeline.</li>
 <li>The time required between moving an instruction one step down the pipeline is a <strong>processor cycle</strong></li>
 <li>The length of aprocessor cycle is determined by the time required for the <strong>slowest pipe stage</strong></li>
-<li>Designer's goal is to balance the length of each pipeline stage. The ideal time per instruction is equal to<br>
-$$\frac{Time\ per\ instruction\ on\ unpipelined\ machine}{Number\ of\ pipe\ stages}$$</li>
-<li>Ideally the speedup from pipelining equals the number of pipe stages. However, the stages will not be perfectly balanced and pipelining does involve some overhead.</li>
-<li><strong>Thus, the time per instruction on the pepelined processor will not have its minimum possible value. Pipelining yields a reduction in the average execution time per instruction. Pipelining reduces the CPI</strong></li>
-<li>Pipelining is an implementation technique that exploits parallelism among the instructins in a sequentilal instruction stream. It is not visible to the programmer.</li>
+<li>Designer's goal is to balance the length of each pipeline stage. The ideal time per instruction is equal to</li>
 </ol>
+<div align = center><img width = '300' height ='45' src ="8.png"></div>
+6. Ideally the speedup from pipelining equals the number of pipe stages. However, the stages will not be perfectly balanced and pipelining does involve some overhead.
+7. **Thus, the time per instruction on the pepelined processor will not have its minimum possible value. Pipelining yields a reduction in the average execution time per instruction. Pipelining reduces the CPI**
+8. Pipelining is an implementation technique that exploits parallelism among the instructins in a sequentilal instruction stream. It is not visible to the programmer.
 <h1 id="the-basics-of-the-risc-v-instruction-set-and-pipeline"><strong>The Basics of the RISC-V Instruction Set and Pipeline</strong></h1>
 <h2 id="all-risc-architectures-features"><strong>All RISC architectures' features</strong></h2>
 <ol>
