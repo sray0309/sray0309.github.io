@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2021.11.1-2021.11.5</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="111">11.1</h1>
+<h2 id="%E6%95%B0%E7%BB%84%E7%BA%A6%E6%9D%9F">数组约束</h2>
+<ol>
+<li>数组的大小
+<ul>
+<li>数组大小应该给定范围，防止生成过大体积的数组或者空数组</li>
+<li>此外还可以在约束中结合数组的其他方法 <code>sum(), product(), and(), or(), xor()</code> 。</li>
+</ul>
+</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> dyn_size;
+    <span class="hljs-keyword">rand</span> <span class="hljs-keyword">logic</span> [<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] d[];
+    <span class="hljs-keyword">constraint</span> d_size {d<span class="hljs-variable">.size</span>() <span class="hljs-keyword">inside</span> {[<span class="hljs-number">1</span>:<span class="hljs-number">10</span>]};}
+<span class="hljs-keyword">endclass</span>
+</div></code></pre>
+<ol start="2">
+<li>约束数组中的元素
+<ul>
+<li>利用  <code>foreach</code> 对数组的每一个元素进行约束，<code>foreach</code> 适合对非固定大小数组中每个元素的约束。</li>
+</ul>
+</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> good_sum5;
+    <span class="hljs-keyword">rand</span> <span class="hljs-keyword">int</span> len[];
+    <span class="hljs-keyword">constraint</span> c_len {
+        <span class="hljs-keyword">foreach</span> (len[i]) len[i] <span class="hljs-keyword">inside</span> {[<span class="hljs-number">1</span>:<span class="hljs-number">255</span>]};
+        len<span class="hljs-variable">.sum</span>() &lt; <span class="hljs-number">1024</span>;
+        len<span class="hljs-variable">.size</span>() insede {[<span class="hljs-number">1</span>:<span class="hljs-number">8</span>]};
+    }
+<span class="hljs-keyword">endclass</span>
+</div></code></pre>
+<ol start="3">
+<li>产生唯一元素值的数组</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> UniqueSlow;
+    <span class="hljs-keyword">rand</span> <span class="hljs-keyword">bit</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] ua[<span class="hljs-number">64</span>];
+    <span class="hljs-keyword">constraint</span> c {
+        <span class="hljs-keyword">foreach</span> (ua[i])
+            <span class="hljs-keyword">foreach</span> (ua[j])
+                <span class="hljs-keyword">if</span> (i != j) ua[i] != ua[j];
+    }
+<span class="hljs-keyword">endclass</span>
+</div></code></pre>
+<p><strong>也可以用randc辅助生成唯一元素值的数组</strong></p>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> randc8;
+    <span class="hljs-keyword">randc</span> <span class="hljs-keyword">bit</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] val;
+<span class="hljs-keyword">endclass</span>
+<span class="hljs-keyword">class</span> LittleUniqueArray;
+    <span class="hljs-keyword">bit</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] ua [<span class="hljs-number">64</span>];
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> pre_randomize();
+        randc8 rc8;
+        rc8 = <span class="hljs-keyword">new</span>(); <span class="hljs-comment">// 注意不能再foreach里例化</span>
+        <span class="hljs-keyword">foreach</span> (ua[i]) <span class="hljs-keyword">begin</span>
+            <span class="hljs-keyword">assert</span> (rc8<span class="hljs-variable">.randomize</span>());
+            ua[i] = rc8<span class="hljs-variable">.val</span>;
+        <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">endfunction</span>
+<span class="hljs-keyword">endclass</span>
+</div></code></pre>
+<ol start="4">
+<li>随机化句柄数组
+<ul>
+<li>随机函数会随机化数组中的每一个句柄所指向的对象，调用随机函数前要保证句柄数组中的每一个句柄元素都是非悬空的</li>
+<li>如果要产生多个随机对象，需要在随机化前分配所有的元素，随机求解器不会创建对象</li>
+<li>随机化时，动态句柄数组的大小可以保持不变或减小，但不能增加</li>
+</ul>
+</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">parameter</span> MAX_SIZE = <span class="hljs-number">10</span>;
+
+<span class="hljs-keyword">class</span> RandStuff;
+    <span class="hljs-keyword">rand</span> <span class="hljs-keyword">bit</span> [<span class="hljs-number">1</span>:<span class="hljs-number">0</span>] value = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">endclass</span>
+
+<span class="hljs-keyword">class</span> RandArray;
+    <span class="hljs-keyword">rand</span> RandStuff array[];
+    <span class="hljs-keyword">constraint</span> c {
+        array<span class="hljs-variable">.size</span> () <span class="hljs-keyword">inside</span> {[<span class="hljs-number">1</span>:MAX_SIZE]};
+    }
+
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>();
+        array = <span class="hljs-keyword">new</span>[MAX_SIZE];
+        <span class="hljs-keyword">foreach</span> (array[i])
+            array[i] = <span class="hljs-keyword">new</span>();
+    <span class="hljs-keyword">endfunction</span>
+<span class="hljs-keyword">endclass</span>
+
+RandArray ra;
+
+<span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+    ra = <span class="hljs-keyword">new</span>();
+    <span class="hljs-keyword">assert</span> (ra<span class="hljs-variable">.randomize</span>()); <span class="hljs-comment">//随机化数组，可能会减小数组大小</span>
+    <span class="hljs-keyword">foreach</span> (ar<span class="hljs-variable">.array</span>[i])
+        <span class="hljs-built_in">$display</span> (ra<span class="hljs-variable">.array</span>[i]<span class="hljs-variable">.value</span>);
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<h2 id="%E9%9A%8F%E6%9C%BA%E6%8E%A7%E5%88%B6">随机控制</h2>
+<ol>
+<li>随机序列：随机产生事务序列</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>; i&lt;<span class="hljs-number">15</span>; i++) <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">randsequence</span> (steam)
+            stream: cfg_read := <span class="hljs-number">1</span> |
+                    io_read := <span class="hljs-number">2</span> | 
+                    mem_read := <span class="hljs-number">5</span>;
+            cfg_read: {cfg_read_task;} | <span class="hljs-comment">// | 是分隔符，表示50%可能执行|之前的内容，也有50%可能执行|后的内容</span>
+                      {cfg_read_task;} cfg_read;
+            mem_read: {mem_read_task;} |
+                      {mem_read_task;} mem_read;
+            io_read:  {io_read_task;} |
+                      {io_read_task;} io_read;
+        <span class="hljs-keyword">endsequence</span>
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<ol start="2">
+<li>随机决策树</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+    <span class="hljs-keyword">int</span> len;
+    <span class="hljs-keyword">randcase</span>
+        <span class="hljs-number">1</span>: len = $urandom_range(<span class="hljs-number">0</span>, <span class="hljs-number">2</span>); <span class="hljs-comment">// 10%</span>
+        <span class="hljs-number">8</span>: len = $urandom_range(<span class="hljs-number">3</span>, <span class="hljs-number">5</span>); <span class="hljs-comment">// 80%</span>
+        <span class="hljs-number">1</span>: len = $urandom_range(<span class="hljs-number">6</span>, <span class="hljs-number">7</span>); <span class="hljs-comment">// 10%</span>
+    <span class="hljs-keyword">endcase</span>
+    <span class="hljs-built_in">$display</span>(<span class="hljs-string">"len=%0d"</span>, len);
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<h2 id="%E5%AD%90%E7%B1%BB%E7%BA%A6%E6%9D%9F%E5%92%8C%E7%88%B6%E7%B1%BB%E7%BA%A6%E6%9D%9F">子类约束和父类约束</h2>
+<ol>
+<li>子类约束与父类约束同名：子类约束覆盖父类约束</li>
+<li>子类约束与父类约束不同命：子类约束继承父类约束（子类和父类的约束要求同时满足）
+<br></br></li>
+</ol>
+<h1 id="112">11.2</h1>
+<p>复习RISC-V指令集
+<br></br></p>
+<h1 id="113">11.3</h1>
+<p>复习RISC-V指令集
+SV实验3</p>
+<ol>
+<li>每个类中的 <code>local static int obj_id;</code> 整个仿真过程中只有一个还是每个类中都有一个？
+<ul>
+<li><code>static</code> 静态变量被这个类的所有实例所共享</li>
+</ul>
+</li>
+</ol>
+<h1 id="114">11.4</h1>
+<p>SV实验3</p>
+<ol>
+<li>丰富transaction类</li>
+</ol>
+<pre class="hljs"><code><div>  <span class="hljs-keyword">class</span> chnl_trans;
+    <span class="hljs-keyword">rand</span> <span class="hljs-keyword">bit</span>[<span class="hljs-number">31</span>:<span class="hljs-number">0</span>] data[];
+    <span class="hljs-keyword">rand</span> <span class="hljs-keyword">int</span> ch_id;
+    <span class="hljs-keyword">rand</span> <span class="hljs-keyword">int</span> pkt_id;
+    <span class="hljs-keyword">rand</span> <span class="hljs-keyword">int</span> data_nidles;
+    <span class="hljs-keyword">rand</span> <span class="hljs-keyword">int</span> pkt_nidles;
+    <span class="hljs-keyword">bit</span> rsp;
+    <span class="hljs-keyword">local</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> obj_id = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">constraint</span> cstr{
+      data<span class="hljs-variable">.size</span> <span class="hljs-keyword">inside</span> {[<span class="hljs-number">4</span>:<span class="hljs-number">8</span>]};
+      <span class="hljs-keyword">foreach</span>(data[i]) data[i] == <span class="hljs-number">'hC000_0000</span> + (<span class="hljs-keyword">this</span><span class="hljs-variable">.ch_id</span>&lt;&lt;<span class="hljs-number">24</span>) + (<span class="hljs-keyword">this</span><span class="hljs-variable">.pkt_id</span>&lt;&lt;<span class="hljs-number">8</span>) + i;
+      <span class="hljs-keyword">soft</span> ch_id == <span class="hljs-number">0</span>;
+      <span class="hljs-keyword">soft</span> pkt_id == <span class="hljs-number">0</span>;
+      data_nidles <span class="hljs-keyword">inside</span> {[<span class="hljs-number">0</span>:<span class="hljs-number">2</span>]};
+      pkt_nidles <span class="hljs-keyword">inside</span> {[<span class="hljs-number">1</span>:<span class="hljs-number">10</span>]};
+    };
+
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>();
+      <span class="hljs-keyword">this</span><span class="hljs-variable">.obj_id</span>++;
+    <span class="hljs-keyword">endfunction</span>
+
+    <span class="hljs-keyword">function</span> chnl_trans clone();
+      chnl_trans c = <span class="hljs-keyword">new</span>();
+      c<span class="hljs-variable">.data</span> = <span class="hljs-keyword">this</span><span class="hljs-variable">.data</span>;
+      c<span class="hljs-variable">.ch_id</span> = <span class="hljs-keyword">this</span><span class="hljs-variable">.ch_id</span>;
+      c<span class="hljs-variable">.pkt_id</span> = <span class="hljs-keyword">this</span><span class="hljs-variable">.pkt_id</span>;
+      c<span class="hljs-variable">.data_nidles</span> = <span class="hljs-keyword">this</span><span class="hljs-variable">.data_nidles</span>;
+      c<span class="hljs-variable">.pkt_nidles</span> = <span class="hljs-keyword">this</span><span class="hljs-variable">.pkt_nidles</span>;
+      c<span class="hljs-variable">.rsp</span> = <span class="hljs-keyword">this</span><span class="hljs-variable">.rsp</span>;
+      <span class="hljs-keyword">return</span> c;
+    <span class="hljs-keyword">endfunction</span>
+
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">string</span> sprint();
+      <span class="hljs-keyword">string</span> s;
+      s = {s, <span class="hljs-built_in">$sformatf</span>(<span class="hljs-string">"=======================================\n"</span>)};
+      s = {s, <span class="hljs-built_in">$sformatf</span>(<span class="hljs-string">"chnl_trans object content is as below: \n"</span>)};
+      s = {s, <span class="hljs-built_in">$sformatf</span>(<span class="hljs-string">"obj_id = %0d: \n"</span>, <span class="hljs-keyword">this</span><span class="hljs-variable">.obj_id</span>)};
+      <span class="hljs-keyword">foreach</span>(data[i]) s = {s, <span class="hljs-built_in">$sformatf</span>(<span class="hljs-string">"data[%0d] = %8x \n"</span>, i, <span class="hljs-keyword">this</span><span class="hljs-variable">.data</span>[i])};
+      s = {s, <span class="hljs-built_in">$sformatf</span>(<span class="hljs-string">"ch_id = %0d: \n"</span>, <span class="hljs-keyword">this</span><span class="hljs-variable">.ch_id</span>)};
+      s = {s, <span class="hljs-built_in">$sformatf</span>(<span class="hljs-string">"pkt_id = %0d: \n"</span>, <span class="hljs-keyword">this</span><span class="hljs-variable">.pkt_id</span>)};
+      s = {s, <span class="hljs-built_in">$sformatf</span>(<span class="hljs-string">"data_nidles = %0d: \n"</span>, <span class="hljs-keyword">this</span><span class="hljs-variable">.data_nidles</span>)};
+      s = {s, <span class="hljs-built_in">$sformatf</span>(<span class="hljs-string">"pkt_nidles = %0d: \n"</span>, <span class="hljs-keyword">this</span><span class="hljs-variable">.pkt_nidles</span>)};
+      s = {s, <span class="hljs-built_in">$sformatf</span>(<span class="hljs-string">"rsp = %0d: \n"</span>, <span class="hljs-keyword">this</span><span class="hljs-variable">.rsp</span>)};
+      s = {s, <span class="hljs-built_in">$sformatf</span>(<span class="hljs-string">"=======================================\n"</span>)};
+      <span class="hljs-keyword">return</span> s;
+    <span class="hljs-keyword">endfunction</span>
+  <span class="hljs-keyword">endclass</span>: chnl_trans
+</div></code></pre>
+<ol start="2">
+<li>丰富generator类</li>
+</ol>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> chnl_generator;
+    <span class="hljs-keyword">rand</span> <span class="hljs-keyword">int</span> pkt_id = -<span class="hljs-number">1</span>;
+    <span class="hljs-keyword">rand</span> <span class="hljs-keyword">int</span> ch_id = -<span class="hljs-number">1</span>;
+    <span class="hljs-keyword">rand</span> <span class="hljs-keyword">int</span> data_nidles = -<span class="hljs-number">1</span>;
+    <span class="hljs-keyword">rand</span> <span class="hljs-keyword">int</span> pkt_nidles = -<span class="hljs-number">1</span>;
+    <span class="hljs-keyword">rand</span> <span class="hljs-keyword">int</span> data_size = -<span class="hljs-number">1</span>;
+    <span class="hljs-keyword">rand</span> <span class="hljs-keyword">int</span> ntrans = <span class="hljs-number">10</span>;
+
+    mailbox <span class="hljs-variable">#(chnl_trans)</span> req_mb;
+    mailbox <span class="hljs-variable">#(chnl_trans)</span> rsp_mb;
+
+    <span class="hljs-keyword">constraint</span> cstr{
+      <span class="hljs-keyword">soft</span> ch_id == -<span class="hljs-number">1</span>;
+      <span class="hljs-keyword">soft</span> pkt_id == -<span class="hljs-number">1</span>;
+      <span class="hljs-keyword">soft</span> data_size == -<span class="hljs-number">1</span>;
+      <span class="hljs-keyword">soft</span> data_nidles == -<span class="hljs-number">1</span>;
+      <span class="hljs-keyword">soft</span> pkt_nidles == -<span class="hljs-number">1</span>;
+      <span class="hljs-keyword">soft</span> ntrans == <span class="hljs-number">10</span>;
+    }
+
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>();
+      <span class="hljs-keyword">this</span><span class="hljs-variable">.req_mb</span> = <span class="hljs-keyword">new</span>();
+      <span class="hljs-keyword">this</span><span class="hljs-variable">.rsp_mb</span> = <span class="hljs-keyword">new</span>();
+    <span class="hljs-keyword">endfunction</span>
+
+    <span class="hljs-keyword">task</span> run();
+      <span class="hljs-keyword">repeat</span>(ntrans) send_trans();
+    <span class="hljs-keyword">endtask</span>
+
+    <span class="hljs-comment">// generate transaction and put into local mailbox</span>
+    <span class="hljs-keyword">task</span> send_trans();
+      chnl_trans req, rsp;
+      req = <span class="hljs-keyword">new</span>();
+      <span class="hljs-keyword">assert</span>(req<span class="hljs-variable">.randomize</span> <span class="hljs-keyword">with</span> {<span class="hljs-keyword">local</span>::ch_id &gt;= <span class="hljs-number">0</span> -&gt; ch_id == <span class="hljs-keyword">local</span>::ch_id;  <span class="hljs-comment">// local表示当前域的变量，this表示该类的成员变量</span>
+                                 <span class="hljs-keyword">local</span>::pkt_id &gt;= <span class="hljs-number">0</span> -&gt; pkt_id == <span class="hljs-keyword">local</span>::pkt_id;
+                                 <span class="hljs-keyword">local</span>::data_nidles &gt;= <span class="hljs-number">0</span> -&gt; data_nidles == <span class="hljs-keyword">local</span>::data_nidles;
+                                 <span class="hljs-keyword">local</span>::pkt_nidles &gt;= <span class="hljs-number">0</span> -&gt; pkt_nidles == <span class="hljs-keyword">local</span>::pkt_nidles;
+                                 <span class="hljs-keyword">local</span>::data_size &gt;<span class="hljs-number">0</span> -&gt; data<span class="hljs-variable">.size</span>() == <span class="hljs-keyword">local</span>::data_size; 
+                               })
+        <span class="hljs-keyword">else</span> <span class="hljs-built_in">$fatal</span>(<span class="hljs-string">"[RNDFAIL] channel packet randomization failure!"</span>);
+      <span class="hljs-keyword">this</span><span class="hljs-variable">.pkt_id</span>++;
+      <span class="hljs-built_in">$display</span>(req<span class="hljs-variable">.sprint</span>());
+      <span class="hljs-keyword">this</span><span class="hljs-variable">.req_mb</span><span class="hljs-variable">.put</span>(req);
+      <span class="hljs-keyword">this</span><span class="hljs-variable">.rsp_mb</span><span class="hljs-variable">.get</span>(rsp);
+      <span class="hljs-built_in">$display</span>(rsp<span class="hljs-variable">.sprint</span>());
+      <span class="hljs-keyword">assert</span>(rsp<span class="hljs-variable">.rsp</span>)
+        <span class="hljs-keyword">else</span> <span class="hljs-built_in">$error</span>(<span class="hljs-string">"[RSPERR] %0t error response received!"</span>, <span class="hljs-built_in">$time</span>);
+    <span class="hljs-keyword">endtask</span>
+
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">string</span> sprint();
+      <span class="hljs-keyword">string</span> s;
+      s = {s, <span class="hljs-built_in">$sformatf</span>(<span class="hljs-string">"=======================================\n"</span>)};
+      s = {s, <span class="hljs-built_in">$sformatf</span>(<span class="hljs-string">"chnl_generator object content is as below: \n"</span>)};
+      s = {s, <span class="hljs-built_in">$sformatf</span>(<span class="hljs-string">"ntrans = %0d: \n"</span>, <span class="hljs-keyword">this</span><span class="hljs-variable">.ntrans</span>)};
+      s = {s, <span class="hljs-built_in">$sformatf</span>(<span class="hljs-string">"ch_id = %0d: \n"</span>, <span class="hljs-keyword">this</span><span class="hljs-variable">.ch_id</span>)};
+      s = {s, <span class="hljs-built_in">$sformatf</span>(<span class="hljs-string">"pkt_id = %0d: \n"</span>, <span class="hljs-keyword">this</span><span class="hljs-variable">.pkt_id</span>)};
+      s = {s, <span class="hljs-built_in">$sformatf</span>(<span class="hljs-string">"data_nidles = %0d: \n"</span>, <span class="hljs-keyword">this</span><span class="hljs-variable">.data_nidles</span>)};
+      s = {s, <span class="hljs-built_in">$sformatf</span>(<span class="hljs-string">"pkt_nidles = %0d: \n"</span>, <span class="hljs-keyword">this</span><span class="hljs-variable">.pkt_nidles</span>)};
+      s = {s, <span class="hljs-built_in">$sformatf</span>(<span class="hljs-string">"data_size = %0d: \n"</span>, <span class="hljs-keyword">this</span><span class="hljs-variable">.data_size</span>)};
+      s = {s, <span class="hljs-built_in">$sformatf</span>(<span class="hljs-string">"=======================================\n"</span>)};
+      <span class="hljs-keyword">return</span> s;
+    <span class="hljs-keyword">endfunction</span>
+
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> post_randomize();
+      <span class="hljs-keyword">string</span> s;
+      s = {<span class="hljs-string">"AFTER RANDOMIZATION \n"</span>, <span class="hljs-keyword">this</span><span class="hljs-variable">.sprint</span>()};
+      <span class="hljs-built_in">$display</span>(s);
+    <span class="hljs-keyword">endfunction</span>
+  <span class="hljs-keyword">endclass</span>: chnl_generator
+</div></code></pre>
+<h1 id="115">11.5</h1>
+<h2 id="%E4%BC%91%E6%81%AF">休息</h2>
+
+</body>
+</html>
