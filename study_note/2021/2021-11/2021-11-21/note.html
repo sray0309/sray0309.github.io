@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2021.11.21-2021.11.25</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="1121">11.21</h1>
+<h2 id="%E5%AF%B9%E8%B1%A1%E6%8B%B7%E8%B4%9D">对象拷贝</h2>
+<ul>
+<li>赋值和拷贝
+<ul>
+<li>如果将p1句柄赋值给另一个变量p2，那么依然只有一个对象，只是指向这个对象的句柄有p1和p2</li>
+<li>以下方式表示p1和p2代表两个不同的对象，在创建p2对象时，将从p1拷贝其成员变量例如integer，string和句柄等，该种拷贝方式称为浅拷贝</li>
+</ul>
+</li>
+</ul>
+<pre class="hljs"><code><div>Packet p1;
+Packet p2;
+p1 = <span class="hljs-keyword">new</span>;
+p2 = <span class="hljs-keyword">new</span> p1;
+</div></code></pre>
+<ul>
+<li>概述
+<ul>
+<li>对象的拷贝无法通过 <code>=</code> 来实现，因为这一操作是句柄的赋值，而不是对象的拷贝</li>
+<li>如果要拷贝对象，要首先创建一个新的对象，再将目标对象的成员变量值拷贝给新对象的成员，使新对象与目标对象的成员变量数值保持一致，完成了对象的拷贝</li>
+</ul>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> basic_test;
+    ...
+    <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> copy_data(basic_test t);
+        t<span class="hljs-variable">.def</span> = def;
+        t<span class="hljs-variable">.fin</span> = fin;
+    <span class="hljs-keyword">endfunction</span>
+
+    <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> basic_test copy();
+        basic_test t = <span class="hljs-keyword">new</span>(<span class="hljs-number">0</span>);
+        copy_data(t);
+        <span class="hljs-keyword">return</span> t;
+    <span class="hljs-keyword">endfunction</span>
+<span class="hljs-keyword">endclass</span>
+
+<span class="hljs-keyword">class</span> test_wr <span class="hljs-keyword">extends</span> basic_test;
+    ...
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> copy_data(basic_test t);
+        test_wr h;
+        <span class="hljs-keyword">super</span><span class="hljs-variable">.copy_data</span>(t);
+        <span class="hljs-built_in">$cast</span>(h, t); <span class="hljs-comment">// !!very important!!</span>
+        h<span class="hljs-variable">.def</span> = def;
+    <span class="hljs-keyword">endfunction</span>
+
+    <span class="hljs-keyword">function</span> basic_test copy();
+        test_wr t = <span class="hljs-keyword">new</span>();
+        copy_data(t);
+        <span class="hljs-keyword">return</span> t;    
+    <span class="hljs-keyword">endfunction</span>
+<span class="hljs-keyword">endclass</span>
+
+<span class="hljs-keyword">module</span> tb;
+    ...
+    test_wr wr;
+    test_wr h;
+
+    <span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+        wr = <span class="hljs-keyword">new</span>();
+        <span class="hljs-built_in">$cast</span>(h, wr<span class="hljs-variable">.copy</span>());
+        <span class="hljs-built_in">$display</span>(<span class="hljs-string">"wr.def = %0d"</span>, wr<span class="hljs-variable">.def</span>); <span class="hljs-comment">// wr.def = 200</span>
+        <span class="hljs-built_in">$display</span>(<span class="hljs-string">"h.def = %0d"</span>, h<span class="hljs-variable">.def</span>);   <span class="hljs-comment">// h.def = 200</span>
+        h<span class="hljs-variable">.def</span> = <span class="hljs-number">300</span>;
+        <span class="hljs-built_in">$display</span>(<span class="hljs-string">"wr.def = %0d"</span>, wr<span class="hljs-variable">.def</span>); <span class="hljs-comment">// wr.def = 200</span>
+        <span class="hljs-built_in">$display</span>(<span class="hljs-string">"h.def = %0d"</span>, h<span class="hljs-variable">.def</span>);   <span class="hljs-comment">// h.def = 300</span>
+    <span class="hljs-keyword">end</span>
+    ...
+<span class="hljs-keyword">endmodule</span>
+</div></code></pre>
+<ul>
+<li>总结
+<ul>
+<li>将成员拷贝函数 <code>copy_data()</code> 和新对象生成函数 <code>copy()</code> 分为两个方法，使得子类继承和方法复用较为容易</li>
+<li>为了保证父类和子类的成员均可以完成拷贝，将拷贝方法声明为虚方法，且遵循只拷贝该类的域成员的原则，父类的成员拷贝应有父类的拷贝方法完成</li>
+<li>在实现 <code>copy_data()</code> 过程中应该注意句柄的类型转换，保证转换后的句柄可以访问类成员变量</li>
+</ul>
+</li>
+</ul>
+<h1 id="1122">11.22</h1>
+<h2 id="%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0callback">回调函数（callback）</h2>
+<ul>
+<li>概述
+<ul>
+<li>验证环境应当在复用的时候尽量少地修改模块本身，只在外部做少量的配置就可以嵌入到新的环境上。一方面可以通过顶层环境的配置对象自顶向下进行配置参数传递。另一方面可以在不修改原始类地情况下注入新的代码</li>
+<li>在父类定义方法时，预留回调函数入口，使得在继承的子类中填充回调函数，就可以完成对父类方法的修改。</li>
+</ul>
+</li>
+</ul>
+<div align="center"><img src="1.png"></img></div>
+<pre class="hljs"><code><div><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">class</span> Driver_cbs;
+    <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">task</span> pre_tx (<span class="hljs-keyword">ref</span> Transaction tr, <span class="hljs-keyword">ref</span> <span class="hljs-keyword">bit</span> drop);
+        <span class="hljs-comment">//</span>
+    <span class="hljs-keyword">endtask</span>
+    <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">task</span> post_tx(<span class="hljs-keyword">ref</span> Transaction tr);
+        <span class="hljs-comment">//</span>
+    <span class="hljs-keyword">endtask</span>
+<span class="hljs-keyword">endclass</span>
+
+<span class="hljs-keyword">class</span> Driver;
+    Driver_cbs cbs[$];
+    <span class="hljs-keyword">task</span> run();
+        <span class="hljs-keyword">bit</span> drop;
+        Transaction tr;
+        <span class="hljs-keyword">forever</span> <span class="hljs-keyword">begin</span>
+            drop = <span class="hljs-number">0</span>;
+            agt2drv<span class="hljs-variable">.get</span>(tr);
+            <span class="hljs-keyword">foreach</span> (cbs[i]) cbs[i]<span class="hljs-variable">.pre_tx</span>(tr, drop);
+            <span class="hljs-keyword">if</span> (drop) <span class="hljs-keyword">continue</span>;
+            transmit (tr);
+            <span class="hljs-keyword">foreach</span> (cbs[i]) cbs[i]<span class="hljs-variable">.post_tx</span>(tr);
+        <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">endtask</span>
+<span class="hljs-keyword">endclass</span>
+
+<span class="hljs-keyword">class</span> Driver_cbs_drop <span class="hljs-keyword">extends</span> Driver_cbs;
+    <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">task</span> pre_tx (<span class="hljs-keyword">ref</span> Transaction tr, <span class="hljs-keyword">ref</span> <span class="hljs-keyword">bit</span> drop);
+        drop = ($urandom_range(<span class="hljs-number">0</span>, <span class="hljs-number">99</span>) == <span class="hljs-number">0</span>);
+    <span class="hljs-keyword">endtask</span>
+<span class="hljs-keyword">endclass</span>
+
+<span class="hljs-keyword">program</span> <span class="hljs-keyword">automatic</span> test;
+    Environment env;
+    <span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+        env = <span class="hljs-keyword">new</span>();
+        env<span class="hljs-variable">.gen_cfg</span>();
+        env<span class="hljs-variable">.build</span>();
+        <span class="hljs-keyword">begin</span> <span class="hljs-comment">// 创建回调对象并且植入driver</span>
+            Driver_cbs_drop dcd = <span class="hljs-keyword">new</span>();
+            env<span class="hljs-variable">.drv</span><span class="hljs-variable">.cbs</span><span class="hljs-variable">.push_back</span>(dcd);
+        <span class="hljs-keyword">end</span>
+        env<span class="hljs-variable">.run</span>();
+        env<span class="hljs-variable">.wrap_up</span>();
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">endprogram</span>
+</div></code></pre>
+<ul>
+<li>回调函数步骤
+<ul>
+<li>预留回调函数入口</li>
+<li>定义回调函数</li>
+<li>例化及添加回调类的实例</li>
+</ul>
+</li>
+</ul>
+<h2 id="%E5%8F%82%E6%95%B0%E5%8C%96%E7%9A%84%E7%B1%BB">参数化的类</h2>
+<ul>
+<li>概述
+<ul>
+<li>参数化的使用是为了提高代码的复用率，在SV中，可以为类增加若干个数据类型参数，并在声明句柄的时候指定类型</li>
+<li>参数化的类可以在后期例化时使用不同的参数，以此来存储不同的数据类型</li>
+</ul>
+</li>
+<li>实现一个简化的mailbox</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> mailbox <span class="hljs-variable">#(type T=int)</span>;
+    <span class="hljs-keyword">local</span> T queue[$];
+
+    <span class="hljs-keyword">task</span> put (<span class="hljs-keyword">input</span> T i);
+        queue<span class="hljs-variable">.push_back</span>(i);
+    <span class="hljs-keyword">endtask</span>
+
+    <span class="hljs-keyword">task</span> get (<span class="hljs-keyword">ref</span> T o);
+        <span class="hljs-keyword">wait</span>(queue<span class="hljs-variable">.size</span>() &gt; <span class="hljs-number">0</span>);
+        o = queue<span class="hljs-variable">.pop_front</span>();
+    <span class="hljs-keyword">endtask</span>
+
+    <span class="hljs-keyword">task</span> peek (<span class="hljs-keyword">ref</span> T o);
+        <span class="hljs-keyword">wait</span> (queue<span class="hljs-variable">.size</span>() &gt; <span class="hljs-number">0</span>);
+        <span class="hljs-number">0</span> = queue[<span class="hljs-number">0</span>];
+    <span class="hljs-keyword">endtask</span>
+<span class="hljs-keyword">endclass</span>
+
+<span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+    <span class="hljs-keyword">real</span> <span class="hljs-number">0</span>;
+    mailbox <span class="hljs-variable">#(real)</span> mb;
+    mb = <span class="hljs-keyword">new</span>();
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>; i&lt;<span class="hljs-number">5</span>; i++) mb<span class="hljs-variable">.put</span> (i*<span class="hljs-number">2</span><span class="hljs-variable">.0</span>);
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<h1 id="1123">11.23</h1>
+<h2 id="sv-lab5">SV lab5</h2>
+<ul>
+<li>reg_pkg.sv-l98</li>
+<li>reg_pkg.sv-l109</li>
+<li>fmt_pkg.sv-l142
+<strong>完成，待重做</strong></li>
+</ul>
+<h1 id="1124">11.24</h1>
+<h2 id="uvm%E7%AE%80%E4%BB%8B">UVM简介</h2>
+<ul>
+<li>验证方法学目的提供一些可重用类来减轻水平复用和垂直复用的工作量，并且提供一套可靠的框架</li>
+<li>UVM面向所有数字设计，从ASIC到FPGA，以及控制逻辑，数据通路到处理器验证的全部场景</li>
+<li>UVM的学习结构
+<ul>
+<li>UVM的类库和核心机制</li>
+<li>UVM的组件和层次构建方式</li>
+<li>组件间的通信方式</li>
+<li>UVM测试场景的构成</li>
+<li>UVM的寄存器模型应用</li>
+</ul>
+</li>
+<li>类库地图
+<ul>
+<li>核心基类</li>
+<li>工厂（factory）类</li>
+<li>事务（transaction）和序列（sequence）类</li>
+<li>结构创建（structure creation）类</li>
+<li>环境组件（environment component）类</li>
+<li>通信管道（channel）类</li>
+<li>信息报告（message report）类</li>
+<li>寄存器模型（register model）类</li>
+<li>线程同步（thread synchronization）类</li>
+<li>事务接口（transaction interface）类</li>
+</ul>
+</li>
+</ul>
+<div align="center"><img src="2.png"></img></div> 
+<h2 id="uvm%E7%BB%84%E4%BB%B6%E4%B8%8E%E7%8E%AF%E5%A2%83">UVM组件与环境</h2>
+<ul>
+<li>验证环境中，激励，监测，检查都有其对应的组件，在UVM中从基类继承的一个核心分支，即uvm_component类</li>
+</ul>
+<div align="center"><img src="3.png"></img></div> 
+<ul>
+<li>UVM环境
+<ul>
+<li>UVM在验证环境构建时，引入了phase机制。可以将UVM仿真阶段层次化。</li>
+</ul>
+</li>
+</ul>
+<div align="center"><img src="4.png"></img></div> 
+<div align="center"><img src="5.png"></img></div> 
+<div align="center"><img src="6.png"></img></div>
+<h1 id="1125">11.25</h1>
+<h2 id="%E9%87%8D%E6%9E%84mcdf%E4%BB%A3%E7%A0%81">重构mcdf代码</h2>
+
+</body>
+</html>

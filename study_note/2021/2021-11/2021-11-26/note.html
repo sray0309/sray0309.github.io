@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2021.11.26-2021.11.30</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="1126">11.26</h1>
+<h2 id="%E9%87%8D%E6%9E%84mcdf%E4%BB%A3%E7%A0%81">重构mcdf代码</h2>
+<h2 id="%E9%AA%8C%E8%AF%81%E6%96%B9%E6%B3%95%E5%AD%A6%E6%A6%82%E8%BF%B0">验证方法学概述</h2>
+<ul>
+<li>验证方法学会提供一些可重用的类来减轻在项目之间水平复用和垂直复用的工作量</li>
+</ul>
+<h1 id="1127">11.27</h1>
+<h2 id="%E7%B1%BB%E5%BA%93%E5%9C%B0%E5%9B%BE">类库地图</h2>
+<ul>
+<li>概述
+<ul>
+<li>UVM将验证过程中可以重用和标准化的部分都规定在其方法学的类库中，通过标准化的方式减轻构建环境的负担</li>
+<li>验证环境的共同需求：组件创建和访问，环境结构创建，组件连接和运行，不同阶段的顺序安排，激励的生成传递和控制，测试的报告机制</li>
+</ul>
+</li>
+<li>UVM世界
+<ul>
+<li>核心基类</li>
+<li>工厂（factory）类</li>
+<li>事务（transaction）和序列（sequence）类</li>
+<li>结构创建（structure creation）类</li>
+<li>环境组件（environment component）类</li>
+<li>通信管道（channel）类</li>
+<li>信息报告（message report）类</li>
+<li>寄存器模型（register model）类</li>
+<li>线程同步（thread synchronization）类</li>
+<li>事务接口（transaction interface）类</li>
+</ul>
+</li>
+</ul>
+<div align="center"><img src="1.png"></img></div>
+<h2 id="%E5%B7%A5%E5%8E%82%E6%9C%BA%E5%88%B6">工厂机制</h2>
+<h3 id="%E5%B7%A5%E5%8E%82%E6%9C%BA%E5%88%B6%E6%98%AF%E8%BD%AF%E4%BB%B6%E7%9A%84%E4%B8%80%E7%A7%8D%E5%85%B8%E5%9E%8B%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">工厂机制是软件的一种典型设计模式</h3>
+<ul>
+<li>工厂的意义
+<ul>
+<li>UVM工厂是为了更方便地替换验证环境中的实例或者注册了的类型，工厂的注册机制也带来了配置的灵活性。</li>
+<li>实例或者类型地替换在UVM中称作覆盖（override），被用来覆盖地对象或者类型应该满足注册。（registration）和多态（polymorphism）的要求。</li>
+<li>UVM的验证环境可分为两部分，一部分构成了环境的层次，通过uvm_component类完成。另一部分构成环境的属性（配置）和数据传输，通过uvm_object类完成。</li>
+<li>uvm_component类继承于uvm_object类，这两种类也是进出工厂的主要模具和生产对象。称之为模具是因为通过注册可以利用工厂完成对象创建。</li>
+<li>对象由工厂生产是利用了工厂生产模具可灵活替代的好处，这使得在不修改原有验证环境层次和验证包的同时，实现了对环境内部组件类型或者对象的覆盖。</li>
+</ul>
+</li>
+<li>uvm_component和uvm_object
+<ul>
+<li>验证环境组件大致包含generator，stimulator，monitor，agent，checker/ref model，environment，test。这些组件在uvm_component的子类中均有相应的组件</li>
+<li>SV中非固定的TLM transaction，从generator刘翔stimulator的数据包，这些类在UVM中统一由uvm_object表示</li>
+</ul>
+</li>
+<li>uvm_component, uvm_object的例化
+<ul>
+<li>每个uvm_{component, object}在例化时都应该给予一个名字，每个层次中例化的组件名称应该独一无二</li>
+<li>创建component或者object的方法：<code>comp_type::type_id::create(string name, uvm_component parent);</code> 和 <code>object_type::type_id::create(string name);</code></li>
+</ul>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> comp1 <span class="hljs-keyword">extends</span> uvm_component;
+    <span class="hljs-meta">`uvm_component_utils(comp1) // 注册该类</span>
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">string</span> name=<span class="hljs-string">"comp1"</span>, uvm_component parent=<span class="hljs-literal">null</span>);
+        <span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(name, parent);
+        <span class="hljs-built_in">$display</span>(<span class="hljs-built_in">$sformatf</span>(<span class="hljs-string">"%s is created"</span>, name));
+    <span class="hljs-keyword">endfunction</span>: <span class="hljs-keyword">new</span>
+
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> build_phase(uvm_phase phase);
+        <span class="hljs-keyword">super</span><span class="hljs-variable">.build_phase</span>(phase);
+    <span class="hljs-keyword">endfunction</span>: build_phase
+<span class="hljs-keyword">endclass</span>
+
+<span class="hljs-keyword">class</span> obj1 <span class="hljs-keyword">extends</span> uvm_object;
+    <span class="hljs-meta">`uvm_object_utils(obj1)</span>
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">string</span> name=<span class="hljs-string">"obj1"</span>);
+        <span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(name);
+        <span class="hljs-built_in">$display</span>(<span class="hljs-built_in">$sformatf</span>(<span class="hljs-string">"%s is created"</span>, name));
+    <span class="hljs-keyword">endfunction</span>: <span class="hljs-keyword">new</span>
+<span class="hljs-keyword">endclass</span>
+
+comp1 c1, c2;
+obj1 o1, o2;
+<span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+    c1 = <span class="hljs-keyword">new</span>(<span class="hljs-string">"c1"</span>); <span class="hljs-comment">// 利用SV创建</span>
+    o1 = <span class="hljs-keyword">new</span>(<span class="hljs-string">"o1"</span>);
+    c2 = comp1::type_id::create(<span class="hljs-string">"c2"</span>, <span class="hljs-literal">null</span>); <span class="hljs-comment">// 利用UVM工厂创建</span>
+    o2 = obj1::type_id::create(<span class="hljs-string">"o2"</span>);
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-comment">// 以上initial中两种创建方式都可以，在UVM环境中要求利用UVM工厂方式创建</span>
+</div></code></pre>
+<ul>
+<li>创建（create）
+<ul>
+<li>运用factory的步骤可分为 1. 将类注册到工厂。2. 在例化前设置覆盖对象和类型（可选）。3. 对象创建</li>
+<li>在注册中要分别使用UVM宏 <code>'uvm_component_utils</code> 和 <code>'uvm_object_utils</code>，这两个宏将类注册到factory中</li>
+<li>在整个仿真过程中，factory是独有的，保证了所有类的注册都在一个机构中</li>
+</ul>
+</li>
+</ul>
+<h1 id="1128">11.28</h1>
+<h2 id="%E5%B7%A5%E5%8E%82%E6%9C%BA%E5%88%B6">工厂机制</h2>
+<ul>
+<li>uvm_coreservice_t类
+<ul>
+<li>内置uvm核心组件和方法包括唯一的uvm_factory，用来注册，覆盖和例化</li>
+<li>包括全局的report_server，用来做消息统筹和报告</li>
+<li>包括全局的tr_database，用来记录transaction记录</li>
+<li>包括get_roog()方法，用来返回当前uvm环境的结构顶层对象</li>
+<li>该类并不是uvm_component或者uvm_object，没有例化在uvm环境中，而是独立于uvm环境之外</li>
+</ul>
+</li>
+<li>工厂创建component/opject的方法
+<ul>
+<li><code>create_component_by_name()</code></li>
+<li><code>create_component by type()</code></li>
+<li><code>create_object_by_name()</code></li>
+<li><code>create_object_by_type()</code></li>
+</ul>
+</li>
+<li>uvm_component/object配合工厂注册，创建，覆盖的方法
+<ul>
+<li><code>create()</code></li>
+<li><code>create_component()</code></li>
+<li><code>get()</code></li>
+<li><code>get_type_name()</code></li>
+<li><code>set_inst_override()</code></li>
+<li><code>set_type_override()</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>利用工厂创建实例的方法</strong></p>
+<ol>
+<li><code>T::type_id::create(args)</code></li>
+<li>利用工厂直接创建（<code>create_component_by_name()</code>等等）</li>
+<li>利用uvm_component/object配合工厂创建</li>
+</ol>
+<h2 id="%E8%A6%86%E7%9B%96%E6%96%B9%E6%B3%95">覆盖方法</h2>
+<h3 id="%E5%B7%A5%E5%8E%82%E6%8F%90%E4%BE%9B%E7%9A%84%E8%A6%86%E7%9B%96override">工厂提供的覆盖（override）</h3>
+<ul>
+<li>将原来所属的类型替换为另外一个新的类型，覆盖之后工厂创建新的替换类型
+<ul>
+<li>无需修改原始代码</li>
+<li>新的替换类型必须与被替换类型相兼容，否则稍后的句柄赋值将失败，所以使用继承</li>
+<li>允许灵活的配置，可使用子类来覆盖原本的父类</li>
+<li>可使用不同的对象来修改其代码行为</li>
+</ul>
+</li>
+<li>想要实现覆盖特性，原有类型和新类型都需要注册</li>
+<li>使用create()创建对象时
+<ul>
+<li>工厂会检查原有类型是否被覆盖</li>
+<li>如果是，会创建一个新类型的对象</li>
+<li>如果不是，会创建一个原有类型的对象</li>
+</ul>
+</li>
+<li>覆盖发生时，可以使用类型覆盖或者实例覆盖
+<ul>
+<li>类型覆盖：UVM层次结构下所有原有类型都被覆盖类型所替换</li>
+<li>实例覆盖：在某些位置中的原有类型会被覆盖类型所替换</li>
+</ul>
+</li>
+</ul>
+<h3 id="%E8%A6%86%E7%9B%96%E6%96%B9%E6%B3%95">覆盖方法</h3>
+<ul>
+<li><code>set_type_override()</code>
+<ul>
+<li><code>static function void set_type_override(uvm_object_wrapper override_type, bit replace=1);</code></li>
+<li><code>uvm_object_wrapper override_type</code>：注册过后的某一个类在工厂中注册时的句柄，可以使用 <code>new_type::get_type()</code> 找到</li>
+<li><code>bit replace=1</code>：1表示如果已经有覆盖存在，新的覆盖会替代就的覆盖。0表示如果已经有覆盖存在，该覆盖不会生效</li>
+<li><code>set_type_override</code> 是一个静态函数：<code>orig_type::type_id::set_type_override(new_type::get_type())</code></li>
+</ul>
+</li>
+<li><code>set_inst_override()</code>
+<ul>
+<li><code>static function void set_inst_override(uvm_object_wrapper override_type, string inst_path, uvm_component parent=null);</code></li>
+<li><code>string inst_path</code>：指向组件结构的路径字符串</li>
+<li><code>uvm_component parent=null</code>：如果缺省，表示使用inst_path内容为绝对路径。如果有值传递，则使用 <code>{parent.get_ful_name(),'.',inst_path}</code> 来作为目标路径</li>
+<li><code>set_type_override</code> 是一个静态函数：<code>orig_type::type_id::set_inst_override(new_type::get_type(), &quot;orig_inst_path&quot;)</code></li>
+</ul>
+</li>
+<li>如何使用覆盖相关的函数
+<ul>
+<li>有不止一个类提供与覆盖有关的函数，名称与参数列表各不相同
+<ul>
+<li><code>uvm_component::set_{type, inst}_override{_by_type}</code></li>
+<li><code>uvm_component_registry::set_{type, inst}_override</code></li>
+<li><code>uvm_object_registry::set_{type, inst}_override</code></li>
+<li><code>uvm_factory::set_{type, inst}_override</code></li>
+<li>通过 <code>orig_type::type_id</code> 调用覆盖函数</li>
+<li>在uvm_component的域中直接调用</li>
+<li>使用uvm_factory来做覆盖</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">module</span> factory_override;
+    <span class="hljs-keyword">import</span> uvm_pkg::*;
+    <span class="hljs-meta">`<span class="hljs-meta-keyword">include</span> "uvm_macros.svh"</span>
+
+    <span class="hljs-keyword">class</span> comp1 <span class="hljs-keyword">extends</span> uvm_component;
+        <span class="hljs-meta">`uvm_component_utils(comp1)</span>
+        <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">string</span> name=<span class="hljs-string">"comp1"</span>, uvm_component parent=<span class="hljs-literal">null</span>);
+            <span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(name, parent);
+            <span class="hljs-built_in">$display</span>(<span class="hljs-built_in">$sformatf</span>(<span class="hljs-string">"comp1:: %s is created"</span>, name));
+        <span class="hljs-keyword">endfunction</span>:<span class="hljs-keyword">new</span>
+
+        <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> hello(<span class="hljs-keyword">string</span> name);
+            <span class="hljs-built_in">$display</span>(<span class="hljs-built_in">$sformatf</span>(<span class="hljs-string">"comp1:: %s said hello!"</span>, name));
+        <span class="hljs-keyword">endfunction</span>
+    <span class="hljs-keyword">endclass</span>
+
+    <span class="hljs-keyword">class</span> comp2 <span class="hljs-keyword">extends</span> comp1;
+        <span class="hljs-meta">`uvm_component_utils(comp2)</span>
+        <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">string</span> name=<span class="hljs-string">"comp2"</span>, uvm_component parent=<span class="hljs-literal">null</span>);
+            <span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(name, parent);
+            <span class="hljs-built_in">$display</span>(<span class="hljs-built_in">$sformatf</span>(<span class="hljs-string">"comp2:: %s is created"</span>, name))
+        <span class="hljs-keyword">endfunction</span>
+ 
+        <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> hello(<span class="hljs-keyword">string</span> name);
+            <span class="hljs-built_in">$display</span>(<span class="hljs-built_in">$sformatf</span>(<span class="hljs-string">"comp2:: %s said hello!"</span>, name));
+        <span class="hljs-keyword">endfunction</span>   
+    <span class="hljs-keyword">endclass</span>
+
+    comp1 c1, c2;
+    <span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+        comp1::type_id::set_type_override(comp2::get_type());<span class="hljs-comment">// 工厂将comp1替换为comp2</span>
+        c1 = <span class="hljs-keyword">new</span>(<span class="hljs-string">"c1"</span>); <span class="hljs-comment">// 没有用工厂创建，所以就没有被替换，c1还是comp1类型</span>
+        c2 = comp1::type_id::create(<span class="hljs-string">"c2"</span>, <span class="hljs-literal">null</span>); <span class="hljs-comment">// c2被替换，是comp2类型</span>
+        c1<span class="hljs-variable">.hello</span>(<span class="hljs-string">"c1"</span>);
+        c2<span class="hljs-variable">.hello</span>(<span class="hljs-string">"c2"</span>);
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">endmodule</span>
+<span class="hljs-comment">// 输出结果</span>
+<span class="hljs-comment">// comp1:: c1 is created</span>
+<span class="hljs-comment">// comp1:: c2 is created</span>
+<span class="hljs-comment">// comp2:: c2 is created</span>
+<span class="hljs-comment">// comp1:: c1 said hello! (通过new函数的创建没有被覆盖)</span>
+<span class="hljs-comment">// comp2:: c2 said hello!</span>
+</div></code></pre>
+<p><strong>注意</strong></p>
+<ol>
+<li>comp2必须继承于comp1</li>
+<li>comp1的hello函数是虚函数</li>
+</ol>
+<ul>
+<li>确保正确覆盖
+<ul>
+<li>uvm中所有的类都注册到工厂，并由工厂创建对象</li>
+<li>创建对象时，句柄名称应该同传递到create()方法中的字符串名称相同。无论是通过层次路径名称来覆盖还是配置，将例化组件的句柄名称同创建时create()方法中的字符串名称保持一致</li>
+<li>覆盖是采用parent wins模式，注意在同一个顶层build_phase()中覆盖方法应发生在从对象创建之前（先做覆盖再创建对象，多个覆盖时层次越高优先级越高）</li>
+<li>覆盖类应是原始类的子类，调用成员方法也应当声明为虚方法</li>
+<li>另外一种确保运行时覆盖类型句柄正确使用的方式，需要通过$cast()进行动态类型转换</li>
+</ul>
+</li>
+<li>总结
+<ul>
+<li>UVM环境的构建离不开factory的三个核心要素
+<ul>
+<li>注册：`uvm_{component, object}_utils</li>
+<li>创建：uvm_{component, object}::type_id::create()</li>
+<li>覆盖：set_{type, inst}_override{,_by_type}()</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="1129">11.29</h1>
+<h2 id="%E6%A0%B8%E5%BF%83%E5%9F%BA%E7%B1%BB">核心基类</h2>
+<h3 id="uvmobject">uvm_object</h3>
+<ul>
+<li>UVM中最基础的根类：uvm_void，该类是虚类，没有任何变量和方法。继承于uvm_void的子类中有uvm_object和uvm_port_base。</li>
+<li>UVM的类库地图中除了事务接口（transaction interface）类继承于uvm_port_base，其他的类都从uvm_object一步步继承而来</li>
+<li>uvm_object的核心方法主要提供与数据操作的相关服务
+<ul>
+<li>copy</li>
+<li>clone</li>
+<li>compare</li>
+<li>print</li>
+<li>pack/unpack</li>
+</ul>
+</li>
+</ul>
+<h3 id="%E5%9F%9F%E7%9A%84%E8%87%AA%E5%8A%A8%E5%8C%96field-automation">域的自动化（field automation）</h3>
+<ul>
+<li>uvm通过域的自动化，使得用户在注册uvm类的同时也可以声明今后会参与到对象拷贝、克隆、打印等操作的成员变量</li>
+<li>凡是声明了的成员变量，都将在数据操作时自动参与进来</li>
+<li>所以在注册component或者object的时候，要包裹其成员变量，默认采取UVM_ALL_ON或者UVM_DEFAULT将所有的数据操作方法都打开</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> box <span class="hljs-keyword">extends</span> uvm_object;
+    <span class="hljs-keyword">int</span> volume = <span class="hljs-number">120</span>;
+    color_t color = WHITE;
+    <span class="hljs-keyword">string</span> name = <span class="hljs-string">"box"</span>;
+    <span class="hljs-meta">`uvm_object_utils_begin(box)</span>
+        <span class="hljs-meta">`uvm_field_int(volume, UVM_ALL_ON)</span>
+        <span class="hljs-meta">`uvm_field_enum(color_t, color, UVM_ALL_ON)</span>
+        <span class="hljs-meta">`uvm_field_string(name, UVM_ALL_ON)</span>
+    <span class="hljs-meta">`uvm_object_utils_end</span>
+    ...
+<span class="hljs-keyword">endclass</span>
+
+box b1, b2;
+<span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+    b1 = <span class="hljs-keyword">new</span>(<span class="hljs-string">"box1"</span>);
+    b1<span class="hljs-variable">.volume</span> = <span class="hljs-number">80</span>;
+    b1<span class="hljs-variable">.color</span> = BLACK;
+    b2 = <span class="hljs-keyword">new</span>();
+    b2<span class="hljs-variable">.copy</span>(b1);
+    b2<span class="hljs-variable">.name</span> = <span class="hljs-string">"box2"</span>;
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<h3 id="%E6%8B%B7%E8%B4%9Dcopy">拷贝（copy）</h3>
+<ul>
+<li>copy默认已经创建好了对象，只需要对数据进行拷贝。clone会自动创建对象并对source object进行数据拷贝，再返回target object句柄</li>
+<li>无论是copy或者clone，都需要对数据进行复制</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> ball <span class="hljs-keyword">extends</span> uvm_object;
+    <span class="hljs-keyword">int</span> diameter = <span class="hljs-number">10</span>;
+    color_t color = RED;
+    <span class="hljs-meta">`uvm_object_utils_begin(ball)</span>
+        <span class="hljs-meta">`uvm_field_int(diameter, UVM_DEFAULT)</span>
+        <span class="hljs-meta">`uvm_field_enum(color_t, color, UVM_NOCOPY)</span>
+    <span class="hljs-meta">`uvm_object_utils_end</span>
+    ...
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> do_copy(uvm_object rhs); <span class="hljs-comment">// do_copy()是copy()的回调函数，会被自动调用</span>
+        ball b;
+        <span class="hljs-built_in">$cast</span>(b, rhs);
+        <span class="hljs-built_in">$display</span>(<span class="hljs-string">"ball::do_cpoy entered.."</span>);
+        <span class="hljs-keyword">if</span> (b<span class="hljs-variable">.diameter</span> &lt;= <span class="hljs-number">20</span>) <span class="hljs-keyword">begin</span>
+            diameter = <span class="hljs-number">20</span>;
+        <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">endfunction</span>
+<span class="hljs-keyword">endclass</span>
+
+<span class="hljs-keyword">class</span> box <span class="hljs-keyword">extends</span> uvm_object;
+    <span class="hljs-keyword">int</span> volume = <span class="hljs-number">120</span>;
+    color_t color = WHITE;
+    <span class="hljs-keyword">string</span> name = <span class="hljs-string">"box"</span>;
+    ball b;
+    <span class="hljs-meta">`uvm_object_utils_begin(box)</span>
+        <span class="hljs-meta">`uvm_field_int(volume, UVM_ALL_ON)</span>
+        <span class="hljs-meta">`uvm_field_enum(color_t, color, UVM_ALL_ON)</span>
+        <span class="hljs-meta">`uvm_field_string(name, UVM_ALL_ON)</span>
+        <span class="hljs-meta">`uvm_fidle_object(b, UVM_ALL_ON)</span>
+    <span class="hljs-meta">`uvm_object_utils_end</span>
+    ...
+<span class="hljs-keyword">endclass</span>
+
+box b1, b2;
+<span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+    b1 = <span class="hljs-keyword">new</span>(<span class="hljs-string">"box1"</span>);
+    b1<span class="hljs-variable">.volume</span> = <span class="hljs-number">80</span>;
+    b1<span class="hljs-variable">.color</span> = BLACK;
+    b1<span class="hljs-variable">.b</span><span class="hljs-variable">.color</span> = WHITE;
+    b2 = <span class="hljs-keyword">new</span>();
+    b2<span class="hljs-variable">.copy</span>(b1);
+    b2<span class="hljs-variable">.name</span> = <span class="hljs-string">"box2"</span>;
+    <span class="hljs-built_in">$display</span>(<span class="hljs-string">"%s"</span>, b1<span class="hljs-variable">.sprint</span>());
+    <span class="hljs-built_in">$display</span>(<span class="hljs-string">"%s"</span>, b2<span class="hljs-variable">.sprint</span>());
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<p><strong>上述代码输出结果</strong></p>
+<div align="center"><img src="2.png"></img></div>  
+<ul>
+<li>上述代码中默认进行的是深拷贝（deep copy），copy()和do_copy()都会执行</li>
+<li>再拷贝过程中，对于box::b的拷贝是通过ball的深拷贝方式进行，即创建了一个新的对象并进行拷贝</li>
+<li>从ball::do_copy()函数可以看到，如果被拷贝对象的diameter小于20，那么则将自身的diameter设置为20，因此最后对象b2.b的成员与b1.b的成员数值不同</li>
+</ul>
+<h3 id="%E6%AF%94%E8%BE%83compare">比较（compare）</h3>
+<ul>
+<li><code>function bit compare(uvm_object rhs, uvm_comparer comparer=null);</code></li>
+<li>默认情况下可以省略第二项参数，不对比较的情况做出额外配置</li>
+<li>比较方法经常会在两个数据类中进行，如从generator产生的一个transaction，和再设计输出上监测的transaction。若它们为同一种类型，除了可以自定义数据比较之外，也可以直接使用 <code>uvm_object::compare()</code> 函数来实现数据比较和消息打印</li>
+</ul>
+<pre class="hljs"><code><div>box b1, b2;
+<span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+    b1<span class="hljs-variable">.new</span>(<span class="hljs-string">"box1"</span>);
+    b1<span class="hljs-variable">.volume</span> = <span class="hljs-number">80</span>;
+    b1<span class="hljs-variable">.color</span> = BLACK;
+    b2 = <span class="hljs-keyword">new</span>(<span class="hljs-string">"box2"</span>);
+    b2<span class="hljs-variable">.volume</span> = <span class="hljs-number">90</span>;
+    <span class="hljs-keyword">if</span> (!b2<span class="hljs-variable">.compare</span>(b1)) <span class="hljs-keyword">begin</span>
+        <span class="hljs-meta">`uvm_info("COMPARE", "b2 compared with b1 failure", UVM_LOW)</span>
+    <span class="hljs-keyword">end</span>
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">begin</span>
+        <span class="hljs-meta">`uvm_info("COMPARE", "b2 compared with b1 succes", UVM_LOW)</span>
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+<span class="hljs-comment">// 输出结果</span>
+<span class="hljs-comment">// UVM_INFO @ 0: reporter [MISCMP] Miscompare for box2.volume: lhs = 'h5a : rhs = 'h50</span>
+<span class="hljs-comment">// UVM_INFO @ 0: reporter [MISCMP] 1 Miscompare(s) for object box1@336 vs. box2@337</span>
+<span class="hljs-comment">// UVM_INFO @ 0: reporter [COMPARE] b2 compared with b1 failure</span>
+</div></code></pre>
+<ul>
+<li>默认的比较器（uvm_package::uvm_default_comparer）当比较错误发生时，不会再进行后续的比较</li>
+</ul>
+<h3 id="%E5%85%A8%E5%B1%80%E5%AF%B9%E8%B1%A1">全局对象</h3>
+<ul>
+<li>uvm_pkg中例化了不少全局对象包括uvm_default_coparer, uvm_default_printer, uvm_default_packer</li>
+<li>若不想使用默认的比较配置，可以考虑创建一个uvm_comparer对象或者修改全局的uvm_comparer</li>
+</ul>
+<div align="center"><img src="3.png"></img></div> 
+<h3 id="%E6%89%93%E5%8D%B0print">打印（print）</h3>
+<ul>
+<li>通过field automation，声明之后的各个成员域会再调用uvm_object::print()函数时自动打印出来</li>
+</ul>
+<div align="center"><img src="4.png"></img></div>  
+<div align="center"><img src="2.png"></img></div> 
+<h3 id="%E6%89%93%E5%8C%85%E5%92%8C%E8%A7%A3%E5%8C%85packunpack">打包和解包（pack/unpack）</h3>
+<ul>
+<li><code>function int pack (ref bit bitstream[], input uvm_packer packer=null);</code>
+<ul>
+<li>pack是为了将自动化声明后的标量打包为比特流，容易与硬件进行数据传递和对比</li>
+</ul>
+</li>
+<li><code>function int unpack (ref bit bitstream[], input uvm_packer packer=null);</code>
+<ul>
+<li>将串行数据解包变为原有的各自域</li>
+</ul>
+</li>
+<li>pack与unpack在通常的UVM环境中使用较少，但与外界环境例如systemC进行大规模数据传递时是首选方式</li>
+</ul>
+<h2 id="phase%E6%9C%BA%E5%88%B6">phase机制</h2>
+<h3 id="phase%E6%9C%BA%E5%88%B6%E5%8F%AF%E4%BB%A5%E5%B0%86uvm%E4%BB%BF%E7%9C%9F%E9%98%B6%E6%AE%B5%E5%B1%82%E6%AC%A1%E5%8C%96">phase机制可以将UVM仿真阶段层次化</h3>
+<h3 id="%E6%89%A7%E8%A1%8C%E6%9C%BA%E5%88%B6">执行机制</h3>
+<ul>
+<li>phase的九个方法只有component有</li>
+</ul>
+<div align="center"><img src="6.png"></img></div>  
+<div align="center"><img src="7.png"></img></div>  
+<div align="center"><img src="8.png"></img></div> 
+<ul>
+<li>所有phase中只有run_phase是一个可以耗时的方法，该方法可以完成一些等待、激励、采样的任务</li>
+<li>run_phase中如果要完成测试，通常需要组织下面的激励序列
+<ul>
+<li>上电</li>
+<li>复位</li>
+<li>寄存器配置</li>
+<li>发送主要测试内容</li>
+<li>等待DUT完成测试</li>
+</ul>
+</li>
+</ul>
+<h3 id="12%E4%B8%AA%E5%88%86%E6%94%AFphase">12个分支phase</h3>
+<ul>
+<li>发送激励的另外方式是将上面的激励划分到不同区间，按顺序发送。run_phase可以分为下面12个phase
+<ul>
+<li>pre_reset_phase</li>
+<li>reset_phase</li>
+<li>post_reset_phase</li>
+<li>pre_configure_phase</li>
+<li>configure_phase</li>
+<li>post_configure_phase</li>
+<li>pre_main_phase</li>
+<li>main_phase</li>
+<li>post_main_phase</li>
+<li>pre_shutdown_phase</li>
+<li>shutdown_phase</li>
+<li>post_shutdown_phase</li>
+</ul>
+</li>
+<li>run_phase和12个phase是并行的</li>
+</ul>
+<div align="center"><img src="9.png"></img></div>  
+<h3 id="uvm%E7%BC%96%E8%AF%91%E5%92%8C%E8%BF%90%E8%A1%8C%E9%A1%BA%E5%BA%8F">UVM编译和运行顺序</h3>
+<div align="center"><img src="10.png"></img></div>
+<h3 id="uvm%E4%BB%BF%E7%9C%9F%E5%BC%80%E5%A7%8B">UVM仿真开始</h3>
+<ul>
+<li>通过全局函数run_test()选择性地指定要运行哪一个uvm_test</li>
+<li>通过仿真时传递参数+UVM_TESTNAME=&lt;test_name&gt;来指定仿真时调用的uvm_test</li>
+<li>无论哪一种方式都必须在顶层调用全局函数run_test()</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-comment">// uvm-1.2/base/uvm_globals.svh</span>
+<span class="hljs-keyword">task</span> run_test(<span class="hljs-keyword">string</span> test_name=<span class="hljs-string">""</span>);
+  uvm_root top;
+  uvm_coreservice_t cs;
+  cs = uvm_coreservice_t::get();
+  top = cs<span class="hljs-variable">.get_root</span>();
+  top<span class="hljs-variable">.run_test</span>(test_name);
+<span class="hljs-keyword">endtask</span>
+</div></code></pre>
+<ul>
+<li>uvm_top(uvm_root)承担的核心职责包括
+<ul>
+<li>UVM世界顶层，任何其他组件实例都在它之下，通过创建组件时指定parent来构建曾测</li>
+<li>如果parent为null，那么它将作为uvm_top的子组件</li>
+<li>phase控制，控制所有组件的phase顺序</li>
+<li>索引功能，通过层次名称来索引组件实例</li>
+<li>报告功能，通过uvm_top来全局配置报告的繁简度</li>
+<li>全局报告设置，uvm报告设备在组件内部和组件外部都可以访问</li>
+</ul>
+</li>
+<li>通过uvm_top调用方法run_test(test_name)，uvm_top会做如下初始化
+<ul>
+<li>得到正确test_name</li>
+<li>初始化objection机制（控制仿真退出）</li>
+<li>创建uvm_test_top实例</li>
+<li>调用phase控制方法，安排所有组件的phase方法执行顺序</li>
+<li>等待所有phase执行结束，关闭phase控制进程</li>
+<li>报告总结和结束仿真</li>
+</ul>
+</li>
+</ul>
+<h3 id="uvm%E4%BB%BF%E7%9C%9F%E7%BB%93%E6%9D%9F">UVM仿真结束</h3>
+<ul>
+<li>结束仿真的机制只有一种：利用objection挂起机制来控制仿真结束</li>
+<li>uvm_objection类提供了一种供所有component和sequence共享的计数器，如果有组件来挂起(raise_objection)objection，那么它还应该记得落下(drop_objection)objection</li>
+<li>参与到objection机制的组件可以独立的各自挂起objection来防止run_phase退出，只有这些组件都落下objection后，uvm_objection共享的counter才会变为0，run phase可以推出</li>
+<li>对于uvm_objection类，用来反停止的控制方法包括
+<ul>
+<li><code>raise_objection(uvm_object obj=null, string description=&quot;&quot;, int count=1)</code> 挂起</li>
+<li><code>drop_objection(uvm_object obj=null, string description=&quot;&quot;, int count=1)</code> 落下</li>
+<li><code>set_drain_time(uvm_object obj=null, time drain)</code> 设置退出时间</li>
+</ul>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> test1 <span class="hljs-keyword">extends</span> uvm_test;
+  ...
+  <span class="hljs-keyword">task</span> run_phase(uvm_phase phase);
+    phase<span class="hljs-variable">.raise_objection</span>(<span class="hljs-keyword">this</span>);<span class="hljs-comment">//必须要在第一行最开始执行，否则仿真会退出</span>
+    <span class="hljs-meta">`uvm_info("run_phase", "entered ..", UVM_LOW)</span>
+    #<span class="hljs-number">1</span>us;
+    <span class="hljs-meta">`uvm_info("run_phase", "exited ..", UVM_LOW)</span>
+    phase<span class="hljs-variable">.drop_objection</span>(<span class="hljs-keyword">this</span>);
+  <span class="hljs-keyword">endtask</span>
+<span class="hljs-keyword">endclass</span>
+</div></code></pre>
+<h1 id="1130">11.30</h1>
+<h2 id="config%E6%9C%BA%E5%88%B6">config机制</h2>
+<h3 id="%E6%A6%82%E8%BF%B0">概述</h3>
+<ul>
+<li>在build phase中，除了组件的实例化，还需要进行配置。</li>
+<li>通过外部参数配置，在环境创建时根据不同参数来选择创建的组件类型，组件实例数目，组件之间的连接以及组件的运行模式</li>
+<li>UVM config可以在仿真中通过变量设置修改环境而不需要重新编译</li>
+<li>UVM提供 <code>uvm_config_db</code> 配置类以及几种方便的变量设置方法来实现仿真时的环境控制，使用方式包括
+<ul>
+<li>传递virtual interface到环境中</li>
+<li>设置单一变量值，例如int， string，enum</li>
+<li>传递配置对象（config object）到环境</li>
+</ul>
+</li>
+<li><code>uvm_config_db#(T)::set(uvm_component cntxt, string inst_name, stiing field_name, T value);</code></li>
+<li><code>uvm_config_dv#(T)::get(uvm_component cntxt, string inst_name, string field_name, inout T value);</code></li>
+</ul>
+<h3 id="interface%E4%BC%A0%E9%80%92">interface传递</h3>
+<ul>
+<li>uvm_config_db使得接口的传递和获取彻底分离</li>
+<li>需要注意：
+<ul>
+<li>传递接口应该发生在run_test()之前，保证在进入build phase之前，virtual interface已经被传递到uvm_config_db中</li>
+<li>应把interface和virtual interface声明区分开，传递过程中的类型应当为virtual interface，即实际接口的句柄</li>
+</ul>
+</li>
+</ul>
+<pre class="hljs"><code><div>interfacec intf1;
+  <span class="hljs-keyword">logic</span> enable = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">endinterface</span>
+
+<span class="hljs-keyword">class</span> comp1 <span class="hljs-keyword">extends</span> uvm_component;
+  <span class="hljs-meta">`uvm_component_utils(comp1)</span>
+  <span class="hljs-keyword">virtual</span> intf1 vif;
+  ...
+  <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> build_phase(uvm_phase phase);
+    <span class="hljs-keyword">if</span> (!uvm_config_db<span class="hljs-variable">#(virtual intf1)::get(this, "", "vif", vif))</span> <span class="hljs-keyword">begin</span>
+      <span class="hljs-meta">`uvm_error("GETVIF", "no virtual interface is assigned")</span>
+    <span class="hljs-keyword">end</span>
+    <span class="hljs-meta">`uvm_info("SETVAL", $sformatf("vif.enable is %b before set", vif.enable), UVM_LOW)</span>
+    vif<span class="hljs-variable">.enable</span> = <span class="hljs-number">1</span>;
+    <span class="hljs-meta">`uvm_info("SETVAL", $sformatf("vif.enable is %b after set", vif.enable), UVM_LOW)</span>
+  <span class="hljs-keyword">endfunction</span>
+<span class="hljs-keyword">endclass</span>
+
+<span class="hljs-keyword">class</span> test1 <span class="hljs-keyword">extends</span> uvm_test;
+  <span class="hljs-meta">`uvm_component_utils(test1)</span>
+  comp1 c1;
+  ...
+<span class="hljs-keyword">endclass</span>
+
+intf1 intf();
+<span class="hljs-keyword">initial</span> <span class="hljs-keyword">begin</span>
+  uvm_comfig_db<span class="hljs-variable">#(virtual intf1)::set(uvm_root::get(), "uvm_test_top.c1", "vif", intf);// uvm_root::get()</span>获得root的句柄
+  run_test(<span class="hljs-string">"test1"</span>);
+<span class="hljs-keyword">end</span>
+</div></code></pre>
+<h3 id="%E5%8F%98%E9%87%8F%E8%AE%BE%E7%BD%AE">变量设置</h3>
+<ul>
+<li>在各个test中，可以在build phase对底层组件的变量加以配置，进而在环境例化之前完成配置，使得环境可以按照预期运行</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> comp1 <span class="hljs-keyword">extends</span> uvm_component;
+  <span class="hljs-meta">`uvm_conponent_utils(comp1)</span>
+  <span class="hljs-keyword">int</span> vall = <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">string</span> str1 = <span class="hljs-string">"null"</span>;
+  ...
+  <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> build_phase(uvm_phase phase);
+    <span class="hljs-meta">`uvm_info("SETVAL", $sformatf("vall is %d before get", vall), UVM_LOW)</span>
+    <span class="hljs-meta">`uvm_info("SETVAL", $sformatf("str1 is %d before get", str1), UVM_LOW)</span>
+    uvm_config_db<span class="hljs-variable">#(int)::get(this, "", "vall", vall)</span>;
+    uvm_config_db<span class="hljs-variable">#(string)::get(this, "", "str1", str1)</span>;
+    <span class="hljs-meta">`uvm_info("SETVAL", $sformatf("vall is %d after get", vall), UVM_LOW)</span>
+    <span class="hljs-meta">`uvm_info("SETVAL", $sformatf("str1 is %d after get", str1), UVM_LOW)</span>
+  <span class="hljs-keyword">endfunction</span>
+<span class="hljs-keyword">endclass</span>
+
+<span class="hljs-keyword">class</span> test1 <span class="hljs-keyword">extends</span> uvm_test;
+  <span class="hljs-meta">`uvm_component_utils(test1)</span>
+  comp1 c1;
+  ...
+  <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> build_phase(uvm_phase phase);
+    uvm_config_db<span class="hljs-variable">#(int)::set(this, "c1", "vall", 100)</span>;
+    uvm_config_db<span class="hljs-variable">#(string)::set(this, "c1", "str1", "comp1")</span>;
+    c1 = comp1::type_id::create(<span class="hljs-string">"c1"</span>, <span class="hljs-keyword">this</span>);
+  <span class="hljs-keyword">endfunction</span>
+<span class="hljs-keyword">endclass</span>
+</div></code></pre>
+<h3 id="object%E4%BC%A0%E9%80%92">object传递</h3>
+<ul>
+<li>如果传递多个变量，可以将每个组建的变量整合，放置到一个uvm_object中，再将中心化的配置对象进行传递</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> config1 <span class="hljs-keyword">extends</span> uvm_object;
+  <span class="hljs-keyword">int</span> vall = <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">string</span> strl = <span class="hljs-string">"null"</span>;
+  <span class="hljs-meta">`uvm_object_utils(config1)</span>
+  ...
+<span class="hljs-keyword">endclass</span>
+
+<span class="hljs-keyword">class</span> comp1 <span class="hljs-keyword">extends</span> uvm_coponent;
+  <span class="hljs-meta">`uvm_component_utils(comp1)</span>
+  config1 cfg;
+  ...
+  <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> build_phase(uvm_phase phase);
+    uvm_object tmp;
+    uvm_config_db<span class="hljs-variable">#(uvm_object)::get(this, "", "cfg", tmp)</span>;
+    <span class="hljs-keyword">void</span>'(<span class="hljs-built_in">$cast</span>(cfg, tmp));
+    <span class="hljs-meta">`uvm_info("SETVAL", $sformatf("cfg.vall is %d after get", cfg.vall), UVM_LOW)</span>
+    <span class="hljs-meta">`uvm_info("SETVAL", $sformatf("cfg.str1 is %s after get", cfg.str1), UVM_LOW)</span>
+  <span class="hljs-keyword">endfunction</span>
+<span class="hljs-keyword">endclass</span>
+
+<span class="hljs-keyword">class</span> test1 <span class="hljs-keyword">extends</span> uvm_test;
+  <span class="hljs-meta">`uvm_component_utils(test1)</span>
+  comp1 c1, c2;
+  config1 cfg1, cfg2;
+  ...
+  <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> build_phase(uvm_phase phase);
+    cfg1 = config1::type_id::create(<span class="hljs-string">"cfg1"</span>);
+    cfg2 = config2::type_id::create(<span class="hljs-string">"cfg2"</span>);
+    cfg1<span class="hljs-variable">.vall</span> = <span class="hljs-number">30</span>;
+    cfg1<span class="hljs-variable">.strl</span> = <span class="hljs-string">"c1"</span>;
+    cfg2<span class="hljs-variable">.vall</span> = <span class="hljs-number">50</span>;
+    cfg2<span class="hljs-variable">.strl</span> = <span class="hljs-string">"c2"</span>;
+    uvm_config_db<span class="hljs-variable">#(uvm_object)::set(this, "c1", "cfg", cfg1)</span>;
+    uvm_config_db<span class="hljs-variable">#(uvm_object)::set(this, "c2", "cfg", cfg2)</span>;
+    c1 = comp1::type_id::create(<span class="hljs-string">"c1"</span>, <span class="hljs-keyword">this</span>);
+    c2 = comp1::type_id::create(<span class="hljs-string">"c2"</span>, <span class="hljs-keyword">this</span>);
+  <span class="hljs-keyword">endfunction</span>
+<span class="hljs-keyword">endclass</span>
+</div></code></pre>
+<h3 id="%E6%80%BB%E7%BB%93">总结</h3>
+<ul>
+<li>set()和get()一定要成对出现</li>
+<li>set()和get()传递参数类型应该一致，如果对uvm_object进行传递导致类型不一致，应首先通过$cast()进行类型转换</li>
+<li>set()和get()的路径要保持一致</li>
+<li>set()和get()传递参数可以使用通配符 <code>*</code> 来表示任意的层次</li>
+<li>先做set()再做get()</li>
+</ul>
+<h2 id="%E6%B6%88%E6%81%AF%E7%AE%A1%E7%90%86">消息管理</h2>
+<h3 id="%E6%B6%88%E6%81%AF%E6%96%B9%E6%B3%95">消息方法</h3>
+<ul>
+<li>在UVM环境中或者环境外，只要引入uvm_pkg，均可以通过下面的方法来按照消息的严重级别和冗余度来打印消息
+<ul>
+<li><code>function void uvm_report_info(string id, string message, int verbosity=UVM_MEDIUM, string filename=&quot;&quot;, int line=0);</code></li>
+<li><code>function void uvm_report_warning(string id, string message, int verbosity=UVM_MEDIUM, string filename=&quot;&quot;, int line=0);</code></li>
+<li><code>function void uvm_report_error(string id, string message, int verbosity=UVM_LOW, string filename=&quot;&quot;, int line=0);</code></li>
+<li><code>function void uvm_report_fatal(string id, string message, int verbosity=UVM_NONE, string filename=&quot;&quot;, int line=0);</code></li>
+</ul>
+</li>
+</ul>
+<div align="center"><img src="11.png"></img></div>
+<div align="center"><img src="12.png"></img></div>
+<h3 id="%E6%B6%88%E6%81%AF%E5%AE%8F">消息宏</h3>
+<ul>
+<li>UVM提供一些宏来对应消息方法
+<ul>
+<li>uvm_report_info() ---- `uvm_info(ID, MESSAGE, VERBOSITY)</li>
+<li>uvm_report_warning() ---- `uvm_warning(ID, MESSAGE)</li>
+<li>uvm_report_error() ---- `uvm_error(ID, MESSAGE)</li>
+<li>uvm_report_fatal ---- `uvm_fatal(ID, MESSAGE)</li>
+</ul>
+</li>
+</ul>
+<h3 id="%E6%B6%88%E6%81%AF%E6%9C%BA%E5%88%B6">消息机制</h3>
+<ul>
+<li>消息处理都是由uvm_report_handler类来完成的，每一个uvm_report_object类中都有一个uvm_report_handler实例</li>
+<li>上面的uvm_report_object消息处理方法或者uvm_component消息处理方法都是针对与这些uvm_report_handler做出的配置</li>
+<li>用户可以做出更高级的消息控制，例如通过set_max_quit_count设置UVM_ERROR的UVM_COUNT数量上限</li>
+</ul>
+<h3 id="%E5%9B%9E%E8%B0%83%E5%87%BD%E6%95%B0">回调函数</h3>
+<ul>
+<li>回调函数可以帮助在处理信息时做出额外的处理，uvm_report_object提供的回调函数如下
+<ul>
+<li>report_hook</li>
+<li>report_info_hook</li>
+<li>report_warning_hook</li>
+<li>report_error_hook</li>
+<li>report_fatal_hook</li>
+</ul>
+</li>
+</ul>
+<div align="center"><img src="13.png"></img></div>
+<div align="center"><img src="14.png"></img></div>
+<ul>
+<li>调用回调函数时，会首先调用report_hook()函数，接下来才按照severity级别来选择更细致的回调函数report_SEVERITY_hook()</li>
+<li>默认情况下report_hook()的返回值为1，再转入severity hook函数</li>
+<li>如果report_hook()函数被自定义返回0的话，后续的report_SEVERITY_hook()就不会执行</li>
+</ul>
+
+</body>
+</html>
