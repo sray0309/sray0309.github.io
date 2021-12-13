@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2021.12.6-2021.12.10</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="uvm%E5%85%A5%E9%97%A83">UVM入门3</h1>
+<h2 id="%E7%BB%84%E4%BB%B6%E5%AE%B6%E6%97%8F">组件家族</h2>
+<div align="center"><img src="1.png"></img></div>
+<ul>
+<li>从uvm_component类继承的类都继承了phase机制，均可以构成验证环境</li>
+<li>常见验证组件
+<ul>
+<li>uvm_driver</li>
+<li>uvm_monitor</li>
+<li>uvm_sequencer</li>
+<li>uvm_agent</li>
+<li>uvm_scoreboard</li>
+<li>uvm_env</li>
+<li>uvm_test</li>
+</ul>
+</li>
+</ul>
+<h1 id="uvmdriver">uvm_driver</h1>
+<h2 id="%E6%A6%82%E8%BF%B0">概述</h2>
+<ul>
+<li><code>class uvm_driver #(type REQ=uvm_sequence_item, type RSP=REQ)</code></li>
+<li>从该类会从uvm_sequencer中获取事务（transaction），经过转化进而在接口中对DUT进行时序激励</li>
+<li>该类是参数化的类，在定义时需要声明参数的类型</li>
+<li>在定义新的driver类时，应声明该类所需要获取的事务参数REQ类型，默认情况下RSP参数类型同REQ类型保持一致</li>
+<li>uvm_driver在uvm_component基础上没有扩展新的函数，只是扩展了一些用来通信的端口和变量
+<ul>
+<li><code>uvm_seq_item_pull_port #(REQ, RSP) seq_item_port;</code></li>
+<li><code>uvm_analysis_port #(RSP) rsp_port;</code></li>
+<li><code>REQ req;</code></li>
+<li><code>RSP rsp;</code></li>
+</ul>
+</li>
+<li>driver类与sequencer类之间的通信就是为了获取新的事务对象，这一操作通过pull方式实现
+<ul>
+<li><code>driver.seq_item_port.connect(sequencer.seq_item_export);</code></li>
+<li><code>driver.rsp_port.connect(sequencer.rsp_export);</code></li>
+</ul>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> dut_driver <span class="hljs-keyword">extends</span> uvm_driver <span class="hljs-variable">#(basic_transaction); // REQ is basic_transaction (sequenct item类型)</span>
+    <span class="hljs-keyword">virtual</span> chip_if vif;
+    <span class="hljs-keyword">bit</span> [<span class="hljs-number">7</span>:<span class="hljs-number">0</span>] addr, data;
+
+    <span class="hljs-meta">`uvm_component_utild (dut_driver)</span>
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(name, parent);
+        <span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(name, parent);
+    <span class="hljs-keyword">endfunction</span>
+    <span class="hljs-keyword">extern</span> <span class="hljs-keyword">task</span> run_phase(uvm_phase phase);<span class="hljs-comment">// 运行过程中自动执行run_phase，extern表示在外部具体定义该方法</span>
+<span class="hljs-keyword">endclass</span>
+</div></code></pre>
+<h1 id="uvmmonitor">uvm_monitor</h1>
+<h2 id="%E6%A6%82%E8%BF%B0">概述</h2>
+<ul>
+<li>监测接口数据</li>
+<li>uvm_monitor与父类相比，没有增添新的成员和方法，新定义的类继承于uvm_monitor有助于实现父类的方法和特性</li>
+<li>常用功能
+<ul>
+<li>观测DUT的interface，收集总线数据</li>
+<li>永远保持POSSIVE模式，永远不会驱动DUT</li>
+<li>在观察总线协议或者内部信号协议时，可以做一些功能和时序的检查</li>
+<li>对于更复杂的检测要求，可以将数据发送至其他验证组件例如scoreboard，reference model或者coverage collector</li>
+</ul>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> serial_monitor <span class="hljs-keyword">extends</span> uvm_monitor;
+    <span class="hljs-keyword">virtual</span> serial_if<span class="hljs-variable">.monitor</span> mi; <span class="hljs-comment">// virtual interface and modport</span>
+    <span class="hljs-meta">`uvm_component_utils(serial_monitor)</span>
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">string</span> name, uvm_component parent);
+        <span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(name, parent)
+    <span class="hljs-keyword">endfunction</span>
+
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> build_phase(uvm_phase phase);
+        <span class="hljs-keyword">super</span><span class="hljs-variable">.build_phase</span>(phase)
+    <span class="hljs-keyword">endfunction</span>
+
+    <span class="hljs-keyword">extern</span> <span class="hljs-keyword">task</span> run_phase(uvm_phase);
+<span class="hljs-keyword">endclass</span>
+
+<span class="hljs-keyword">task</span> serial_monitor::run_phase(uvm_phase);
+    serial_transaction tr;
+    tr = <span class="hljs-keyword">new</span>();
+    <span class="hljs-keyword">forever</span> <span class="hljs-keyword">begin</span>
+        <span class="hljs-keyword">wait</span>(mi<span class="hljs-variable">.rts</span>);
+        @(<span class="hljs-keyword">negedge</span> mi<span class="hljs-variable">.line</span>);
+        <span class="hljs-variable">#(bit_period/2)</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>; i&lt;=<span class="hljs-number">7</span>; i++) <span class="hljs-keyword">begin</span>
+            <span class="hljs-variable">#(bit_period)</span>;
+            tr<span class="hljs-variable">.parity_error</span> ^= mi<span class="hljs-variable">.line</span>;
+            tr<span class="hljs-variable">.data</span>[i] = mi<span class="hljs-variable">.line</span>;
+        <span class="hljs-keyword">end</span>
+        <span class="hljs-variable">#(bit_period) assert(mi.line == 1'b1)</span> <span class="hljs-keyword">else</span>
+        <span class="hljs-meta">`uvm_warning("MON", "Framing error")</span>
+        ...
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">endtask</span>
+</div></code></pre>
+<h1 id="uvmsequencer">uvm_sequencer</h1>
+<div align="center"><img src="2.png"></img></div>
+<h2 id="%E6%A6%82%E8%BF%B0">概述</h2>
+<ul>
+<li>uvm_sequencer如同一个管道，传递sequence产生的连续的激励事务，最终通过TLM端口送至driver一侧</li>
+<li>uvm_sequencer也可以从uvm_driver那里获取随后的RSP对象来得知数据通信是否正常</li>
+<li>uvm_sequencer也是一个参数类，需要在定义sequencer时声明REQ的类型</li>
+<li>sequencer既管理者sequence，同时也将sequence中产生的transaction item传送到driver一侧</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> my_sequencer <span class="hljs-keyword">extends</span> uvm_sequencer <span class="hljs-variable">#(basic_transaction)</span>;
+    <span class="hljs-meta">`uvm_component_utils(uvm_sequencer)</span>
+
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">string</span> name, uvm_component parent);
+        <span class="hljs-keyword">super</span><span class="hljs-variable">.new</span>(name, parent);
+    <span class="hljs-keyword">endfunction</span>
+<span class="hljs-keyword">endclass</span>
+</div></code></pre>
+<h1 id="uvmagent">uvm_agent</h1>
+<ul>
+<li>agent是一个标准的验证单位，包含driver，monitor，sequencer</li>
+<li>为了复用，uvm_agent中只需要包含一个monitor，而不需要driver和sequencer，这就需要一个变量进行有条件的例化 <code>uvm_active_passive_enum is_active = UVM_ACTIVE</code></li>
+<li>is_active是agent的一个成员，缺省值为UVM_ACTIVE，表示处在active模式的agent需要例化driver, monitor, sequencer；而如果is_active的值是UVM_PASSIVE，表示agent在passive模式可以只例化monitor。active模式的agent既有激励功能也有监测功能，passive模式的agent只具有监测功能</li>
+<li>active模式对应着DUT的接口暴露给agent且需要激励的场景，passive模式对应着DUT的接口已经与其他设计连接而只需要监测的场景</li>
+<li>通过is_active变量，agent需要在build_phase()和connect_phase()等函数中通过选择语句来对driver和sequencer进行有条件的例化和连接</li>
+<li>按照总线传输的方向划分可以分为master和slave，master agent是用来向DUT发起transaction，slave agent是用来响应DUT的events</li>
+</ul>
+<div align="center"><img src="3.png"></img></div>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> my_agent <span class="hljs-keyword">extends</span> uvm_agent;
+    my_sequencer m_sqr;
+    my_driver m_drv;
+    my_monitor m_mon;
+    dut_if vif;
+    uvm_active_passive_enum is_active = UVM_ACTIVE;
+    ...
+    <span class="hljs-keyword">extern</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> build_phase(uvm_phase phase);
+    <span class="hljs-keyword">extern</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> connect_phase(uvm_phase phase);
+    <span class="hljs-meta">`uvm_component_utils(my_agent)</span>
+<span class="hljs-keyword">endclass</span>
+
+<span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> template_master_agent::build();
+    <span class="hljs-keyword">super</span><span class="hljs-variable">.build</span>();
+    <span class="hljs-comment">//可以先通过uvmconfig_db先从顶层get到is_active的值</span>
+    monitor = template_master_monitor::type_id::create(<span class="hljs-string">"monitor"</span>, <span class="hljs-keyword">this</span>);
+    <span class="hljs-keyword">if</span> (is_active == UVM_ACTIVE) <span class="hljs-keyword">begin</span>
+        sequencer = template_master_sequencer::type_id::create(<span class="hljs-string">"sequencer"</span>, <span class="hljs-keyword">this</span>);
+        driver = template_master_driver::type_id(create<span class="hljs-string">"driver"</span>, <span class="hljs-keyword">this</span>);
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">endfunction</span>
+
+<span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> template_master_agent::connect();
+    <span class="hljs-keyword">if</span> (is_active == UVM_ACTIVE) <span class="hljs-keyword">begin</span>
+        driver<span class="hljs-variable">.seq_item_port</span><span class="hljs-variable">.connect</span>(sequencer<span class="hljs-variable">.seq_item_export</span>);
+    <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">endfunction</span>
+</div></code></pre>
+<h1 id="uvmscoreboard">uvm_scoreboard</h1>
+<ul>
+<li>uvm_scoreboard与checker有同样的功能，进行数据比对和报告</li>
+<li>实际环境中，uvm_scoreboard会接受来自多个monitor的监测数据，继而进行对比和报告</li>
+<li>在scoreboard中通常会声明TLM端口以供monitor传输数据</li>
+<li>简单比较的方法可以采用UVM预定义的comparator，复杂的设计可以在scoreboard中分别创建reference model和comparator</li>
+<li>如果一个组件中有子一级的组件，应该考虑它们的创建，连接和通信问题</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> cpu_scoreboard <span class="hljs-keyword">extends</span> uvm_scoreboard;
+    uvm_analysis_export <span class="hljs-variable">#(bus_xact)</span> in_export;
+    uvm_analysis_export <span class="hljs-variable">#(bus_xact)</span> out_export;
+    <span class="hljs-keyword">typedef</span> uvm_in_order_comparator <span class="hljs-variable">#(bus_xact)</span> comp_t;
+    comp_t m_comp;
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> build_phase(uvm_phase phase);
+        <span class="hljs-keyword">super</span><span class="hljs-variable">.build_phase</span>(phase);
+        in_export = <span class="hljs-keyword">new</span>(<span class="hljs-string">"in_export"</span>, <span class="hljs-keyword">this</span>);
+        out_export = <span class="hljs-keyword">new</span>(<span class="hljs-string">"out_export"</span>, <span class="hljs-keyword">this</span>);
+        m_comp = comp_t::type_id::create(<span class="hljs-string">"m_comp"</span>, <span class="hljs-keyword">this</span>);
+    <span class="hljs-keyword">endfunction</span>
+
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> connect_phase(uvm_phase phase);
+        <span class="hljs-keyword">super</span><span class="hljs-variable">.connect_phase</span>(phase);
+        in_export<span class="hljs-variable">.connect</span>(m_comp<span class="hljs-variable">.before_export</span>);
+        out_export<span class="hljs-variable">.connect</span>(m_comp<span class="hljs-variable">.after_export</span>);
+    <span class="hljs-keyword">endfunction</span>
+<span class="hljs-keyword">endclass</span>
+</div></code></pre>
+<h1 id="uvmenv">uvm_env</h1>
+<div align="center"><img src="4.png"></img></div>
+<ul>
+<li>uvm_env可能包含多个uvm_agent和其他的component</li>
+<li>uvm_env就是一个结构化的容器，同时也可以作为子环境在更高层的集成中被嵌入</li>
+<li>uvm_env和uvm_agent之间的嵌套关系如下
+<ul>
+<li>uvm_agent作为一个标准单元，在更上层的集成中应该被例化到uvm_env</li>
+<li>uvm_env在更高层的复用中，可以被其他的uvm_env所嵌套</li>
+</ul>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> top_env <span class="hljs-keyword">extends</span> uvm_env;
+    sub_env m_se;
+    my_agent m_agt;
+    my_scoreboard m_sb;
+    <span class="hljs-meta">`uvm_component_utils(top_env)</span>
+    <span class="hljs-keyword">extern</span> <span class="hljs-keyword">function</span> <span class="hljs-keyword">new</span>(<span class="hljs-keyword">string</span> name, uvm_component parent);
+
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> build_phase(uvm_phase);
+        m_se = sub_env::type_id::create(<span class="hljs-string">"m_se"</span>, <span class="hljs-keyword">this</span>);
+        m_agt = my_agent::type_id::create(<span class="hljs-string">"m_agt"</span>, <span class="hljs-keyword">this</span>);
+        m_sb = my_scoreboard::type_id::create(<span class="hljs-string">"m_sb"</span>, <span class="hljs-keyword">this</span>);
+    <span class="hljs-keyword">endfunction</span>
+    ...
+<span class="hljs-keyword">endclass</span>
+</div></code></pre>
+<h1 id="uvmtest">uvm_test</h1>
+<ul>
+<li>uvm_test是验证环境建立的唯一入口，只用通过它才能正常运转UVM的phase机制，它也决定着环境的结构和连接关系，也决定着使用哪一个测试序列</li>
+<li>在一个顶层test中可以例化多个组件，例如uvm_env或者uvm_agent</li>
+<li>推荐在uvm_test中只例化一个顶层uvm_env，便于提供一个唯一环境节点以形成树状的拓扑结构</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> env <span class="hljs-keyword">extends</span> uvm_env;
+    <span class="hljs-meta">`uvm_component_utils(env)</span>
+    ...
+<span class="hljs-keyword">endclass</span>
+
+<span class="hljs-keyword">class</span> agent <span class="hljs-keyword">extends</span> uvm_agent;
+    <span class="hljs-meta">`uvm_component_utils(agent)</span>
+    ...
+<span class="hljs-keyword">endclass</span>
+
+<span class="hljs-keyword">class</span> test1 <span class="hljs-keyword">extends</span> uvm_test;
+    <span class="hljs-meta">`uvm_component_utils(test1)</span>
+    env e1;
+    agent a1;
+
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> build_phase(uvm_phase phase);
+        e1 = env::type_id::create(<span class="hljs-string">"c1"</span>, <span class="hljs-keyword">this</span>);
+        a1 = agent::type_id::create(<span class="hljs-string">"a1"</span>, <span class="hljs-keyword">this</span>);
+    <span class="hljs-keyword">endfunction</span>
+<span class="hljs-keyword">endclass</span>
+</div></code></pre>
+<h1 id="uvm%E7%BB%93%E6%9E%84%E5%9B%9E%E9%A1%BE">UVM结构回顾</h1>
+<h2 id="uvmtop">uvm_top</h2>
+<div align="center"><img src="5.png"></img></div>
+<ul>
+<li>uvm_top是uvm_root类的唯一实例，由UVM创建和管理，所在的域是uvm_pkg</li>
+<li>uvm_top是所有test组件的顶层
+<ul>
+<li>所有验证环境中的组件在创建时都需要指明它的父一级</li>
+<li>如果某些组件在创建时指定父一级的参数为null，那么它将直接隶属于uvm_top</li>
+</ul>
+</li>
+<li>uvm_top提供一系列方法来控制仿真，例如phase机制、objection防止仿真推出机制等</li>
+</ul>
+<h2 id="uvmtest">uvm_test</h2>
+<ul>
+<li>test类是用户自定义类的顶层结构</li>
+<li>所有的test类都应该继承于uvm_test，否则uvm_top将无法识别</li>
+<li>test的目标：
+<ul>
+<li>提供不同的配置，包括环境结构配置、测试模式配置等，然后创建验证环境</li>
+<li>例化测试序列，并且挂载（attach）到目标sequencer，使其命令driver发送激励</li>
+</ul>
+</li>
+</ul>
+<div align="center"><img src="6.png"></img></div>
+<h2 id="%E6%9E%84%E5%BB%BA%E7%8E%AF%E5%A2%83%E7%9A%84%E4%B8%BB%E8%A6%81%E7%BB%84%E4%BB%B6">构建环境的主要组件</h2>
+<ul>
+<li>uvm_component：管理验证环境的层次</li>
+<li>uvm_env：为验证环境结构提供一个容器</li>
+<li>uvm_test：提供对uvm_env的额外配置以及挂载激励</li>
+</ul>
+<h2 id="uvmcomponent">uvm_component</h2>
+<ul>
+<li>一个虚类（不能直接例化，可以继承），所有环境组件均继承于此类</li>
+<li>该类提供的接口：
+<ul>
+<li>结构相关：get_full_name()、get_parent()、get_num_children()</li>
+<li>phase机制：build_phase()、connect_phase()、run_phase()</li>
+<li>config机制：print_config()、print_override_info()</li>
+<li>report机制：report_hook()、set_report_verbosity_level_hier()</li>
+<li>事务记录：record()</li>
+<li>工厂机制：set_inst_override()，set_type_override()</li>
+</ul>
+</li>
+<li>组件的构建函数的固定形式 <code>function new(string name, uvm_component parent);</code>
+<ul>
+<li>string name：声明当前例化组件的名称，与父一级及以上层次构成的完整名称（路径）可以通过get_full_name()获取</li>
+<li>uvm_component parent：父一级句柄，通常用this指代，即例化在当前的父一级组件中</li>
+<li>注意与uvm_object的构建函数new(string name)区分</li>
+<li>凡是继承于uvm_component的组件，也应该保持同样的形式参数列表</li>
+</ul>
+</li>
+</ul>
+<h1 id="mcdf%E9%A1%B6%E5%B1%82%E9%AA%8C%E8%AF%81%E6%96%B9%E6%A1%88">MCDF顶层验证方案</h1>
+<h2 id="regenv">reg_env</h2>
+<div align="center"><img src="7.png"></img></div>
+<ul>
+<li>reg_master_agent: 提供寄存器接口驱动信号</li>
+<li>reg_slave_agent：提供寄存器接口反馈信号</li>
+<li>scoreboard：分别从reg_master_agent内的monitor和reg_slave_agent内的monitor获取监测数据，并且进行数据比对</li>
+</ul>
+<h2 id="chnlenv">chnl_env</h2>
+<div align="center"><img src="8.png"></img></div>
+<ul>
+<li>chnl_master_agent：提供上行的激励数据</li>
+<li>chnl_slave_agent：提供用来模拟arbiter仲裁信号，并且接受流出数据</li>
+<li>reg_cfg_agent：提供用来模拟寄存器的配置信号，并且接受内置FIFO的余量信号</li>
+<li>scoreboard：分别从chnl_master_agent、chnl_slave_agent和reg_cfg_agent的monitor接收监测数据，并且对channel的流入流出数据进行比对</li>
+</ul>
+<h2 id="arbenv">arb_env</h2>
+<div align="center"><img src="9.png"></img></div>
+<h2 id="fmtenv">fmt_env</h2>
+<div align="center"><img src="10.png"></img></div>
+</body>
+</html>
