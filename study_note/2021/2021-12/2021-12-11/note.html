@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>2021.12.11-2021.12.15</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="mcdf%E9%A1%B6%E5%B1%82%E9%AA%8C%E8%AF%81%E6%96%B9%E6%A1%88">MCDF顶层验证方案</h1>
+<h2 id="%E7%8E%AF%E5%A2%83%E9%9B%86%E6%88%90%E6%96%B9%E6%A1%881">环境集成方案1</h2>
+<div align="center"><img src="1.png"></img></div>
+<pre class="hljs"><code><div><span class="hljs-keyword">class</span> mcdf_env1 <span class="hljs-keyword">extends</span> uvm_env;
+    <span class="hljs-meta">`uvm_component_utils(mcdf_env1)</span>
+    reg_master_agent reg_mst;
+    chnl_master_agent chnl_mst1;
+    chnl_master_agent chnl_mst2;
+    chnl_master_agent chnl_mst3;
+    fmt_slave_agent fmt_slv;
+    mcdf_virtual_sequencer virt_sqr;
+    mcdf_scoreboard sb;
+    ...
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> build_phase(uvm_phase phase);
+        <span class="hljs-keyword">super</span><span class="hljs-variable">.build_phase</span>(phase);
+        reg_mst = reg_master_agent::type_id::create(<span class="hljs-string">"reg_mst"</span>, <span class="hljs-keyword">this</span>);
+        chnl_mst1 = chnl_master_agent::type_id::create(<span class="hljs-string">"chnl_mst1"</span>, <span class="hljs-keyword">this</span>);
+        chnl_mst2 = chnl_master_agent::type_id::create(<span class="hljs-string">"chnl_mst2"</span>, <span class="hljs-keyword">this</span>);
+        chnl_mst3 = chnl_master_agent::type_id::create(<span class="hljs-string">"chnl_mst3"</span>, <span class="hljs-keyword">this</span>);
+        fmt_slv = fmt_slave_agent::type_id::create(<span class="hljs-string">"fmt_slv"</span>, <span class="hljs-keyword">this</span>);
+        virt_sqr = mcdf_virtual_sequencer::type_id::create(<span class="hljs-string">"virt_sqr"</span>, <span class="hljs-keyword">this</span>);
+        sb = mcdf_scoreboard::type_id::create(<span class="hljs-string">"sb"</span>, <span class="hljs-keyword">this</span>);
+    <span class="hljs-keyword">endfunction</span>
+
+    <span class="hljs-keyword">function</span> <span class="hljs-keyword">void</span> connect_phase(uvm_phase phase);
+        <span class="hljs-keyword">super</span><span class="hljs-variable">.connect_phase</span>(phase);
+        ......
+    <span class="hljs-keyword">endfunction</span>
+<span class="hljs-keyword">endclass</span>
+</div></code></pre>
+<h2 id="%E7%8E%AF%E5%A2%83%E9%9B%86%E6%88%90%E6%96%B9%E6%A1%882">环境集成方案2</h2>
+<div align="center"><img src="2.png"></img></div>
+<h2 id="%E5%AF%B9%E6%AF%94">对比</h2>
+<ul>
+<li>方案一需要新建一个scoreboard来检查MCDF的整体功能</li>
+<li>方案二复用底层模块环境的scoreboard，减少顶层环境的额外成本</li>
+</ul>
+<h2 id="%E6%80%BB%E7%BB%93">总结</h2>
+<ul>
+<li>UVM各个模块的验证环境是独立封装的，对外不需要保留数据端口，便于环境的进一步集成复用</li>
+<li>由于phase机制，无需考虑子环境之间的例化顺序导致的句柄悬空问题</li>
+<li>子环境的测试序列相对独立，复用子环境测试序列构成virtual sequence时，不需要其他额外的迁移成本</li>
+<li>通过config_db配置方式，使得顶层环境可以在不同uvm_test进行集中管理配置</li>
+</ul>
+<h1 id="%E6%9E%84%E5%BB%BA%E9%AA%8C%E8%AF%81%E7%8E%AF%E5%A2%83%E7%9A%84%E5%86%85%E7%BB%8F">构建验证环境的内经</h1>
+<h2 id="%E7%8E%AF%E5%A2%83%E6%9E%84%E5%BB%BA%E7%9A%84%E5%9B%9B%E8%A6%81%E7%B4%A0">环境构建的四要素</h2>
+<ul>
+<li>单元组件的自闭性</li>
+<li>回归创建</li>
+<li>通信端口连接</li>
+<li>顶层配置</li>
+</ul>
+<h3 id="%E5%8D%95%E5%85%83%E7%BB%84%E4%BB%B6%E7%9A%84%E8%87%AA%E9%97%AD%E6%80%A7">单元组件的自闭性</h3>
+<ul>
+<li>自闭性是单元组件自身可以成为独立行为、不依赖于其他并行的组件</li>
+<li>各个子环境可以独立集成于顶层环境，互相也不需要额外的通信连接</li>
+</ul>
+<h3 id="%E5%9B%9E%E5%BD%92%E5%88%9B%E5%BB%BA">回归创建</h3>
+<ul>
+<li>回归创建依赖于自顶向下执行顺序的build phase</li>
+<li>build phase保证父组件必先于子组件创建，创建过程包含：
+<ul>
+<li>在定义成员变量时赋予默认值，或者在new()函数中赋予初始值</li>
+<li>结构配置变量用来决定组件的条件生成，例如uvm_agent依靠is_active变量来判断是否需要例化uvm_sequence和uvm_driver</li>
+<li>模式配置变量用来决定各个子组件的工作模式</li>
+<li>子组件按照自顶向下、从前到后的顺序依次生成</li>
+</ul>
+</li>
+</ul>
+<h3 id="%E9%80%9A%E4%BF%A1%E7%AB%AF%E5%8F%A3%E8%BF%9E%E6%8E%A5">通信端口连接</h3>
+<h3 id="%E9%A1%B6%E5%B1%82%E9%85%8D%E7%BD%AE">顶层配置</h3>
+<ul>
+<li>UVM结构不建议用户通过引用子环境句柄，继而索引更深层次的变量进行顶层配置</li>
+<li>更好的方法是通过配置话对象，作为绑定于顶层环境的部分传递到子环境，而子环境的各个组件又可以从结构化的配置对象中获取自身的配置参数，从而在build phase、connect phase以及run phase中来决定它们的结构和运行模式
+<ul>
+<li>配置的作用域应该只关注当前层次及以下，而不涉及更高的层次</li>
+<li>配置的对象结构应该尽量独立，最好同环境结构一样形成一个树状结构</li>
+<li>config_db的配置特性使得高层的配置会覆盖低层的配置</li>
+</ul>
+</li>
+</ul>
+<h2 id="%E9%A1%B6%E5%B1%82%E9%85%8D%E7%BD%AE%E4%B8%BE%E4%BE%8B-reg">顶层配置举例-reg</h2>
+<div align="center"><img src="3.png"></img></div>
+<h2 id="%E7%8E%AF%E5%A2%83%E5%85%83%E7%B4%A0%E5%88%86%E7%B1%BB">环境元素分类</h2>
+<ul>
+<li>环境元素分类：
+<ul>
+<li>成员变量
+<ul>
+<li>一般变量</li>
+<li>结构变量</li>
+<li>模式变量</li>
+</ul>
+</li>
+<li>子组件
+<ul>
+<li>固定组件</li>
+<li>条件组件</li>
+<li>引用组件（句柄）</li>
+</ul>
+</li>
+<li>子对象
+<ul>
+<li>自生对象</li>
+<li>克隆对象</li>
+<li>引用对象</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</body>
+</html>
